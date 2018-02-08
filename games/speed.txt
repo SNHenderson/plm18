@@ -1,0 +1,31 @@
+# DSL thoughts
+
+# Speed definition:
+
+# imperitive style. Tells system what to do what 
+
+use a standard deck
+add one discard pile
+add one discard pile
+...
+
+
+# declarative could work something like this
+# we could definitely make it more english-y
+Speed:
+    deck:
+        standard
+        no jokers
+    table:
+        piles:
+            discard:
+                face up
+                start empty
+            discard:
+                face up
+                ...
+    
+        
+    
+        
+
