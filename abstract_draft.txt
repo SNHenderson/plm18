@@ -1,0 +1,53 @@
+Name of Game: Speed
+
+Number of players: 2
+
+Turns?:No
+
+Piles: 6
+
+Pile 1 Type: Discard Pile
+Pile 1 Owner: Player 1
+Pile 1 Discard Rule: playedvalue = topvalue + 1 OR playedvalue = topvalue - 1 OR (playedvalue = 1 AND topvalue = 13)
+
+Pile 2 Type: Discard Pile
+Pile 2 Owner: Player 2
+Pile 2 Discard Rule: playedvalue = topvalue + 1 OR playedvalue = topvalue - 1 OR (playedvalue = 1 AND topvalue = 13)
+
+Pile 3 Type: Draw Pile
+Pile 3 Owner: Player 1
+Pile 3 Draw Rule: none
+
+Pile 4 Type: Draw Pile
+Pile 4 Owner: Player 2
+Pile 3 Draw Rule: none
+
+Pile 5 Type: Transfer Pile
+Pile 5 Owner: Player 1
+Pile 5 Transfer Pile: Pile 1 
+Pile 5 Transfer Rule: #Do we need to know if a player can play or not?
+
+Pile 6 Type: Transfer Pile
+Pile 6 Owner: Player 2
+Pile 6 Transfer Pile: Pile 2
+Pile 6 Transfer Rule: #Do we need to know if a player can play or not?
+
+# Do we ask the users to associate discarding with specific keys?
+# Would probably make things simpler
+
+
+Name of Game: Bartok
+
+Number of players: 2
+
+Turns?:Yes
+
+Piles: 2
+
+Pile 1 Type: Discard Pile
+Pile 1 Owner: none
+Pile 1 Discard Rule: playedvalue = topvalue OR playedsuit = topsuit
+
+Pile 2 Type: Draw Pile
+Pile 2 Owner: none
+Pile 2 Draw Rule: none
