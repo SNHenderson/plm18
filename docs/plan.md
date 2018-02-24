@@ -16,10 +16,10 @@
 - Hand
     - owner: str
     - size: int (constant size hand)
-    - cards: list<Card> 
+    - cards: list<Card>
 - Player
     - name: str (to match with Pile owner)
     - lastPlayedCard: Card
     - score: int
     - hand: Hand
-     
+
