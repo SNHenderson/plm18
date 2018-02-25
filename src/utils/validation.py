@@ -1,6 +1,6 @@
 class Validatable(object):
     def __init__(self):
-        self.restrictions = []
+        self.restrictions = set()
         self.should_validate = False
 
     def restrict(self, r):
@@ -8,6 +8,9 @@ class Validatable(object):
 
     def enable_validation():
         self.should_validate = True
+        for prop in self.__dict__.values():
+            if isinstance(prop, Validatable):
+                prop.enable_validation()
 
 
 def validate(undo=None):
@@ -16,15 +19,13 @@ def validate(undo=None):
 
         # The decorated function
         def validating_fn(self, *args, **kwargs):
-            fn(self, *args, **kwargs)
+            val = fn(self, *args, **kwargs)
             if self.should_validate:
                 valid = all([r(self) for r in self.restrictions])
                 if not valid:
-                    if undo is None:
-                        raise ValidationException 
-                    undo(self, *args, **kwargs)
-                return valid
-            return True
+                    if undo: undo(self, *args, **kwargs)
+                    raise ValidationException
+            return val
 
         return validating_fn
 

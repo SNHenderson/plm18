@@ -2,10 +2,10 @@ from utils.validation import validate
 from utils.validation import Validatable
 
 class Collection(Validatable):
-    def __init__(self):
-        super().__init__(self)
+    def __init__(self, name=None):
+        super().__init__()
         self.cards = [] # TODO: an ordered set would be better
-        self.undo = None
+        self.name = name
 
     @validate(undo=lambda self, *cards: [self.cards.remove(c) for c in cards])
     def add(self, *cards):
@@ -17,5 +17,4 @@ class Collection(Validatable):
         self.cards.pop(self._tmp)
 
     def __repr__(self):
-        return "[" + ",".join(map(str, self.cards)) + "]"
-
+        return "[" + self.name + ":" + ",".join(map(str, self.cards)) + "]"

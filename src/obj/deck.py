@@ -1,5 +1,6 @@
 from itertools import product
-from random import suffle
+from itertools import chain
+from random import shuffle
 
 from obj.card import Card
 from obj.suit import Suit
@@ -16,4 +17,10 @@ class Deck(object):
         return repr(self.cards)
 
     def shuffled(self):
-        return shuffle(list(self.cards))
+        cards = list(self.cards)
+        shuffle(cards)
+        return cards
+
+    def is_partitioned_by(self, collections):
+        cards = chain(*collections)
+        return len(cards) == len(self.cards) and len(self.cards - set(cards)) == 0

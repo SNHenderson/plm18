@@ -1,8 +1,21 @@
 from utils import arg_parser
 from obj import collection
+from dsl import game_parser
+from dsl import game_builder
 
-# This can be the main file that is run
-# It probably needs a better name
+def main():
+    # parse arguments
+    # args = arg_parser.parse()
 
-# TODO: Parse arguments, initialize system, start game
+    # parse game file
+    # game_rules = game_parser.parse(args.filename)
 
+    # create game
+    # game = game_builder.build_game(game_rules)
+    game = game_builder.build_speed(None)
+
+    # start game loop 
+    # game.run()
+
+if __name__ == "__main__":
+    main()

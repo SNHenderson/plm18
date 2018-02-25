@@ -9,4 +9,5 @@ class Hand(Collection):
         self.cards[b_index] = a
 
     def __str__(self):
-        return "TODO"
+        # TODO
+        return repr(self)
