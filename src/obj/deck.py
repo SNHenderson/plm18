@@ -22,5 +22,5 @@ class Deck(object):
         return cards
 
     def is_partitioned_by(self, collections):
-        cards = chain(*collections)
+        cards = [ c for col in collections for c in col.cards ]
         return len(cards) == len(self.cards) and len(self.cards - set(cards)) == 0

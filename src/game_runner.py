@@ -15,7 +15,7 @@ def main():
     game = game_builder.build_speed(None)
 
     # start game loop 
-    # game.run()
+    game.run()
 
 if __name__ == "__main__":
     main()

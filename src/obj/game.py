@@ -1,8 +1,8 @@
 from utils.validation import validate
 from utils.validation import Validatable
 
-from obj.table import Table
 from obj.deck import Deck
+from obj.pile import Pile
 
 class Game(Validatable):
     def __init__(self):
@@ -11,7 +11,6 @@ class Game(Validatable):
         self.is_running = False
         self.win_conditions = []
         self.collections = set()
-        self.table = Table()
         self.deck = Deck()
 
         self.restrict(lambda self: self.deck.is_partitioned_by(self.collections))
@@ -24,23 +23,38 @@ class Game(Validatable):
     def add_player(self, player):
         self.players.append(player)
 
-    def collections_for(player):
+    def collections_for(self, player):
         return [ c for c in self.collections if player.owns(c) ]
 
     def add_win_condition(self, condition):
         self.win_conditions.append(condition)
 
-    def run(start):
+    def run(self):
         self.enable_validation()
         game_running = True
         while game_running:
+            self.render()
             self.update_game()
-            game_running = all([c() for c in self.win_conditions()])
+            game_running = all([c(self) for c in self.win_conditions])
+
+            game_running = False # TODO: remove
+
+    def render(self):
+        # Render: need some abstract way to configure the layout of the game
+        other_collections = { c for c in self.collections if isinstance(c, Pile) }
+        print("Table:")
+        for c in other_collections:
+            print(c)
+        print()
+
+        print("Players:")
+        for p in self.players:
+            print(p.name, p.hand)
+        print()
 
     @validate()
-    def update_game():
+    def update_game(self):
         # TODO:
-        # render game
         # get player inputs
         # perform actions
         pass

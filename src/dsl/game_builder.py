@@ -1,5 +1,3 @@
-from itertools import chain
-
 from obj.game import Game
 from obj.pile import Pile
 from obj.player import Player
@@ -19,7 +17,7 @@ def build_speed(game_rules):
     game.restrict(lambda self: len(self.collections) == 8)
 
     # Game ends when ethier player runs out of cards
-    game.add_win_condition(lambda: any([sum(map(len, game.collections_for(p))) == 0 in self.players]))
+    game.add_win_condition(lambda self: any([ sum([len(c.cards) for c in game.collections_for(p)]) == 0 for p in self.players ]))
 
     p1 = Player("Player1")
     p2 = Player("Player2")
@@ -33,6 +31,7 @@ def build_speed(game_rules):
     game.add_player(p1)
     game.add_player(p2)
 
+    # Draw piles
     draw1 = Pile(name="d1", facedown=True)
     draw2 = Pile(name="d2", facedown=True)
     p1.add_collection(draw1)

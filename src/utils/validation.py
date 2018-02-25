@@ -6,7 +6,7 @@ class Validatable(object):
     def restrict(self, r):
         self.restrictions.add(r)
 
-    def enable_validation():
+    def enable_validation(self):
         self.should_validate = True
         for prop in self.__dict__.values():
             if isinstance(prop, Validatable):

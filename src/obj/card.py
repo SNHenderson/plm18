@@ -14,7 +14,7 @@ class Card(object):
         return hash((self.suit, self.rank))
 
     def __repr__(self):
-        return "[%s %s]" % (self.suit, self.rank)
+        return "[%s %s]" % (self.rank, self.suit)
 
     def __str__(self):
         # TODO: The way we want to display the card during the game should go here
