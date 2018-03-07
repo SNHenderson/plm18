@@ -16,5 +16,8 @@ class Collection(Validatable):
         self._tmp = self.cards.index(card) # temporarily store the index in case we need to undo
         self.cards.pop(self._tmp)
 
+    def __getitem__(self, key):
+        return self.cards[key]
+
     def __repr__(self):
         return "[" + self.name + ":" + ",".join(map(str, self.cards)) + "]"

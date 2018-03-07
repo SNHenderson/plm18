@@ -2,7 +2,9 @@
 
 Name of Game: Bartok
 
-Number of players: 2
+Jokers?: No
+
+Number of players: ?
 
 Turns?:Yes
 

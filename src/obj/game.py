@@ -1,17 +1,28 @@
 from utils.validation import validate
 from utils.validation import Validatable
 
+from utils.getch import getch
+from utils.objs import dict_obj
+
 from obj.deck import Deck
 from obj.pile import Pile
 
+
 class Game(Validatable):
-    def __init__(self):
+    def __init__(self, turn_based = False):
         super().__init__()
         self.players = []
         self.is_running = False
         self.win_conditions = []
+        self.moves = []
         self.collections = set()
         self.deck = Deck()
+        self.turn_based = turn_based
+        self.game_running = False
+        if turn_based:
+            self.turn = 0
+        else:
+            self.turn = -1
 
         self.restrict(lambda self: self.deck.is_partitioned_by(self.collections))
 
@@ -23,6 +34,10 @@ class Game(Validatable):
     def add_player(self, player):
         self.players.append(player)
 
+    @validate()
+    def add_move(self, card, start, end, inp):
+        self.moves.append(dict_obj(card = card, start = start, end = end, input = inp))
+
     def collections_for(self, player):
         return [ c for c in self.collections if player.owns(c) ]
 
@@ -31,13 +46,16 @@ class Game(Validatable):
 
     def run(self):
         self.enable_validation()
-        game_running = True
-        while game_running:
+        self.game_running = True
+        if self.turn_based:
+            self.turn = 0
+        while self.game_running:
             self.render()
             self.update_game()
-            game_running = all([c(self) for c in self.win_conditions])
-
-            game_running = False # TODO: remove
+            if all([c(self) for c in self.win_conditions]):
+                self.game_running = False;
+                self.render()
+                print("Game end!")
 
     def render(self):
         # Render: need some abstract way to configure the layout of the game
@@ -52,12 +70,37 @@ class Game(Validatable):
             print(p.name, p.hand)
         print()
 
+    def get_input(self):
+        ch = getch()
+        if ord(ch) == 27:
+            self.game_running = False;
+
+        moves = [ move for move in self.moves if move.input == ch ]
+
+        return moves
+
+    def move_card(self, move):
+        #validate this move
+        try:
+            card = move.start[move.card]
+            move.start.remove(card)
+            move.end.add(card)
+        except IndexError as e:
+            pass
+
     @validate()
     def update_game(self):
+        if self.turn_based:
+            move = self.get_input()
+            # Verify the correct player inputted that command?
+            self.move_card(move.card, move.start, move.end)
+            if self.turn >= len(self.players):
+                self.turn = 0
+            else:
+                self.turn += 1
+        else:
+            moves = self.get_input()
+            [ self.move_card(move) for move in moves ]
         # TODO:
         # get player inputs
         # perform actions
-        pass
-
-    def move_card(card, start, end):
-        pass

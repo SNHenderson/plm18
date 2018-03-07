@@ -1,0 +1,895 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getPlayer"
+			],
+			[
+				"tur",
+				"turn_based"
+			],
+			[
+				"P",
+				"PayloadCapacityReached"
+			],
+			[
+				"st",
+				"str_list"
+			],
+			[
+				"nu",
+				"numberC"
+			],
+			[
+				"op",
+				"operation"
+			],
+			[
+				"n",
+				"numberB"
+			],
+			[
+				"try",
+				"try\tTry/Except"
+			],
+			[
+				"param",
+				"param_grid_cell"
+			],
+			[
+				"par",
+				"param_grid_border"
+			],
+			[
+				"para",
+				"param_grid_cell"
+			],
+			[
+				"param_gr",
+				"param_grid_border"
+			],
+			[
+				"is",
+				"is_final_state"
+			],
+			[
+				"is_",
+				"is_start_state"
+			],
+			[
+				"fib",
+				"fib_num"
+			],
+			[
+				"sti",
+				"string2"
+			],
+			[
+				"num",
+				"num_list"
+			],
+			[
+				"word",
+				"word_set"
+			],
+			[
+				"mo",
+				"most_ones_in_binary"
+			],
+			[
+				"urll",
+				"url_list"
+			],
+			[
+				"zip",
+				"zip_to"
+			],
+			[
+				"col",
+				"colOffset"
+			],
+			[
+				"row",
+				"rowOffset"
+			],
+			[
+				"U",
+				"UserRec"
+			],
+			[
+				"fore",
+				"fore\tfor (each)"
+			],
+			[
+				"for",
+				"for\tfor"
+			],
+			[
+				"enc",
+				"encryptMessage"
+			],
+			[
+				"en",
+				"encryptMessage"
+			],
+			[
+				"A",
+				"AESDecrypter"
+			],
+			[
+				"encr",
+				"encryptRequest"
+			],
+			[
+				"AES",
+				"AESEncrypter"
+			],
+			[
+				"ses",
+				"sessionKey"
+			],
+			[
+				"RS",
+				"RSADecrypter"
+			],
+			[
+				"__",
+				"__global__"
+			],
+			[
+				"cou",
+				"countList"
+			],
+			[
+				"cud",
+				"cudaWordList"
+			],
+			[
+				"wo",
+				"wordCount"
+			],
+			[
+				"Arr",
+				"ArrayList"
+			],
+			[
+				"print",
+				"println"
+			],
+			[
+				"File",
+				"FileNotFoundException"
+			],
+			[
+				"c",
+				"ca\tcatch"
+			],
+			[
+				"u",
+				"users"
+			],
+			[
+				"user",
+				"userFileReader"
+			],
+			[
+				"rea",
+				"objectFileReader"
+			],
+			[
+				"obje",
+				"objects"
+			],
+			[
+				"arg",
+				"argc"
+			],
+			[
+				"null",
+				"NULL"
+			],
+			[
+				"coo",
+				"cooking"
+			],
+			[
+				"cir",
+				"circleCond"
+			],
+			[
+				"ldr",
+				"ldrb"
+			],
+			[
+				"char",
+				"character"
+			],
+			[
+				"dxcx",
+				"dxcxdone"
+			],
+			[
+				"dx",
+				"dxaxdone"
+			],
+			[
+				"se",
+				"secondThirdTwoSwap"
+			],
+			[
+				"firt",
+				"firstFourth"
+			],
+			[
+				"first",
+				"firstFourth"
+			],
+			[
+				"fi",
+				"firstFourth"
+			],
+			[
+				"second",
+				"secondFourth"
+			],
+			[
+				"mul",
+				"multiply"
+			],
+			[
+				"li",
+				"listLock"
+			],
+			[
+				"wor",
+				"wordCount"
+			],
+			[
+				"words",
+				"wordsAvailable"
+			],
+			[
+				"tot",
+				"totalLock"
+			],
+			[
+				"jm",
+				"jmptble"
+			],
+			[
+				"che",
+				"checkDir"
+			],
+			[
+				"chara",
+				"characters"
+			],
+			[
+				"next",
+				"nextTurn"
+			],
+			[
+				"ch",
+				"characters"
+			],
+			[
+				"character",
+				"character"
+			],
+			[
+				"ser",
+				"serverQueue"
+			],
+			[
+				"cli",
+				"clientQueue"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/dsl/game_builder.py",
+			"settings":
+			{
+				"buffer_size": 1786,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/obj/game.py",
+			"settings":
+			{
+				"buffer_size": 2080,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/obj/player.py",
+			"settings":
+			{
+				"buffer_size": 541,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "games/speed.txt",
+			"settings":
+			{
+				"buffer_size": 1704,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/games",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/src",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/src/dsl",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/src/obj"
+	],
+	"file_history":
+	[
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/Linalg.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/src/obj/collection.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/src/obj/card.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/sublime.sublime-project",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/games/bartok.txt",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/games/speed.txt",
+		"/C/Users/Samuel/git/csc326-GP-202-6/iTrust2/src/main/java/db.properties",
+		"/C/Users/Samuel/git/csc326-GP-202-6/iTrust2/pom.xml",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/snhender_hw3.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/hello_world.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/src/__init__.py",
+		"/C/Users/Samuel/AppData/Roaming/Sublime Text 3/Installed Packages/SideBarEnhancements.sublime-package",
+		"/C/Users/Samuel/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/C/Users/Samuel/AppData/Local/Temp/Sentiment.Analysis.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/plm18/abstract_draft.txt",
+		"/C/Users/Samuel/AppData/Local/Temp/1.Sentiment.Analysis.Project-Description.html",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.19.rkt",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/test.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/snhender_h3.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/decorator.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/bit.python/bit.cpp",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/bit.python/bit.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/snhender_h2.py",
+		"/C/P23X/MAZE/MAZE.ANS",
+		"/C/Users/Samuel/Desktop/School/__SPRING2017__/Data Structures; CSC 316/buildAttackTree.java",
+		"/C/Users/Samuel/Desktop/School/__SPRING2017__/Data Structures; CSC 316/insertLogEntry.java",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/dfa.nfa.python/backtracking/NFA1.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/babynames/babynames.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/snhender_sym_h2.py",
+		"/C/Users/Samuel/git/csc326-GP-202-6.wiki/Design-Document.md",
+		"/C/Users/Samuel/git/csc326-GP-202-6/iTrust2/src/main/java/email.properties",
+		"/C/Users/Samuel/git/csc326-OBP-202-6/CoffeeMaker/src/main/resources/hibernate.cfg.xml",
+		"/C/Users/Samuel/git/csc326-GP-202-6/iTrust2/src/main/resources/hibernate.properties",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.29.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.30.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.31.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.32.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.33.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.34.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.35.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.36.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/1.37.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.1/Cube Root.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.1/Ex 1.6.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.1/Ex. 1.3.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.1/Ex. 1.5.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.1/Newton's Method.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.10.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.11.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.16.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.17.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.18.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.20.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.21.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.2/1.22.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.4/1.46.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.4/1.45.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.4/1.40.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.4/1.41.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.4/1.42.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.4/1.43.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.4/1.44.rkt",
+		"/C/Users/Samuel/git/csc326-OBP-202-6/.gitignore",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/codes/parallel-bitmap/graph.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/codes/parallel-bitmap/NFA2Filter.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/codes/backtracking/NFA1Filter.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/codes/backtracking/NFA1.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/codes/parallel-bitmap/NFA2.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/function_passing.py",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 2/2.1/2.1.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 2/2.1/2.2.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 2/2.1/2.3.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/integral.rkt",
+		"/C/Users/Samuel/Desktop/Programming/Scheme/SICP/Chapter 1/1.3/stupidIntegral.rkt",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/snhender.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/snhender_h1.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/snhender_hw1.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/codes/parallel-bitmap/stringlist.txt",
+		"/C/Users/Samuel/Desktop/Programming/Java/Java Proficiency/Ch07_5.java",
+		"/C/Users/Samuel/Desktop/Programming/Java/Ch07/fibonacci.java",
+		"/C/Users/Samuel/Desktop/Programming/Java/Ch07/fibonacciPrime.java",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/basic/string1.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/basic/mimic.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/basic/list2.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/basic/list1.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/logpuzzle/animaldir/index.html",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/logpuzzle/logpuzzle.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/copyspecial/copyspecial.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/logpuzzle/solution/logpuzzle.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/logpuzzle/animal_code.google.com",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/copyspecial/solution/copyspecial.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/basic/wordcount.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/babynames/baby1990.html",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/babynames/solution/babynames.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/basic/solution/wordcount.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/SNHendersonhi.py",
+		"/C/Users/Samuel/Desktop/School/Programming Languages; CSC495/hello.py",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/basic/small.txt",
+		"/C/Users/Samuel/Desktop/School/Software Engineeering; CSC326/Onboarding-Angular/resources/js/controller/inventory_controller.js",
+		"/C/Users/Samuel/Desktop/School/Software Engineeering; CSC326/Onboarding-Angular/resources/js/service/inventory_service.js",
+		"/C/Users/Samuel/Desktop/School/Software Engineeering; CSC326/Onboarding-Angular/resources/index.html",
+		"/C/Users/Samuel/Desktop/School/Automata; CSC333/google-python-exercises/hello.py",
+		"/C/Users/Samuel/Desktop/School/Operating Systems; CSC246/HW5/PermissionsServer.java",
+		"/c/users/samuel/appdata/local/temp/rsub-z72bs1/Palindrome.java",
+		"/C/Users/Samuel/Desktop/HW6/Server.java",
+		"/C/Users/Samuel/Desktop/HW6/Client.java",
+		"/C/Users/Samuel/Desktop/HW6/palindrome.cu",
+		"/c/users/samuel/appdata/local/temp/rsub-jveklt/palindrome.cu",
+		"/c/users/samuel/appdata/local/temp/rsub-ka104w/PermissionsServer.java",
+		"/c/users/samuel/appdata/local/temp/rsub-l9nzly/Client.java",
+		"/c/users/samuel/appdata/local/temp/rsub-sni14r/Server.java",
+		"/c/users/samuel/appdata/local/temp/rsub-091d29/Client.java",
+		"/c/users/samuel/appdata/local/temp/rsub-259sfr/Client.",
+		"/c/users/samuel/appdata/local/temp/rsub-2_lqhk/Cli",
+		"/c/users/samuel/appdata/local/temp/rsub-w31aug/Client.java",
+		"/c/users/samuel/appdata/local/temp/rsub-_9rkc_/Client.java",
+		"/c/users/samuel/appdata/local/temp/rsub-097sky/Server.java",
+		"/c/users/samuel/appdata/local/temp/rsub-an_4l_/Server.java",
+		"/c/users/samuel/appdata/local/temp/rsub-ifdj5y/Client.java",
+		"/c/users/samuel/appdata/local/temp/rsub-v7ytmh/Server.java",
+		"/c/users/samuel/appdata/local/temp/rsub-cuj4u1/Client.java",
+		"/c/users/samuel/appdata/local/temp/rsub-4wy59r/Server.java",
+		"/c/users/samuel/appdata/local/temp/rsub-egjw6u/Client.java",
+		"/c/users/samuel/appdata/local/temp/rsub-8uri4k/Server.java",
+		"/c/users/samuel/appdata/local/temp/rsub-qjs3oc/Server.java",
+		"/C/P23X/MOV/JMPMOV.ASM",
+		"/C/P23X/MAZE/NEXTVAL.ASM",
+		"/C/P23X/MOV/IFTHEN.ASM"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"5",
+			"groovy",
+			"model",
+			"m.",
+			"m",
+			"i.payload.count",
+			"pass",
+			"pas",
+			"#pass",
+			"run",
+			"struct",
+			"dir",
+			"Lambda",
+			"lambda",
+			"B.d",
+			"A.d",
+			"A",
+			"1ULL",
+			"time",
+			"dict",
+			"pass",
+			"range",
+			"    \n",
+			"puzzle",
+			"dir",
+			"orders",
+			"inventory.",
+			"order",
+			"orders",
+			"orderorders",
+			"order",
+			"Order",
+			"milk",
+			"Coffee:",
+			"milk",
+			"inventory",
+			"inventory.milk",
+			"coffee",
+			"UserRec",
+			"rec",
+			"Arrays",
+			"Array",
+			"arrays",
+			"array",
+			"address",
+			"bind",
+			"throw",
+			"inc",
+			"group",
+			"object",
+			"string",
+			"User",
+			"printf",
+			"->",
+			"head",
+			"tail",
+			"if(",
+			"if",
+			"notifyAll",
+			"wait",
+			"Boolean",
+			"microwave",
+			"mixer",
+			"microwave",
+			"mixer",
+			"microwave",
+			"mixer",
+			"fryer",
+			"oven",
+			"fryer",
+			"oven",
+			"}\n",
+			"fryer",
+			"oven",
+			"griddle",
+			"fryer",
+			"oven",
+			"coffeeMaker",
+			"new Object();",
+			"private static Object",
+			"circleCond + i",
+			"42",
+			"79",
+			"139",
+			"78",
+			"77",
+			"76",
+			"75",
+			"74",
+			"73",
+			"72",
+			"71",
+			"70",
+			"42",
+			"00",
+			"db",
+			"bx",
+			"[bx",
+			"wordCo",
+			"words",
+			"wordsAv",
+			"table",
+			"si",
+			"s",
+			"buffer",
+			"Buffer",
+			"buffer",
+			"();\n",
+			"workers",
+			"\\n",
+			"argc",
+			"argc - 1",
+			"i"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Object",
+			"String",
+			"cCount"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/dsl/game_builder.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1786,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								939,
+								939
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/obj/game.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2080,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1946,
+								1946
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 616.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/obj/player.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "games/speed.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 411.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "sublime.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 209.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
