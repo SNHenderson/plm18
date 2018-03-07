@@ -6,6 +6,7 @@ class Collection(Validatable):
         super().__init__()
         self.cards = [] # TODO: an ordered set would be better
         self.name = name
+        self.owner = None
 
     @validate(undo=lambda self, *cards: [self.cards.remove(c) for c in cards])
     def add(self, *cards):
@@ -15,6 +16,18 @@ class Collection(Validatable):
     def remove(self, card):
         self._tmp = self.cards.index(card) # temporarily store the index in case we need to undo
         self.cards.pop(self._tmp)
+
+    def set_owner(self, player):
+        """
+        Sets the owner of the collection to a player;
+        should only be called in Player.add_collection();
+        the assertion enforces this requirement
+        """
+        assert player.owns(self)
+        self.owner = player
+
+    def contains_card(self, card):
+        return card in self.cards
 
     def __repr__(self):
         return "[" + self.name + ":" + ",".join(map(str, self.cards)) + "]"

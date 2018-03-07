@@ -11,6 +11,7 @@ class Player(Validatable):
 
     def add_collection(self, collection):
         self.collections.add(collection)
+        collection.set_owner(self)
 
     def owns(self, collection):
         return collection in self.collections

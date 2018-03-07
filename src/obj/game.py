@@ -59,5 +59,23 @@ class Game(Validatable):
         # perform actions
         pass
 
+    def valid_move(card, start, end):
+        """ Verifies whether a move is valid. 
+
+        A move from start collection to end is valid if:
+
+        1.) The start collection has the card, and the end doesn't
+        2.) The owner of the start collection is moving the card 
+            to a collection available to them (that they own, or 
+            is a table collection AKA no owner)
+        """
+        card_in_start = start.contains_card(card)
+        card_in_end = end.contains_card(card)
+        return card_in_start and not(card_in_end) and (end.owner == None or end.owner == start.owner)
+
     def move_card(card, start, end):
-        pass
+        """ Move a card from the start collection to end collection
+        """
+        if valid_move(card, start, end):
+            start.remove(card)
+            end.add(card)

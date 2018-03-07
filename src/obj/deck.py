@@ -21,6 +21,7 @@ class Deck(object):
         shuffle(cards)
         return cards
 
+    # Verifies that the set of collections partitions the deck of cards (i.e, each card is in some collection)
     def is_partitioned_by(self, collections):
         cards = [ c for col in collections for c in col.cards ]
         return len(cards) == len(self.cards) and len(self.cards - set(cards)) == 0

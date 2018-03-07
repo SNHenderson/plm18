@@ -13,6 +13,8 @@ def build_game(game_rules):
 # TODO: Remove this once we get the DSL working
 def build_speed(game_rules):
     game = Game()
+
+    # There are only 2 players, and 8 total collections in game
     game.restrict(lambda self: len(self.players) == 2)
     game.restrict(lambda self: len(self.collections) == 8)
 
@@ -22,26 +24,30 @@ def build_speed(game_rules):
     p1 = Player("Player1")
     p2 = Player("Player2")
 
+    # Each player owns 3 collections, and their hand can have at most 5 cards
     for p in [p1, p2]:
         p.restrict(lambda self: len(self.collections) == 3)
         p.hand.restrict(lambda self: len(self.hand) <= 5)
 
-    hands = [p1.hand]
+    p1.add_collection(p1.hand)
+    p2.add_collection(p2.hand)   
 
     game.add_player(p1)
     game.add_player(p2)
 
-    # Draw piles
+    # Draw piles; used when a player needs to replenish their hand
     draw1 = Pile(name="d1", facedown=True)
     draw2 = Pile(name="d2", facedown=True)
     p1.add_collection(draw1)
     p2.add_collection(draw2)
 
+    # Replace piles; used when neither player has a playable card in their hand
     replace1 = Pile(name="r1", facedown=True)
     replace2 = Pile(name="r2", facedown=True)
     p1.add_collection(replace1)
     p2.add_collection(replace2)
 
+    # Discard piles; used by either player to discard a card from their hand
     discard1 = Pile(name="discard1", facedown=True)
     discard2 = Pile(name="discard2", facedown=True)
 
