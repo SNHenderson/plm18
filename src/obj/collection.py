@@ -29,5 +29,8 @@ class Collection(Validatable):
     def contains_card(self, card):
         return card in self.cards
 
+    def __getitem__(self, key):
+        return self.cards[key]
+
     def __repr__(self):
         return "[" + self.name + ":" + ",".join(map(str, self.cards)) + "]"

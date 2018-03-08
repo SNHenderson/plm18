@@ -30,6 +30,8 @@ Speed:
 
 Name of Game: Speed
 
+Jokers?: No
+
 Number of players: 2
 
 Turns?:No
@@ -61,14 +63,16 @@ Pile 4 Initial Size: 15
 Pile 5 Type: Transfer Pile
 Pile 5 Owner: Player 1
 Pile 5 Transfer Pile: Pile 1 
-Pile 5 Transfer Rule: #Do we need to know if a player can play or not?
+Pile 5 Transfer Rule: #Do we need to know if a player can play or not? If not, don't need this
 Pile 5 Initial Size: 5
 
 Pile 6 Type: Transfer Pile
 Pile 6 Owner: Player 2
 Pile 6 Transfer Pile: Pile 2
-Pile 6 Transfer Rule: #Do we need to know if a player can play or not?
+Pile 6 Transfer Rule: #Do we need to know if a player can play or not? If not, don't need this
 Pile 6 Initial Size: 5
+
+Win Condition: Player has an empty pile
 
 # Do we ask the users to associate discarding with specific keys?
 # Would probably make things simpler
