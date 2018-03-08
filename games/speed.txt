@@ -42,7 +42,7 @@ Initial Hand Size: 5
 
 Pile 1 Type: Discard Pile
 Pile 1 Owner: Player 1
-Pile 1 Discard Rule: playedvalue = topvalue + 1 OR playedvalue = topvalue - 1 OR (playedvalue = 1 AND topvalue = 13)
+Pile 1 Discard Rule: playedvalue = topvalue + 1 OR playedvalue = topvalue - 1 OR (playedvalue = 1 AND topvalue = 13) OR (playedvalue = 13 AND topvalue = 1)
 Pile 1 Initial Size: 1
 
 Pile 2 Type: Discard Pile

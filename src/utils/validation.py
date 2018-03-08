@@ -1,10 +1,18 @@
 class Validatable(object):
     def __init__(self):
         self.restrictions = set()
+
+        # A dictionary that maps actions to rules that must be satisfied to take the action
+        self.rules = {}
         self.should_validate = False
 
     def restrict(self, r):
         self.restrictions.add(r)
+
+    def add_rule(self, fName, rule):
+        """ Maps the function with name fName to a rule lambda
+        """
+        self.rules[fName] = rule
 
     def enable_validation(self):
         self.should_validate = True
@@ -30,6 +38,24 @@ def validate(undo=None):
         return validating_fn
 
     return validate_with_undo
+
+def checkRule():
+    """ For the given function, applies the rule associated
+    with that function in self.rules{}, and only executes
+    the function if the rule is satisfied. Throws exception
+    otherwise
+    """
+    def check(fn):
+        def do_move(self, *args):
+            allowed = self.rules[fn.__name__](*args)
+            if allowed:
+                val = fn(self, *args)
+            else:
+                raise ValidationException
+            return val
+        return do_move
+    return check
+
 
 class ValidationException(Exception):
     pass

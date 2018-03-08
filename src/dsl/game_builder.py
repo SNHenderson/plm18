@@ -1,6 +1,8 @@
 from obj.game import Game
 from obj.pile import Pile
 from obj.player import Player
+from obj.rank import Rank
+from obj.hand import Hand
 
 def build_game(game_rules):
     game = Game()
@@ -46,8 +48,8 @@ def build_speed(game_rules):
     replace2 = Pile(name="r2", facedown=True)
 
     # Discard piles; used by either player to discard a card from their hand
-    discard1 = Pile(name="discard1", facedown=True)
-    discard2 = Pile(name="discard2", facedown=True)
+    discard1 = Pile(name="discard1", facedown=False)
+    discard2 = Pile(name="discard2", facedown=False)
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw1, draw2, discard1, discard2, replace1, replace2]
@@ -107,6 +109,73 @@ def build_speed(game_rules):
     # Add moves for using the replacement piles
     game.add_move(-1, replace1, discard1, "b")
     game.add_move(-1, replace2, discard2, "b")
+
+    def appropriate_rank(top_card_rank, played_card_rank):
+        """ Verifies that the card to be played is of 1 rank higher or
+            1 rank lower than the top-most card. Allows a KING to be played
+            on ACE, and for ACE to be played on KING (wrap-around behavior)
+        """
+        return played_card_rank == (top_card_rank + 1) or \
+                 top_card_rank == 1 and played_card_rank == 13 or \
+                 top_card_rank == 13 and played_card_rank == 1 or \
+                 played_card_rank == (top_card_rank - 1)
+
+
+    def has_valid_move(pile, hand):
+        """ Returns true if any card in hand can be discarded onto pile
+        """
+        top_card = pile[-1]
+        return any([appropriate_rank(Rank[top_card.rank].value, Rank[h.rank].value) for h in hand])
+
+    def valid_replacement():
+        """ Returns true if neither player has a card in hand that can be discarded
+            into either discard pile
+        """
+        return not(has_valid_move(discard1, p1.hand) or 
+                   has_valid_move(discard2, p1.hand) or
+                   has_valid_move(discard1, p2.hand) or
+                   has_valid_move(discard2, p2.hand))
+
+    def valid_play(move):
+        """ Determines if the given move is 'allowed'
+
+         - For discarding a card from a players hand, this verifies the rank 
+           is of appropriate value (see appropriate_rank())
+
+         - For drawing from the replacement piles, this verifies that neither player
+           can make a valid move (see valid_replacement() and has_valid_move())
+
+         Always ensures that the move is a "valid move" in the universal sense, see
+         game.valid_move()
+
+         NOTE: This is hacky b/c currently, discarding a card and drawing from their draw
+         pile is tied together (autodraw). Drawing from a draw pile is automatically valid
+         as long as they are playing a card, so if the end collection of a card is the player's
+         hand, it's assumed to be a drawing move.
+        """
+        is_replacement = move.start == replace1 or move.start == replace2
+        if is_replacement:
+            print("Attempt to draw from the replacement piles")
+            return valid_replacement()
+
+        played_card = move.start[move.card]
+        played_card_rank = Rank[played_card.rank].value
+        print("Player is attempting to play card (from %s) of rank %d " % (move.start.name, played_card_rank))
+
+        top_card = move.end[-1]
+        top_card_rank = Rank[top_card.rank].value
+        print("Top card of selected pile (%s) has rank %d " % (move.end.name, top_card_rank))
+
+        correct_rank = appropriate_rank(top_card_rank, played_card_rank)
+
+        is_valid = game.valid_move(played_card, move.start, move.end)
+
+        # The isinstance(move.end, Hand) checks if this is a drawing move => automatically valid
+        return is_valid and (isinstance(move.end, Hand) or correct_rank)
+
+    # Register the set of rules associated with moving a card w. the game
+    game.add_rule("move_card", valid_play)
+
 
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):

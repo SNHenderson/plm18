@@ -1,5 +1,4 @@
-from utils.validation import validate
-from utils.validation import Validatable
+from utils.validation import *
 
 from utils.getch import getch
 from utils.objs import dict_obj
@@ -79,12 +78,13 @@ class Game(Validatable):
 
         return moves
 
+    @checkRule()
     def move_card(self, move):
-        #validate this move
         try:
             card = move.start[move.card]
             move.start.remove(card)
             move.end.add(card)
+            print("Moved the card!")
         except IndexError as e:
             pass
 
@@ -100,10 +100,16 @@ class Game(Validatable):
                 self.turn += 1
         else:
             moves = self.get_input()
-            [ self.move_card(move) for move in moves ]
 
-    def valid_move(card, start, end):
-        """ Verifies whether a move is valid. 
+            # Appropriately handle any attempts to make invalid moves
+            try:
+                [ self.move_card(move) for move in moves ]
+            except ValidationException:
+                print("Move was invalid!")
+
+    def valid_move(self, card, start, end):
+        """ Universal defn. of a valid card transfer from 1 collection
+            to another 
 
         A move from start collection to end is valid if:
 
@@ -115,10 +121,3 @@ class Game(Validatable):
         card_in_start = start.contains_card(card)
         card_in_end = end.contains_card(card)
         return card_in_start and not(card_in_end) and (end.owner == None or end.owner == start.owner)
-
-    def move_card(card, start, end):
-        """ Move a card from the start collection to end collection
-        """
-        if valid_move(card, start, end):
-            start.remove(card)
-            end.add(card)
