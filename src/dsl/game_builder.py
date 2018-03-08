@@ -134,7 +134,15 @@ def build_speed(game_rules):
         return not(has_valid_move(discard1, p1.hand) or 
                    has_valid_move(discard2, p1.hand) or
                    has_valid_move(discard1, p2.hand) or
-                   has_valid_move(discard2, p2.hand))
+                   has_valid_move(discard2, p2.hand)) or \
+                   replace1.size() != replace2.size()
+
+    def replenish_replace():
+        """ Replenishes the replace piles by taking the bottom `size` cards from discard1 and discard2
+        """
+        size = counts[collections.index("replace1")]
+        replace1 = [discard1.cards[k] for k in range(size)]
+        replace2 = [discard2.cards[k] for k in range(size)]
 
     def valid_play(move):
         """ Determines if the given move is 'allowed'
@@ -143,7 +151,8 @@ def build_speed(game_rules):
            is of appropriate value (see appropriate_rank())
 
          - For drawing from the replacement piles, this verifies that neither player
-           can make a valid move (see valid_replacement() and has_valid_move())
+           can make a valid move (see valid_replacement() and has_valid_move()). This also 
+           handles replenshing the replacement piles (by taking from bottom of discard piles)
 
          Always ensures that the move is a "valid move" in the universal sense, see
          game.valid_move()
@@ -156,22 +165,32 @@ def build_speed(game_rules):
         is_replacement = move.start == replace1 or move.start == replace2
         if is_replacement:
             print("Attempt to draw from the replacement piles")
+
+            # Replenish the replace piles if they're depleted
+            if replace1.size() == 0:
+                replenish_replace()
+
             return valid_replacement()
 
-        played_card = move.start[move.card]
-        played_card_rank = Rank[played_card.rank].value
-        print("Player is attempting to play card (from %s) of rank %d " % (move.start.name, played_card_rank))
+        try:
+            played_card = move.start[move.card]
+            played_card_rank = Rank[played_card.rank].value
+            print("Player is attempting to play card (from %s) of rank %d " % (move.start.name, played_card_rank))
 
-        top_card = move.end[-1]
-        top_card_rank = Rank[top_card.rank].value
-        print("Top card of selected pile (%s) has rank %d " % (move.end.name, top_card_rank))
+            top_card = move.end[-1]
+            top_card_rank = Rank[top_card.rank].value
+            print("Top card of selected pile (%s) has rank %d " % (move.end.name, top_card_rank))
 
-        correct_rank = appropriate_rank(top_card_rank, played_card_rank)
+            correct_rank = appropriate_rank(top_card_rank, played_card_rank)
 
-        is_valid = game.valid_move(played_card, move.start, move.end)
+            is_valid = game.valid_move(played_card, move.start, move.end)
 
-        # The isinstance(move.end, Hand) checks if this is a drawing move => automatically valid
-        return is_valid and (isinstance(move.end, Hand) or correct_rank)
+            # The isinstance(move.end, Hand) checks if this is a drawing move => automatically valid
+            return is_valid and (isinstance(move.end, Hand) or correct_rank)
+        
+        # This is used to handle the case when a players draw pile is empty
+        except IndexError:
+            return False
 
     # Register the set of rules associated with moving a card w. the game
     game.add_rule("move_card", valid_play)
