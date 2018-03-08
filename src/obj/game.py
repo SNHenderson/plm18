@@ -80,7 +80,7 @@ class Game(Validatable):
         return moves
 
     def move_card(self, move):
-        #validate this move
+        #validate this move, verify correct player inputted that command?
         try:
             card = move.start[move.card]
             move.start.remove(card)
@@ -90,17 +90,10 @@ class Game(Validatable):
 
     @validate()
     def update_game(self):
+        [ self.move_card(move) for move in self.get_input() ]
+        
         if self.turn_based:
-            move = self.get_input()
-            # Verify the correct player inputted that command?
-            self.move_card(move.card, move.start, move.end)
-            if self.turn >= len(self.players):
+           if self.turn >= len(self.players):
                 self.turn = 0
             else:
                 self.turn += 1
-        else:
-            moves = self.get_input()
-            [ self.move_card(move) for move in moves ]
-        # TODO:
-        # get player inputs
-        # perform actions
