@@ -9,6 +9,63 @@ def build_game(game_rules):
 
     return game
 
+def build_bartok(game_rules):
+    game = Game(True)
+    game.restrict(lambda self: len(self.collections) == 4)
+
+    # Game ends when either player runs out of cards
+    game.add_win_condition(lambda self: any([ sum([len(c.cards) for c in game.collections_for(p)]) == 0 for p in self.players ]))
+
+    # Players
+    p1 = Player("Player1")
+    p2 = Player("Player2")
+
+    for p in [p1, p2]:
+        p.restrict(lambda self: len(self.collections) == 1)
+        p.hand.restrict(lambda self: len(self.hand) <= 5)
+
+    game.add_player(p1)
+    game.add_player(p2)
+
+    # Draw and discard piles
+    draw = Pile(name="d", facedown = True)
+
+    discard = Pile("discard", facedown = False)
+
+    cards = game.deck.shuffled()
+    collections = [p1.hand, p2.hand, draw, discard]
+    counts = [5, 5, 41, 1]
+
+    # Register collections with the game
+    [ game.add_collection(c) for c in collections ]
+
+    # Add moves for player one playing a card on the first pile - playing a card auto-draws
+    game.add_move(0, p1.hand, discard, "q")
+    game.add_move(1, p1.hand, discard, "w")
+    game.add_move(2, p1.hand, discard, "e")
+    game.add_move(3, p1.hand, discard, "r")
+    game.add_move(4, p1.hand, discard, "t")
+
+    # Add move for player one drawing a card
+    game.add_move(-1, draw, p1.hand, "a")
+
+    # Add moves for player two playing a card on the first pile - playing a card auto-draws
+    game.add_move(0, p2.hand, discard, "y")
+    game.add_move(1, p2.hand, discard, "u")
+    game.add_move(2, p2.hand, discard, "i")
+    game.add_move(3, p2.hand, discard, "o")
+    game.add_move(4, p2.hand, discard, "p")
+
+    # Add move for player one drawing a card
+    game.add_move(-1, draw, p2.hand, "h")
+
+    # Distribute cards to the game's collections
+    for (collection, count) in zip(collections, counts):
+        for _ in range(count):
+            collection.add(cards.pop(0))
+    assert len(cards) == 0
+
+    return game
 
 # TODO: Remove this once we get the DSL working
 def build_speed(game_rules):
@@ -19,6 +76,7 @@ def build_speed(game_rules):
     # Game ends when either player runs out of cards
     game.add_win_condition(lambda self: any([ sum([len(c.cards) for c in game.collections_for(p)]) == 0 for p in self.players ]))
 
+    # Players
     p1 = Player("Player1")
     p2 = Player("Player2")
 
@@ -26,12 +84,10 @@ def build_speed(game_rules):
         p.restrict(lambda self: len(self.collections) == 3)
         p.hand.restrict(lambda self: len(self.hand) <= 5)
 
-    hands = [p1.hand]
-
     game.add_player(p1)
     game.add_player(p2)
 
-    # Draw piles
+    # Draw, replacement and discard piles
     draw1 = Pile(name="d1", facedown=True)
     draw2 = Pile(name="d2", facedown=True)
     p1.add_collection(draw1)
