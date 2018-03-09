@@ -230,7 +230,7 @@ def build_speed(game_rules):
             is_valid = game.valid_move(played_card, move.start, move.end)
 
             # The isinstance(move.end, Hand) checks if this is a drawing move => automatically valid
-            return is_valid and (isinstance(move.end, Hand) or correct_rank)
+            return is_valid and ((isinstance(move.end, Hand) and move.end.size() < 5) or correct_rank)
         
         # This is used to handle the case when a players draw pile is empty
         except IndexError:

@@ -9,7 +9,7 @@ from obj.pile import Pile
 
 
 class Game(Validatable):
-    def __init__(self, turn_based = False, file_name = "log.txt"):
+    def __init__(self, turn_based = False, file_name = "logs/log.txt"):
         super().__init__()
         self.players = []
         self.is_running = False
