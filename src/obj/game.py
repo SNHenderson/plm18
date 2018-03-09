@@ -93,14 +93,16 @@ class Game(Validatable):
 
     @validate()
     def update_game(self):        
+        if self.turn_based:
+            print("Player " + self.players[self.turn].name + "'s turn:")
+
         # Appropriately handle any attempts to make invalid moves
         try:
             [ self.move_card(move) for move in self.get_input() ]
         except ValidationException:
             print("Move was invalid!")
-
         if self.turn_based:
-            if self.turn >= len(self.players):
+            if self.turn + 1 >= len(self.players):
                 self.turn = 0
             else:
                 self.turn += 1            
