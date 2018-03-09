@@ -92,23 +92,18 @@ class Game(Validatable):
             pass
 
     @validate()
-    def update_game(self):
+    def update_game(self):        
+        # Appropriately handle any attempts to make invalid moves
+        try:
+            [ self.move_card(move) for move in self.get_input() ]
+        except ValidationException:
+            print("Move was invalid!")
+
         if self.turn_based:
-            move = self.get_input()
-            # Verify the correct player inputted that command?
-            self.move_card(move.card, move.start, move.end)
             if self.turn >= len(self.players):
                 self.turn = 0
             else:
-                self.turn += 1
-        else:
-            moves = self.get_input()
-
-            # Appropriately handle any attempts to make invalid moves
-            try:
-                [ self.move_card(move) for move in moves ]
-            except ValidationException:
-                print("Move was invalid!")
+                self.turn += 1            
 
     def valid_move(self, card, start, end):
         """ Universal defn. of a valid card transfer from 1 collection
