@@ -101,6 +101,7 @@ class Game(Validatable):
             [ self.move_card(move) for move in self.get_input() ]
         except ValidationException:
             print("Move was invalid!")
+
         if self.turn_based:
             if self.turn + 1 >= len(self.players):
                 self.turn = 0
