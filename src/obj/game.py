@@ -2,13 +2,14 @@ from utils.validation import *
 
 from utils.getch import getch
 from utils.objs import dict_obj
+from utils.logger import Logger
 
 from obj.deck import Deck
 from obj.pile import Pile
 
 
 class Game(Validatable):
-    def __init__(self, turn_based = False):
+    def __init__(self, turn_based = False, file_name = "log.txt"):
         super().__init__()
         self.players = []
         self.is_running = False
@@ -18,6 +19,7 @@ class Game(Validatable):
         self.deck = Deck()
         self.turn_based = turn_based
         self.game_running = False
+        self.log = Logger(file_name)
         if turn_based:
             self.turn = 0
         else:
@@ -54,20 +56,21 @@ class Game(Validatable):
             if all([c(self) for c in self.win_conditions]):
                 self.game_running = False;
                 self.render()
-                print("Game end!")
+                self.log.print("Game end!")
+        self.log.close()
 
     def render(self):
         # Render: need some abstract way to configure the layout of the game
         other_collections = { c for c in self.collections if isinstance(c, Pile) }
-        print("Table:")
+        self.log.print("Table:")
         for c in other_collections:
-            print(c)
-        print()
+            self.log.print(c)
+        self.log.print()
 
-        print("Players:")
+        self.log.print("Players:")
         for p in self.players:
-            print(p.name, p.hand)
-        print()
+            self.log.print(p.name, p.hand)
+        self.log.print()
 
     def get_input(self):
         ch = getch()
