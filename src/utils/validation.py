@@ -39,7 +39,7 @@ def validate(undo=None):
 
     return validate_with_undo
 
-def checkRule():
+def check_rule():
     """ For the given function, applies the rule associated
     with that function in self.rules{}, and only executes
     the function if the rule is satisfied. Throws exception

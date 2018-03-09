@@ -3,910 +3,2326 @@ Table:
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FIVE DIAMONDS](1)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[FOUR CLUBS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FIVE DIAMONDS](1)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[FOUR CLUBS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FIVE DIAMONDS](1)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[FOUR CLUBS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[TEN HEARTS](1)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[JACK CLUBS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK CLUBS](2)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[QUEEN DIAMONDS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[QUEEN SPADES](1)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[KING SPADES],[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](15)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](15)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
 
 Table:
 [d1:[X](14)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](14)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING SPADES](2)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS],[ACE SPADES]]
+
+Table:
+[d1:[X](14)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
+
+Table:
+[d1:[X](14)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
+
+Table:
+[d1:[X](14)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[QUEEN DIAMONDS](3)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[JACK HEARTS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[ACE SPADES](3)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[KING DIAMONDS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
 
 Table:
 [d1:[X](13)]
 [d2:[X](15)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](15)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](14)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR CLUBS](2)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS],[FIVE SPADES]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FIVE SPADES](3)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[FOUR DIAMONDS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[KING DIAMONDS](4)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[QUEEN HEARTS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[QUEEN HEARTS](5)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[JACK SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](13)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
 
 Table:
 [d1:[X](12)]
-[d2:[X](15)]
+[d2:[X](13)]
 [r1:[X](5)]
 [r2:[X](5)]
-[discard1:[JACK HEARTS](4)]
-[discard2:[QUEEN HEARTS](1)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
 
 Players:
-Player1 [Player1's hand:[ACE HEARTS],[TEN CLUBS],[EIGHT CLUBS],[FOUR HEARTS],[TWO DIAMONDS]]
-Player2 [Player2's hand:[ACE SPADES],[EIGHT HEARTS],[SEVEN DIAMONDS],[SIX CLUBS],[NINE HEARTS]]
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
+
+Table:
+[d1:[X](12)]
+[d2:[X](13)]
+[r1:[X](5)]
+[r2:[X](5)]
+[discard1:[FOUR DIAMONDS](4)]
+[discard2:[JACK SPADES](6)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[SIX CLUBS],[TEN SPADES],[KING CLUBS]]
+Player2 [Player2's hand:[TEN CLUBS],[EIGHT CLUBS],[FIVE CLUBS]]
 

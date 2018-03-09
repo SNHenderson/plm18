@@ -1,4 +1,7 @@
-from utils.validation import *
+from utils.validation import Validatable
+from utils.validation import validate
+from utils.validation import check_rule
+from utils.validation import ValidationException
 
 from utils.getch import getch
 from utils.objs import dict_obj
@@ -81,7 +84,7 @@ class Game(Validatable):
 
         return moves
 
-    @checkRule()
+    @check_rule()
     def move_card(self, move):
         try:
             card = move.start[move.card]
