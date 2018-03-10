@@ -2,6 +2,7 @@ from obj.game import Game
 from obj.pile import Pile
 from obj.player import Player
 from obj.rank import Rank
+from obj.suit import Suit
 from obj.hand import Hand
 
 def build_game(game_rules):
@@ -28,6 +29,8 @@ def build_bartok(game_rules):
 
     game.add_player(p1)
     game.add_player(p2)
+    p1.add_collection(p1.hand)
+    p2.add_collection(p2.hand)   
 
     # Draw and discard piles
     draw = Pile(name="d", facedown = True)
@@ -41,7 +44,7 @@ def build_bartok(game_rules):
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
 
-    # Add moves for player one playing a card on the first pile - playing a card auto-draws
+    # Add moves for player one playing a card on the first pile
     game.add_move(0, p1.hand, discard, "q")
     game.add_move(1, p1.hand, discard, "w")
     game.add_move(2, p1.hand, discard, "e")
@@ -51,15 +54,47 @@ def build_bartok(game_rules):
     # Add move for player one drawing a card
     game.add_move(-1, draw, p1.hand, "a")
 
-    # Add moves for player two playing a card on the first pile - playing a card auto-draws
+    # Add moves for player two playing a card on the first pile
     game.add_move(0, p2.hand, discard, "y")
     game.add_move(1, p2.hand, discard, "u")
     game.add_move(2, p2.hand, discard, "i")
     game.add_move(3, p2.hand, discard, "o")
     game.add_move(4, p2.hand, discard, "p")
 
-    # Add move for player one drawing a card
+    # Add move for player two drawing a card
     game.add_move(-1, draw, p2.hand, "h")
+
+    def appropriate_card(top_card, played_card):
+        """ Verifies that the card to be played is of same rank or suit as top_card
+        """
+        return Rank[top_card.rank].value == Rank[played_card.rank].value or \
+               Suit[top_card.suit].value == Suit[played_card.suit].value
+
+
+    def has_valid_move(pile, hand):
+        """ Returns true if any card in hand can be discarded onto pile
+        """
+        top_card = pile[-1]
+        return any([appropriate_card(top_card, h) for h in hand])
+
+    def valid_play(move):
+        """ Enforces rules of basic Bartok. A player must play a card of same rank/suit from their hand.
+        If impossible, they must draw from draw pile
+        """
+        # Moves that start from draw pile => player cannot play a card, must draw
+        if move.start == draw:
+            return not(has_valid_move(discard, move.end))
+
+        try:
+            return game.valid_move(move.start[move.card], move.start, move.end) and \
+                   appropriate_card(discard[-1], move.start[move.card])
+
+        # Handle attempts to play a card not currently in hand
+        except IndexError:
+            return False
+
+    game.add_rule("move_card", valid_play)
+
 
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):
