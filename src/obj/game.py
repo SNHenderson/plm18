@@ -104,10 +104,13 @@ class Game(Validatable):
 
     @check_rule()
     def move_card(self, move):
-        card = move.start[move.card]
-        move.start.remove(card)
-        move.end.add(card)
-        print("Moved the card!")
+        try:
+            card = move.start[move.card]
+            move.start.remove(card)
+            move.end.add(card)
+            self.log.print("Moved the card!")
+        except IndexError:
+            pass
 
     @validate()
     def update_game(self):        
@@ -116,7 +119,7 @@ class Game(Validatable):
             made_invalid_move = True
             while made_invalid_move:
                 current_player = self.players[self.turn]
-                print("Player " + current_player.name + "'s turn:")
+                self.log.print("Player " + current_player.name + "'s turn:")
                 made_invalid_move = False
                 try:
                     for move in self.get_input():
@@ -125,7 +128,7 @@ class Game(Validatable):
                             raise ValidationException
                         self.init_and_move(move)
                 except ValidationException:
-                    print("Move was invalid!\n")
+                    self.log.print("Move was invalid!\n")
                     made_invalid_move = True
 
             self.turn = (self.turn + 1) % len(self.players)
@@ -133,7 +136,7 @@ class Game(Validatable):
             try:
                 [ self.init_and_move(move) for move in self.get_input() ]
             except ValidationException:
-                print("Move was invalid!\n")           
+                self.log.print("Move was invalid!\n")           
 
     def valid_move(self, card, start, end):
         """ Universal defn. of a valid card transfer from 1 collection

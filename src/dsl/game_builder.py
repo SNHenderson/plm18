@@ -33,8 +33,10 @@ def build_bartok(game_rules):
     p2.add_collection(p2.hand)   
 
     # Draw and discard piles
-    draw = Pile(name="d", facedown = True)
+    global draw
+    draw = Pile(name="draw", facedown = True)
 
+    global discard
     discard = Pile("discard", facedown = False)
 
     cards = game.deck.shuffled()
@@ -123,14 +125,14 @@ def build_speed(game_rules):
     game.add_player(p2)
 
     # Draw, replacement and discard piles
-    draw1 = Pile(name="d1", facedown=True)
-    draw2 = Pile(name="d2", facedown=True)
+    draw1 = Pile(name="draw1", facedown=True)
+    draw2 = Pile(name="draw2", facedown=True)
     p1.add_collection(draw1)
     p2.add_collection(draw2)
 
     # Replace piles; used when neither player has a playable card in their hand
-    replace1 = Pile(name="r1", facedown=True)
-    replace2 = Pile(name="r2", facedown=True)
+    replace1 = Pile(name="replace1", facedown=True)
+    replace2 = Pile(name="replace2", facedown=True)
 
     # Discard piles; used by either player to discard a card from their hand
     discard1 = Pile(name="discard1", facedown=False)
