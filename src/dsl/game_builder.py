@@ -45,24 +45,16 @@ def build_bartok(game_rules):
     [ game.add_collection(c) for c in collections ]
 
     # Add moves for player one playing a card on the first pile
-    game.add_move(0, p1.hand, discard, "q")
-    game.add_move(1, p1.hand, discard, "w")
-    game.add_move(2, p1.hand, discard, "e")
-    game.add_move(3, p1.hand, discard, "r")
-    game.add_move(4, p1.hand, discard, "t")
+    game.add_move("?", p1.hand, discard, "q")
 
     # Add move for player one drawing a card
-    game.add_move(-1, draw, p1.hand, "a")
+    game.add_move(-1, draw, p1.hand, "e")
 
     # Add moves for player two playing a card on the first pile
-    game.add_move(0, p2.hand, discard, "y")
-    game.add_move(1, p2.hand, discard, "u")
-    game.add_move(2, p2.hand, discard, "i")
-    game.add_move(3, p2.hand, discard, "o")
-    game.add_move(4, p2.hand, discard, "p")
+    game.add_move("?", p2.hand, discard, "i")
 
     # Add move for player two drawing a card
-    game.add_move(-1, draw, p2.hand, "h")
+    game.add_move(-1, draw, p2.hand, "p")
 
     def appropriate_card(top_card, played_card):
         """ Verifies that the card to be played is of same rank or suit as top_card
@@ -151,39 +143,23 @@ def build_speed(game_rules):
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
 
-    # Add moves for player one playing a card on the first pile - playing a card auto-draws
-    game.add_move(0, p1.hand, discard1, "q")
-    game.add_move(1, p1.hand, discard1, "w")
-    game.add_move(2, p1.hand, discard1, "e")
-    game.add_move(3, p1.hand, discard1, "r")
-    game.add_move(4, p1.hand, discard1, "t")
+    # Add move for player one playing a card on the first pile
+    game.add_move("?", p1.hand, discard1, "q")
 
-    # Add moves for player one playing a card on the second pile - playing a card auto-draws
-    game.add_move(0, p1.hand, discard2, "a")
-    game.add_move(1, p1.hand, discard2, "s")
-    game.add_move(2, p1.hand, discard2, "d")
-    game.add_move(3, p1.hand, discard2, "f")
-    game.add_move(4, p1.hand, discard2, "g")
+    # Add move for player one playing a card on the second pile
+    game.add_move("?", p1.hand, discard2, "w")
 
     # Add move for player one drawing a card
-    game.add_move(-1, draw1, p1.hand, "z")
+    game.add_move(-1, draw1, p1.hand, "e")
 
-    # Add moves for player two playing a card on the first pile - playing a card auto-draws
-    game.add_move(0, p2.hand, discard1, "y")
-    game.add_move(1, p2.hand, discard1, "u")
-    game.add_move(2, p2.hand, discard1, "i")
-    game.add_move(3, p2.hand, discard1, "o")
-    game.add_move(4, p2.hand, discard1, "p")
+    # Add moves for player two playing a card on the first pile
+    game.add_move("?", p2.hand, discard1, "i")
 
-    # Add moves for player two playing a card on the second pile - playing a card auto-draws
-    game.add_move(0, p2.hand, discard2, "h")
-    game.add_move(1, p2.hand, discard2, "j")
-    game.add_move(2, p2.hand, discard2, "k")
-    game.add_move(3, p2.hand, discard2, "l")
-    game.add_move(4, p2.hand, discard2, ";")
+    # Add moves for player two playing a card on the second pile
+    game.add_move("?", p2.hand, discard2, "o")
 
     # Add move for player one drawing a card
-    game.add_move(-1, draw2, p2.hand, "n")
+    game.add_move(-1, draw2, p2.hand, "p")
 
     # Add moves for using the replacement piles
     game.add_move(-1, replace1, discard1, "b")

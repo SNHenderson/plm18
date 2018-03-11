@@ -90,20 +90,28 @@ class Game(Validatable):
             moves = [ move for move in self.moves if move.input == ch ]
         return moves
 
+    def init_and_move(self, move):
+        if move.card == "?":
+            try: 
+                move.card = int(input("Enter card index: ")) - 1
+                self.move_card(move)
+            except:
+                raise ValidationException
+            finally:
+                move.card = "?"
+        else:
+            self.move_card(move)
+
     @check_rule()
     def move_card(self, move):
-        try:
-            card = move.start[move.card]
-            move.start.remove(card)
-            move.end.add(card)
-            print("Moved the card!")
-        except IndexError as e:
-            pass
+        card = move.start[move.card]
+        move.start.remove(card)
+        move.end.add(card)
+        print("Moved the card!")
 
     @validate()
     def update_game(self):        
         if self.turn_based:
-
             # Prompt for a valid move from the player so they can complete their turn
             made_invalid_move = True
             while made_invalid_move:
@@ -112,11 +120,10 @@ class Game(Validatable):
                 made_invalid_move = False
                 try:
                     for move in self.get_input():
-
                         # If player's input corresponds to a move for the other player, don't allow it
                         if not(move.start.owner == current_player or move.end.owner == current_player):
                             raise ValidationException
-                        self.move_card(move)
+                        self.init_and_move(move)
                 except ValidationException:
                     print("Move was invalid!\n")
                     made_invalid_move = True
@@ -124,7 +131,7 @@ class Game(Validatable):
             self.turn = (self.turn + 1) % len(self.players)
         else:
             try:
-                [ self.move_card(move) for move in self.get_input() ]
+                [ self.init_and_move(move) for move in self.get_input() ]
             except ValidationException:
                 print("Move was invalid!\n")           
 
