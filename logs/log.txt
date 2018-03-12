@@ -1,0 +1,65 @@
+Table:
+[discard:[FOUR CLUBS](42)]
+[draw:[X](0)]
+
+Players:
+Player1 [Player1's hand:[FIVE CLUBS],[JACK DIAMONDS],[JACK SPADES],[FOUR HEARTS],[NINE CLUBS]]
+Player2 [Player2's hand:[TWO CLUBS],[SIX DIAMONDS],[THREE CLUBS],[EIGHT HEARTS],[THREE DIAMONDS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[FIVE CLUBS](43)]
+[draw:[X](0)]
+
+Players:
+Player1 [Player1's hand:[JACK DIAMONDS],[JACK SPADES],[FOUR HEARTS],[NINE CLUBS]]
+Player2 [Player2's hand:[TWO CLUBS],[SIX DIAMONDS],[THREE CLUBS],[EIGHT HEARTS],[THREE DIAMONDS]]
+
+Player Player2's turn:
+Move was invalid!
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[TWO CLUBS](2)]
+[draw:[X](42)]
+
+Players:
+Player1 [Player1's hand:[JACK DIAMONDS],[JACK SPADES],[FOUR HEARTS],[NINE CLUBS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[THREE CLUBS],[EIGHT HEARTS],[THREE DIAMONDS]]
+
+Player Player1's turn:
+Move was invalid!
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[NINE CLUBS](3)]
+[draw:[X](42)]
+
+Players:
+Player1 [Player1's hand:[JACK DIAMONDS],[JACK SPADES],[FOUR HEARTS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[THREE CLUBS],[EIGHT HEARTS],[THREE DIAMONDS]]
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[THREE CLUBS](4)]
+[draw:[X](42)]
+
+Players:
+Player1 [Player1's hand:[JACK DIAMONDS],[JACK SPADES],[FOUR HEARTS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[EIGHT HEARTS],[THREE DIAMONDS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[THREE CLUBS](4)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[JACK DIAMONDS],[JACK SPADES],[FOUR HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[EIGHT HEARTS],[THREE DIAMONDS]]
+
+Player Player2's turn:

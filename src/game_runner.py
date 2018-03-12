@@ -13,9 +13,9 @@ def main():
     # create game
     # game = game_builder.build_game(game_rules)
     
-    game = game_builder.build_speed(None)
+    #game = game_builder.build_speed(None)
 
-    #game = game_builder.build_bartok(None)
+    game = game_builder.build_bartok(None)
 
     # start game loop 
     game.run()
