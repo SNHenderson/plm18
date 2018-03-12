@@ -4,6 +4,7 @@ from obj.player import Player
 from obj.rank import Rank
 from obj.suit import Suit
 from obj.hand import Hand
+from random import shuffle
 
 def build_game(game_rules):
     game = Game()
@@ -41,7 +42,7 @@ def build_bartok(game_rules):
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw, discard]
-    counts = [5, 5, 41, 1]
+    counts = [5, 5, 0, 42]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
@@ -58,16 +59,15 @@ def build_bartok(game_rules):
     # Add move for player two drawing a card
     game.add_move(-1, draw, p2.hand, "p")
 
-    def replenish_draw():
+    def replenish_draw(draw):
         """ Takes all the cards but the top one from the discard pile, shuffles them, and replenishes the 
         draw pile with this set of cards
         """
         temp = []
-        for k in range(discard.size()):
-            temp.append(discard[k])
-            discard.remove(discard[k])
+        temp = discard[:-1]
+        del discard[:-1]
         shuffle(temp)
-        draw = temp
+        draw.cards = temp
 
     def appropriate_card(top_card, played_card):
         """ Verifies that the card to be played is of same rank or suit as top_card
@@ -91,7 +91,7 @@ def build_bartok(game_rules):
 
             # Replenish the draw pile if empty
             if draw.size() == 0:
-                replenish_draw()
+                replenish_draw(move.start)
 
             return not(has_valid_move(discard, move.end))
 
