@@ -132,17 +132,23 @@ def build_speed(game_rules):
     game.add_player(p2)
 
     # Draw, replacement and discard piles
+    global draw1
     draw1 = Pile(name="draw1", facedown=True)
+    global draw2
     draw2 = Pile(name="draw2", facedown=True)
     p1.add_collection(draw1)
     p2.add_collection(draw2)
 
     # Replace piles; used when neither player has a playable card in their hand
+    global replace1
     replace1 = Pile(name="replace1", facedown=True)
+    global replace2
     replace2 = Pile(name="replace2", facedown=True)
 
     # Discard piles; used by either player to discard a card from their hand
+    global discard1
     discard1 = Pile(name="discard1", facedown=False)
+    global discard2
     discard2 = Pile(name="discard2", facedown=False)
 
     cards = game.deck.shuffled()
@@ -188,16 +194,21 @@ def build_speed(game_rules):
     def replenish_replace():
         """ Replenishes the replace piles by taking the bottom 5 cards from discard1 and discard2
         """
-        replace1 = discard1[:5]
-        replace2 = discard2[:5] 
+        replace1.cards += discard1[:5]
+        replace2.cards += discard2[:5] 
         del discard1[:5]
         del discard2[:5]
 
     def valid_draw(move):
-        played_card = move.start[move.card]
-        is_valid = game.valid_move(played_card, move.start, move.end)
+        try:
+            played_card = move.start[move.card]
+            is_valid = game.valid_move(played_card, move.start, move.end)
 
-        return move.end.size() < 5
+            return move.end.size() < 5
+
+        # This is used to handle the case when a player's draw pile is empty
+        except IndexError:
+            return False 
 
     def valid_discard(move):
         try:
@@ -214,10 +225,10 @@ def build_speed(game_rules):
             is_valid = game.valid_move(played_card, move.start, move.end)
 
             return is_valid and correct_rank
-        
-        # This is used to handle the case when a players draw pile is empty
+        # This is used to handle the case when a player's hand is empty
         except IndexError:
-            return False    
+            return False 
+           
 
     # Add move for player one playing a card on the first pile
     game.add_move("?", p1.hand, discard1, "q", valid_discard)
