@@ -1,0 +1,921 @@
+Table:
+[draw2:[X](15)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[EIGHT DIAMONDS](1)]
+[draw1:[X](15)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[SEVEN CLUBS],[QUEEN DIAMONDS],[KING CLUBS]]
+Player2 [Player2's hand:[SIX SPADES],[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](15)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[SEVEN CLUBS](2)]
+[draw1:[X](15)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS]]
+Player2 [Player2's hand:[SIX SPADES],[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS]]
+
+Move was invalid!
+
+Table:
+[draw2:[X](15)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[SEVEN CLUBS](2)]
+[draw1:[X](15)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS]]
+Player2 [Player2's hand:[SIX SPADES],[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](15)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[SIX SPADES](3)]
+[draw1:[X](15)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS]]
+
+Move was invalid!
+
+Table:
+[draw2:[X](15)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[SIX SPADES](3)]
+[draw1:[X](15)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](14)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[SIX SPADES](3)]
+[draw1:[X](15)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS],[ACE HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](14)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[SIX SPADES](3)]
+[draw1:[X](14)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS],[FIVE HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS],[ACE HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](14)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[FIVE HEARTS](4)]
+[draw1:[X](14)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS],[ACE HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](14)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[FIVE HEARTS](4)]
+[draw1:[X](13)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[FOUR HEARTS],[QUEEN DIAMONDS],[KING CLUBS],[NINE HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS],[ACE HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](14)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[FOUR HEARTS](5)]
+[draw1:[X](13)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[QUEEN DIAMONDS],[KING CLUBS],[NINE HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS],[ACE HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](14)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[FOUR HEARTS](5)]
+[draw1:[X](12)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[QUEEN DIAMONDS],[KING CLUBS],[NINE HEARTS],[KING HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[FIVE CLUBS],[ACE HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](14)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](12)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[QUEEN DIAMONDS],[KING CLUBS],[NINE HEARTS],[KING HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING DIAMONDS](1)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](12)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[QUEEN DIAMONDS],[KING CLUBS],[NINE HEARTS],[KING HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[QUEEN DIAMONDS](2)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](12)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[KING CLUBS],[NINE HEARTS],[KING HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[QUEEN DIAMONDS](2)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](11)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[KING CLUBS],[NINE HEARTS],[KING HEARTS],[ACE SPADES]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING CLUBS](3)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](11)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[ACE SPADES]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[KING CLUBS](3)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](10)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[ACE SPADES],[TWO DIAMONDS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](10)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[FIVE CLUBS](6)]
+[draw1:[X](9)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[FOUR SPADES]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[FOUR SPADES](7)]
+[draw1:[X](9)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[FOUR SPADES](7)]
+[draw1:[X](8)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[THREE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[THREE CLUBS](8)]
+[draw1:[X](8)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[THREE CLUBS](8)]
+[draw1:[X](7)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[SEVEN HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[TWO CLUBS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[TWO CLUBS](9)]
+[draw1:[X](7)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[SEVEN HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[ACE HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](13)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[ACE HEARTS](10)]
+[draw1:[X](7)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[SEVEN HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](12)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[ACE HEARTS](10)]
+[draw1:[X](7)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[SEVEN HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](11)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[ACE SPADES](4)]
+[discard2:[ACE HEARTS](10)]
+[draw1:[X](7)]
+
+Players:
+Player1 [Player1's hand:[TWO HEARTS],[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[SEVEN HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[FOUR CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](11)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[TWO HEARTS](5)]
+[discard2:[ACE HEARTS](10)]
+[draw1:[X](7)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[TWO DIAMONDS],[SEVEN HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[FOUR CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](11)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[TWO HEARTS](5)]
+[discard2:[TWO DIAMONDS](11)]
+[draw1:[X](7)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[FOUR CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](11)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[TWO HEARTS](5)]
+[discard2:[TWO DIAMONDS](11)]
+[draw1:[X](6)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[FOUR CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](11)]
+[replace1:[X](5)]
+[replace2:[X](5)]
+[discard1:[TWO HEARTS](5)]
+[discard2:[TWO DIAMONDS](11)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[FOUR CLUBS]]
+
+Moved the card!
+Moved the card!
+Table:
+[draw2:[X](11)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[THREE SPADES](6)]
+[discard2:[KING SPADES](12)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[FOUR CLUBS]]
+
+Move was invalid!
+
+Table:
+[draw2:[X](11)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[THREE SPADES](6)]
+[discard2:[KING SPADES](12)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[FOUR CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](11)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[KING SPADES](12)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](10)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[KING SPADES](12)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[QUEEN CLUBS]]
+
+Move was invalid!
+
+Table:
+[draw2:[X](10)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[KING SPADES](12)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[QUEEN CLUBS]]
+
+Moved the card!
+Table:
+[draw2:[X](10)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[QUEEN CLUBS](13)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](9)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[QUEEN CLUBS](13)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[KING HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[TEN SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](9)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[KING HEARTS](14)]
+[draw1:[X](5)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[TEN SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](9)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[KING HEARTS](14)]
+[draw1:[X](4)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[QUEEN SPADES]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[TEN SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](9)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[QUEEN SPADES](15)]
+[draw1:[X](4)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[TEN SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](9)]
+[replace1:[X](4)]
+[replace2:[X](4)]
+[discard1:[FOUR CLUBS](7)]
+[discard2:[QUEEN SPADES](15)]
+[draw1:[X](3)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[TEN SPADES]]
+
+Moved the card!
+Moved the card!
+Table:
+[draw2:[X](9)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[SEVEN SPADES](8)]
+[discard2:[JACK CLUBS](16)]
+[draw1:[X](3)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[EIGHT SPADES],[TEN SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](9)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[EIGHT SPADES](9)]
+[discard2:[JACK CLUBS](16)]
+[draw1:[X](3)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES]]
+
+Moved the card!
+Table:
+[draw2:[X](8)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[EIGHT SPADES](9)]
+[discard2:[JACK CLUBS](16)]
+[draw1:[X](3)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES],[SIX DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](8)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE HEARTS](10)]
+[discard2:[JACK CLUBS](16)]
+[draw1:[X](3)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES],[SIX DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](8)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE HEARTS](10)]
+[discard2:[JACK CLUBS](16)]
+[draw1:[X](2)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS]]
+Player2 [Player2's hand:[TEN DIAMONDS],[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES],[SIX DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](8)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE HEARTS](10)]
+[discard2:[TEN DIAMONDS](17)]
+[draw1:[X](2)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES],[SIX DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](7)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE HEARTS](10)]
+[discard2:[TEN DIAMONDS](17)]
+[draw1:[X](2)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE SPADES],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES],[SIX DIAMONDS],[ACE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](7)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE HEARTS](10)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](2)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES],[SIX DIAMONDS],[ACE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](7)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE HEARTS](10)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS],[EIGHT HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[NINE DIAMONDS],[TEN SPADES],[SIX DIAMONDS],[ACE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](7)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[TEN SPADES](11)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS],[EIGHT HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[NINE DIAMONDS],[SIX DIAMONDS],[ACE DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](6)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[TEN SPADES](11)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS],[EIGHT HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[NINE DIAMONDS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS]]
+
+Move was invalid!
+
+Table:
+[draw2:[X](6)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[TEN SPADES](11)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS],[EIGHT HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[NINE DIAMONDS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](6)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE DIAMONDS](12)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS],[EIGHT HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS]]
+
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE DIAMONDS](12)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS],[EIGHT HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[EIGHT HEARTS](13)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[NINE CLUBS],[ACE CLUBS],[THREE HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE CLUBS](14)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](1)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[ACE CLUBS],[THREE HEARTS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE CLUBS](14)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[ACE CLUBS],[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Move was invalid!
+
+Table:
+[draw2:[X](5)]
+[replace1:[X](3)]
+[replace2:[X](3)]
+[discard1:[NINE CLUBS](14)]
+[discard2:[NINE SPADES](18)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[ACE CLUBS],[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](2)]
+[replace2:[X](2)]
+[discard1:[TEN HEARTS](15)]
+[discard2:[TWO SPADES](19)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[ACE CLUBS],[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](2)]
+[replace2:[X](2)]
+[discard1:[TEN HEARTS](15)]
+[discard2:[ACE CLUBS](20)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Move was invalid!
+
+Table:
+[draw2:[X](5)]
+[replace1:[X](2)]
+[replace2:[X](2)]
+[discard1:[TEN HEARTS](15)]
+[discard2:[ACE CLUBS](20)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](1)]
+[replace2:[X](1)]
+[discard1:[THREE DIAMONDS](16)]
+[discard2:[EIGHT CLUBS](21)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[SEVEN HEARTS],[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](1)]
+[replace2:[X](1)]
+[discard1:[THREE DIAMONDS](16)]
+[discard2:[SEVEN HEARTS](22)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX HEARTS],[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](5)]
+[replace1:[X](1)]
+[replace2:[X](1)]
+[discard1:[THREE DIAMONDS](16)]
+[discard2:[SIX HEARTS](23)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](4)]
+[replace1:[X](1)]
+[replace2:[X](1)]
+[discard1:[THREE DIAMONDS](16)]
+[discard2:[SIX HEARTS](23)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[THREE HEARTS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS],[JACK HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](4)]
+[replace1:[X](1)]
+[replace2:[X](1)]
+[discard1:[THREE DIAMONDS](16)]
+[discard2:[FIVE DIAMONDS](24)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[THREE HEARTS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[ACE DIAMONDS],[FOUR DIAMONDS],[QUEEN HEARTS],[JACK HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](4)]
+[replace1:[X](1)]
+[replace2:[X](1)]
+[discard1:[FOUR DIAMONDS](17)]
+[discard2:[FIVE DIAMONDS](24)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:[THREE HEARTS]]
+Player2 [Player2's hand:[SIX DIAMONDS],[ACE DIAMONDS],[QUEEN HEARTS],[JACK HEARTS]]
+
+Moved the card!
+Table:
+[draw2:[X](4)]
+[replace1:[X](1)]
+[replace2:[X](1)]
+[discard1:[THREE HEARTS](18)]
+[discard2:[FIVE DIAMONDS](24)]
+[draw1:[X](0)]
+
+Players:
+Player1 [Player1's hand:]
+Player2 [Player2's hand:[SIX DIAMONDS],[ACE DIAMONDS],[QUEEN HEARTS],[JACK HEARTS]]
+
+Game end!
