@@ -1,22 +1,21 @@
 Table:
-[draw:[X](0)]
-[discard:[FOUR HEARTS](42)]
+[draw:[X](41)]
+[discard:[SIX CLUBS](1)]
 
 Players:
-Player1 [Player1's hand:[JACK HEARTS],[KING SPADES],[FOUR CLUBS],[TWO SPADES],[TWO HEARTS]]
-Player2 [Player2's hand:[NINE HEARTS],[TEN CLUBS],[TEN DIAMONDS],[KING CLUBS],[TWO CLUBS]]
+Player1 [Player1's hand:[FIVE CLUBS],[EIGHT CLUBS],[ACE HEARTS],[SIX DIAMONDS],[FIVE DIAMONDS]]
+Player2 [Player2's hand:[NINE HEARTS],[FOUR CLUBS],[FOUR DIAMONDS],[TEN CLUBS],[FOUR HEARTS]]
 
 Player Player1's turn:
 Move was invalid!
 
 Player Player1's turn:
-Moved the card!
-Table:
-[draw:[X](41)]
-[discard:[JACK HEARTS](2)]
+Move was invalid!
 
-Players:
-Player1 [Player1's hand:[KING SPADES],[FOUR CLUBS],[TWO SPADES],[TWO HEARTS]]
-Player2 [Player2's hand:[NINE HEARTS],[TEN CLUBS],[TEN DIAMONDS],[KING CLUBS],[TWO CLUBS]]
+Player Player1's turn:
+Move was invalid!
 
-Player Player2's turn:
+Player Player1's turn:
+Move was invalid!
+
+Player Player1's turn:

@@ -38,5 +38,8 @@ class Collection(Validatable):
     def __delitem__(self, key):
         del self.cards[key]
 
+    def __setitem__(self, key, item):
+        self.cards[key] = item
+
     def __repr__(self):
         return "[" + self.name + ":" + ",".join(map(str, self.cards)) + "]"

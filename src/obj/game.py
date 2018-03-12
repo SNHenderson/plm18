@@ -39,8 +39,8 @@ class Game(Validatable):
         self.players.append(player)
 
     @validate()
-    def add_move(self, card, start, end, inp):
-        self.moves.append(dict_obj(card = card, start = start, end = end, input = inp))
+    def add_move(self, card, start, end, inp, rule):
+        self.moves.append(dict_obj(card = card, start = start, end = end, input = inp, rule = rule))
 
     def collections_for(self, player):
         return [ c for c in self.collections if player.owns(c) ]

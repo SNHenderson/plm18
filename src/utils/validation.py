@@ -47,7 +47,8 @@ def check_rule():
     """
     def check(fn):
         def do_move(self, *args):
-            allowed = self.rules[fn.__name__](*args)
+            fns = [ arg.rule for arg in args ]
+            allowed = all([  func( arg ) for func in fns for arg in args ])
             if allowed:
                 val = fn(self, *args)
             else:

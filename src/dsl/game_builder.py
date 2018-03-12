@@ -4,6 +4,7 @@ from obj.player import Player
 from obj.rank import Rank
 from obj.suit import Suit
 from obj.hand import Hand
+
 from random import shuffle
 
 def build_game(game_rules):
@@ -42,32 +43,18 @@ def build_bartok(game_rules):
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw, discard]
-    counts = [5, 5, 0, 42]
+    counts = [5, 5, 41, 1]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
-
-    # Add moves for player one playing a card on the first pile
-    game.add_move("?", p1.hand, discard, "q")
-
-    # Add move for player one drawing a card
-    game.add_move(-1, draw, p1.hand, "e")
-
-    # Add moves for player two playing a card on the first pile
-    game.add_move("?", p2.hand, discard, "i")
-
-    # Add move for player two drawing a card
-    game.add_move(-1, draw, p2.hand, "p")
 
     def replenish_draw(draw):
         """ Takes all the cards but the top one from the discard pile, shuffles them, and replenishes the 
         draw pile with this set of cards
         """
-        temp = []
-        temp = discard[:-1]
+        draw.cards = discard[:-1]
+        shuffle(draw.cards)
         del discard[:-1]
-        shuffle(temp)
-        draw.cards = temp
 
     def appropriate_card(top_card, played_card):
         """ Verifies that the card to be played is of same rank or suit as top_card
@@ -82,19 +69,14 @@ def build_bartok(game_rules):
         top_card = pile[-1]
         return any([appropriate_card(top_card, h) for h in hand])
 
-    def valid_play(move):
-        """ Enforces rules of basic Bartok. A player must play a card of same rank/suit from their hand.
-        If impossible, they must draw from draw pile
-        """
-        # Moves that start from draw pile => player cannot play a card, must draw
-        if move.start == draw:
+    def valid_draw(move):
+        # Replenish the draw pile if empty
+        if draw.size() == 0:
+            replenish_draw(move.start)
 
-            # Replenish the draw pile if empty
-            if draw.size() == 0:
-                replenish_draw(move.start)
+        return not(has_valid_move(discard, move.end))  
 
-            return not(has_valid_move(discard, move.end))
-
+    def valid_discard(move):
         try:
             return game.valid_move(move.start[move.card], move.start, move.end) and \
                    appropriate_card(discard[-1], move.start[move.card])
@@ -103,8 +85,17 @@ def build_bartok(game_rules):
         except IndexError:
             return False
 
-    game.add_rule("move_card", valid_play)
+    # Add moves for player one playing a card on the first pile
+    game.add_move("?", p1.hand, discard, "q", valid_discard)
 
+    # Add move for player one drawing a card
+    game.add_move(-1, draw, p1.hand, "e", valid_draw)
+
+    # Add moves for player two playing a card on the first pile
+    game.add_move("?", p2.hand, discard, "i", valid_discard)
+
+    # Add move for player two drawing a card
+    game.add_move(-1, draw, p2.hand, "p", valid_draw)
 
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):
@@ -161,28 +152,6 @@ def build_speed(game_rules):
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
 
-    # Add move for player one playing a card on the first pile
-    game.add_move("?", p1.hand, discard1, "q")
-
-    # Add move for player one playing a card on the second pile
-    game.add_move("?", p1.hand, discard2, "w")
-
-    # Add move for player one drawing a card
-    game.add_move(-1, draw1, p1.hand, "e")
-
-    # Add moves for player two playing a card on the first pile
-    game.add_move("?", p2.hand, discard1, "i")
-
-    # Add moves for player two playing a card on the second pile
-    game.add_move("?", p2.hand, discard2, "o")
-
-    # Add move for player one drawing a card
-    game.add_move(-1, draw2, p2.hand, "p")
-
-    # Add moves for using the replacement piles
-    game.add_move(-1, replace1, discard1, "b")
-    game.add_move(-1, replace2, discard2, "b")
-
     def appropriate_rank(top_card_rank, played_card_rank):
         """ Verifies that the card to be played is of 1 rank higher or
             1 rank lower than the top-most card. Allows a KING to be played
@@ -200,7 +169,13 @@ def build_speed(game_rules):
         top_card = pile[-1]
         return any([appropriate_rank(Rank[top_card.rank].value, Rank[h.rank].value) for h in hand])
 
-    def valid_replacement():
+    def valid_replacement(move):
+        print("Attempt to draw from the replacement piles")
+
+        # Replenish the replace piles if they're depleted
+        if replace1.size() == 0:
+            replenish_replace()
+
         """ Returns true if neither player has a card in hand that can be discarded
             into either discard pile
         """
@@ -211,43 +186,20 @@ def build_speed(game_rules):
                    replace1.size() != replace2.size()
 
     def replenish_replace():
-        """ Replenishes the replace piles by taking the bottom `size` cards from discard1 and discard2
+        """ Replenishes the replace piles by taking the bottom 5 cards from discard1 and discard2
         """
-        size = counts[collections.index("replace1")]
-        for k in range(size):
-            replace1[k] = discard1[k]
-            replace2[k] = discard2[k] 
-            discard1.remove(discard1[k])
-            discard2.remove(discard2[k])
+        replace1 = discard1[:5]
+        replace2 = discard2[:5] 
+        del discard1[:5]
+        del discard2[:5]
 
-    def valid_play(move):
-        """ Determines if the given move is 'allowed'
+    def valid_draw(move):
+        played_card = move.start[move.card]
+        is_valid = game.valid_move(played_card, move.start, move.end)
 
-         - For discarding a card from a players hand, this verifies the rank 
-           is of appropriate value (see appropriate_rank())
+        return move.end.size() < 5
 
-         - For drawing from the replacement piles, this verifies that neither player
-           can make a valid move (see valid_replacement() and has_valid_move()). This also 
-           handles replenshing the replacement piles (by taking from bottom of discard piles)
-
-         Always ensures that the move is a "valid move" in the universal sense, see
-         game.valid_move()
-
-         NOTE: This is hacky b/c currently, discarding a card and drawing from their draw
-         pile is tied together (autodraw). Drawing from a draw pile is automatically valid
-         as long as they are playing a card, so if the end collection of a card is the player's
-         hand, it's assumed to be a drawing move.
-        """
-        is_replacement = move.start == replace1 or move.start == replace2
-        if is_replacement:
-            print("Attempt to draw from the replacement piles")
-
-            # Replenish the replace piles if they're depleted
-            if replace1.size() == 0:
-                replenish_replace()
-
-            return valid_replacement()
-
+    def valid_discard(move):
         try:
             played_card = move.start[move.card]
             played_card_rank = Rank[played_card.rank].value
@@ -261,18 +213,33 @@ def build_speed(game_rules):
 
             is_valid = game.valid_move(played_card, move.start, move.end)
 
-            # A hand can only be replenished if there are < 5 cards currently in it
-            if isinstance(move.end, Hand):
-                return is_valid and move.end.size() < 5
             return is_valid and correct_rank
         
         # This is used to handle the case when a players draw pile is empty
         except IndexError:
-            return False
+            return False    
 
-    # Register the set of rules associated with moving a card w. the game
-    game.add_rule("move_card", valid_play)
+    # Add move for player one playing a card on the first pile
+    game.add_move("?", p1.hand, discard1, "q", valid_discard)
 
+    # Add move for player one playing a card on the second pile
+    game.add_move("?", p1.hand, discard2, "w", valid_discard)
+
+    # Add move for player one drawing a card
+    game.add_move(-1, draw1, p1.hand, "e", valid_draw)
+
+    # Add moves for player two playing a card on the first pile
+    game.add_move("?", p2.hand, discard1, "i", valid_discard)
+
+    # Add moves for player two playing a card on the second pile
+    game.add_move("?", p2.hand, discard2, "o", valid_discard)
+
+    # Add move for player one drawing a card
+    game.add_move(-1, draw2, p2.hand, "p", valid_draw)
+
+    # Add moves for using the replacement piles
+    game.add_move(-1, replace1, discard1, "b", valid_replacement)
+    game.add_move(-1, replace2, discard2, "b", valid_replacement)        
 
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):
