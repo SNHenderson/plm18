@@ -58,6 +58,17 @@ def build_bartok(game_rules):
     # Add move for player two drawing a card
     game.add_move(-1, draw, p2.hand, "p")
 
+    def replenish_draw():
+        """ Takes all the cards but the top one from the discard pile, shuffles them, and replenishes the 
+        draw pile with this set of cards
+        """
+        temp = []
+        for k in range(discard.size()):
+            temp.append(discard[k])
+            discard.remove(discard[k])
+        shuffle(temp)
+        draw = temp
+
     def appropriate_card(top_card, played_card):
         """ Verifies that the card to be played is of same rank or suit as top_card
         """
@@ -77,6 +88,11 @@ def build_bartok(game_rules):
         """
         # Moves that start from draw pile => player cannot play a card, must draw
         if move.start == draw:
+
+            # Replenish the draw pile if empty
+            if draw.size() == 0:
+                replenish_draw()
+
             return not(has_valid_move(discard, move.end))
 
         try:
@@ -198,8 +214,11 @@ def build_speed(game_rules):
         """ Replenishes the replace piles by taking the bottom `size` cards from discard1 and discard2
         """
         size = counts[collections.index("replace1")]
-        replace1 = [discard1.cards[k] for k in range(size)]
-        replace2 = [discard2.cards[k] for k in range(size)]
+        for k in range(size):
+            replace1[k] = discard1[k]
+            replace2[k] = discard2[k] 
+            discard1.remove(discard1[k])
+            discard2.remove(discard2[k])
 
     def valid_play(move):
         """ Determines if the given move is 'allowed'
