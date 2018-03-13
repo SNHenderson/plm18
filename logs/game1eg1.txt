@@ -1,3 +1,4 @@
+Starting game of Bartok
 Table:
 [discard:[TEN CLUBS](1)]
 [draw:[X](41)]

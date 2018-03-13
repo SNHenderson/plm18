@@ -1,3 +1,4 @@
+Starting game of Speed
 Table:
 [replace2:[X](5)]
 [discard1:[EIGHT HEARTS](1)]

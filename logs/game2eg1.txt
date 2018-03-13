@@ -1,3 +1,4 @@
+Starting game of Speed
 Table:
 [draw2:[X](15)]
 [replace1:[X](5)]
