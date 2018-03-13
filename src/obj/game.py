@@ -1,6 +1,5 @@
 from utils.validation import Validatable
 from utils.validation import validate
-from utils.validation import check_rule
 from utils.validation import ValidationException
 
 from utils.getch import getch
@@ -12,8 +11,10 @@ from obj.pile import Pile
 
 
 class Game(Validatable):
-    def __init__(self, turn_based = False, file_name = "logs/log.txt"):
+    def __init__(self, name, turn_based, file_name = "logs/log.txt"):
         super().__init__()
+
+        self.name = name
         self.players = []
         self.is_running = False
         self.win_conditions = []
@@ -49,6 +50,9 @@ class Game(Validatable):
         self.win_conditions.append(condition)
 
     def run(self):
+        self.log.print("Starting new game of %s!" % self.name)
+        self.log.print()
+
         self.enable_validation()
         self.game_running = True
         if self.turn_based:
@@ -76,79 +80,96 @@ class Game(Validatable):
         self.log.print()
 
     def get_input(self):
+        def copy_move(m):
+            # TODO: Get rid of this when move is a proper class
+            return dict_obj(card=m.card, start=m.start, end=m.end, input=m.input, rule=m.rule)
         moves = []
 
         # Wait for input until a key that corresponds to an actual move is pressed
-        while len(moves) == 0:
+        while not moves:
             ch = getch()
 
             # Exit the game on ESC
             if ord(ch) == 27:
+                self.log.print("Exiting game")
                 self.game_running = False;
                 break
 
-            moves = [ move for move in self.moves if move.input == ch ]
+
+            moves = [ copy_move(move) for move in self.moves if move.input == ch ]
+
         return moves
 
     def init_and_move(self, move):
-        if move.card == "?":
-            try: 
-                move.card = int(input("Enter card index: ")) - 1
-                self.move_card(move)
-            except:
+        if move.card is None:
+            try:
+                value = input("Enter card index: ")
+                move.card = int(value) - 1
+            except (ValueError, EOFError):
                 raise ValidationException
-            finally:
-                move.card = "?"
+
+            try:
+                self.move_card(move)
+            except ValidationException:
+                move.card = None
+                raise
+
+            move.card = value
+
         else:
             self.move_card(move)
 
-    @check_rule()
     def move_card(self, move):
+        allowed = move.rule(move)
+        if not allowed:
+            raise ValidationException
+
+        card = move.start[move.card]
         try:
-            card = move.start[move.card]
             move.start.remove(card)
-            move.end.add(card)
-            self.log.print("Moved the card!")
         except IndexError:
-            pass
+            raise ValidationException
+        move.end.add(card)
+        self.log.print("Moved the card!")
 
     @validate()
-    def update_game(self):        
+    def update_game(self):
         if self.turn_based:
             # Prompt for a valid move from the player so they can complete their turn
-            made_invalid_move = True
-            while made_invalid_move:
+            has_moved = False
+            while not has_moved:
                 current_player = self.players[self.turn]
-                self.log.print("Player " + current_player.name + "'s turn:")
-                made_invalid_move = False
+                self.log.print(current_player.name + "'s turn:")
                 try:
                     for move in self.get_input():
                         # If player's input corresponds to a move for the other player, don't allow it
-                        if not(move.start.owner == current_player or move.end.owner == current_player):
+                        if move.start.owner != current_player and move.end.owner != current_player:
                             raise ValidationException
                         self.init_and_move(move)
+                    has_moved = True
                 except ValidationException:
-                    self.log.print("Move was invalid!\n")
-                    made_invalid_move = True
+                    self.log.print("Move was invalid!")
 
             self.turn = (self.turn + 1) % len(self.players)
         else:
             try:
                 [ self.init_and_move(move) for move in self.get_input() ]
-            except ValidationException:
-                self.log.print("Move was invalid!\n")           
+            except ValidationException as e:
+                self.log.print("Move was invalid!")
+
+        self.log.print()
 
     def valid_move(self, card, start, end):
         """ Universal defn. of a valid card transfer from 1 collection
-            to another 
+            to another
 
         A move from start collection to end is valid if:
 
         1.) The start collection has the card, and the end doesn't
-        2.) The owner of the start collection is moving the card 
-            to a collection available to them (that they own, or 
+        2.) The owner of the start collection is moving the card
+            to a collection available to them (that they own, or
             is a table collection AKA no owner)
         """
         card_in_start = start.contains_card(card)
         card_in_end = end.contains_card(card)
-        return card_in_start and not(card_in_end) and (end.owner == None or end.owner == start.owner)
+        return card_in_start and (not card_in_end) and (end.owner == None or end.owner == start.owner)

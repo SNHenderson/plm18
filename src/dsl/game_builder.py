@@ -8,14 +8,14 @@ from obj.hand import Hand
 from random import shuffle
 
 def build_game(game_rules):
-    game = Game()
-    
+    game = Game("Sample", false)
+
     # TODO: Configure game based on the abstract game definition
 
     return game
 
 def build_bartok(game_rules):
-    game = Game(True)
+    game = Game("Bartok", turn_based=True)
     game.restrict(lambda self: len(self.collections) == 4)
 
     # Game ends when either player runs out of cards
@@ -32,7 +32,7 @@ def build_bartok(game_rules):
     game.add_player(p1)
     game.add_player(p2)
     p1.add_collection(p1.hand)
-    p2.add_collection(p2.hand)   
+    p2.add_collection(p2.hand)
 
     # Draw and discard piles
     draw = Pile(name="draw", facedown = True)
@@ -46,7 +46,7 @@ def build_bartok(game_rules):
     [ game.add_collection(c) for c in collections ]
 
     def replenish_draw(draw):
-        """ Takes all the cards but the top one from the discard pile, shuffles them, and replenishes the 
+        """ Takes all the cards but the top one from the discard pile, shuffles them, and replenishes the
         draw pile with this set of cards
         """
         draw.cards = discard[:-1]
@@ -69,9 +69,13 @@ def build_bartok(game_rules):
     def valid_draw(move):
         # Replenish the draw pile if empty
         if draw.size() == 0:
+            if discard.size() < 2:
+                return False
+
             replenish_draw(move.start)
 
-        return not(has_valid_move(discard, move.end))  
+        # return not has_valid_move(discard, move.end)
+        return True
 
     def valid_discard(move):
         try:
@@ -83,13 +87,13 @@ def build_bartok(game_rules):
             return False
 
     # Add moves for player one playing a card on the first pile
-    game.add_move("?", p1.hand, discard, "q", valid_discard)
+    game.add_move(None, p1.hand, discard, "q", valid_discard)
 
     # Add move for player one drawing a card
     game.add_move(-1, draw, p1.hand, "e", valid_draw)
 
     # Add moves for player two playing a card on the first pile
-    game.add_move("?", p2.hand, discard, "i", valid_discard)
+    game.add_move(None, p2.hand, discard, "i", valid_discard)
 
     # Add move for player two drawing a card
     game.add_move(-1, draw, p2.hand, "p", valid_draw)
@@ -104,7 +108,7 @@ def build_bartok(game_rules):
 
 # TODO: Remove this once we get the DSL working
 def build_speed(game_rules):
-    game = Game()
+    game = Game("Speed", turn_based=False)
 
     # There are only 2 players, and 8 total collections in game
     game.restrict(lambda self: len(self.players) == 2)
@@ -123,7 +127,7 @@ def build_speed(game_rules):
         p.hand.restrict(lambda self: len(self.hand) <= 5)
 
     p1.add_collection(p1.hand)
-    p2.add_collection(p2.hand)   
+    p2.add_collection(p2.hand)
 
     game.add_player(p1)
     game.add_player(p2)
@@ -160,11 +164,11 @@ def build_speed(game_rules):
                  played_card_rank == (top_card_rank - 1)
 
 
-    def has_valid_move(pile, hand):
+    def has_valid_move(pile, person):
         """ Returns true if any card in hand can be discarded onto pile
         """
         top_card = pile[-1]
-        return any([appropriate_rank(Rank[top_card.rank].value, Rank[h.rank].value) for h in hand])
+        return any([appropriate_rank(Rank[top_card.rank].value, Rank[h.rank].value) for h in person.hand])
 
     def valid_replacement(move):
         print("Attempt to draw from the replacement piles")
@@ -176,17 +180,13 @@ def build_speed(game_rules):
         """ Returns true if neither player has a card in hand that can be discarded
             into either discard pile
         """
-        return not(has_valid_move(discard1, p1.hand) or 
-                   has_valid_move(discard2, p1.hand) or
-                   has_valid_move(discard1, p2.hand) or
-                   has_valid_move(discard2, p2.hand)) or \
-                   replace1.size() != replace2.size()
+        return all([not has_valid_move(d, p) for d in [discard1, discard2] for p in [p1, p2]])
 
     def replenish_replace():
         """ Replenishes the replace piles by taking the bottom 5 cards from discard1 and discard2
         """
         replace1.cards += discard1[:5]
-        replace2.cards += discard2[:5] 
+        replace2.cards += discard2[:5]
         del discard1[:5]
         del discard2[:5]
 
@@ -199,7 +199,7 @@ def build_speed(game_rules):
 
         # This is used to handle the case when a player's draw pile is empty
         except IndexError:
-            return False 
+            return False
 
     def valid_discard(move):
         try:
@@ -218,30 +218,30 @@ def build_speed(game_rules):
             return is_valid and correct_rank
         # This is used to handle the case when a player's hand is empty
         except IndexError:
-            return False 
-           
+            return False
+
 
     # Add move for player one playing a card on the first pile
-    game.add_move("?", p1.hand, discard1, "q", valid_discard)
+    game.add_move(None, p1.hand, discard1, "q", valid_discard)
 
     # Add move for player one playing a card on the second pile
-    game.add_move("?", p1.hand, discard2, "w", valid_discard)
+    game.add_move(None, p1.hand, discard2, "w", valid_discard)
 
     # Add move for player one drawing a card
     game.add_move(-1, draw1, p1.hand, "e", valid_draw)
 
     # Add moves for player two playing a card on the first pile
-    game.add_move("?", p2.hand, discard1, "i", valid_discard)
+    game.add_move(None, p2.hand, discard1, "i", valid_discard)
 
     # Add moves for player two playing a card on the second pile
-    game.add_move("?", p2.hand, discard2, "o", valid_discard)
+    game.add_move(None, p2.hand, discard2, "o", valid_discard)
 
     # Add move for player one drawing a card
     game.add_move(-1, draw2, p2.hand, "p", valid_draw)
 
     # Add moves for using the replacement piles
     game.add_move(-1, replace1, discard1, "b", valid_replacement)
-    game.add_move(-1, replace2, discard2, "b", valid_replacement)        
+    game.add_move(-1, replace2, discard2, "b", valid_replacement)
 
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):
