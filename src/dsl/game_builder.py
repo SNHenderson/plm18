@@ -15,7 +15,7 @@ def build_game(game_rules):
     return game
 
 def build_bartok(game_rules):
-    game = Game(True)
+    game = Game("Bartok", True, "logs/bartok_log.txt")
     game.restrict(lambda self: len(self.collections) == 4)
 
     # Game ends when either player runs out of cards
@@ -104,7 +104,7 @@ def build_bartok(game_rules):
 
 # TODO: Remove this once we get the DSL working
 def build_speed(game_rules):
-    game = Game()
+    game = Game("Speed", False, "logs/speed_log.txt")
 
     # There are only 2 players, and 8 total collections in game
     game.restrict(lambda self: len(self.players) == 2)

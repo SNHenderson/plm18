@@ -12,8 +12,9 @@ from obj.pile import Pile
 
 
 class Game(Validatable):
-    def __init__(self, turn_based = False, file_name = "logs/log.txt"):
+    def __init__(self, name = "", turn_based = False, file_name = "logs/log.txt"):
         super().__init__()
+        self.name = name
         self.players = []
         self.is_running = False
         self.win_conditions = []
@@ -51,6 +52,7 @@ class Game(Validatable):
     def run(self):
         self.enable_validation()
         self.game_running = True
+        self.log.print("Starting game of %s" % self.name)
         if self.turn_based:
             self.turn = 0
         while self.game_running:

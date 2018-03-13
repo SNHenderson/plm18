@@ -13,8 +13,10 @@ def main():
     # create game
     # game = game_builder.build_game(game_rules)
     
+    # Uncomment this line to play Speed
     #game = game_builder.build_speed(None)
 
+    # Uncomment this line to play Bartok
     game = game_builder.build_bartok(None)
 
     # start game loop 
