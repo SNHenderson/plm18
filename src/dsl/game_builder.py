@@ -180,7 +180,8 @@ def build_speed(game_rules):
         """ Returns true if neither player has a card in hand that can be discarded
             into either discard pile
         """
-        return all([not has_valid_move(d, p) for d in [discard1, discard2] for p in [p1, p2]])
+        return all([not has_valid_move(d, p) for d in [discard1, discard2] for p in [p1, p2]]) \
+               or discard1.size() != discard2.size()
 
     def replenish_replace():
         """ Replenishes the replace piles by taking the bottom 5 cards from discard1 and discard2
