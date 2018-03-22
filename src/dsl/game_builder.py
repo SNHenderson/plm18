@@ -74,8 +74,7 @@ def build_bartok(game_rules):
 
             replenish_draw(move.start)
 
-        # return not has_valid_move(discard, move.end)
-        return True
+        return not has_valid_move(discard, move.end)
 
     def valid_discard(move):
         try:

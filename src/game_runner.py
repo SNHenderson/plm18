@@ -1,5 +1,7 @@
 from utils import arg_parser
 from obj import collection
+from obj import views
+from obj.controller import Controller
 from dsl import game_parser
 from dsl import game_builder
 
@@ -18,9 +20,11 @@ def main():
 
     # Uncomment this line to play Bartok
     game = game_builder.build_bartok(None)
+    view = views.log_view("logs/mvctest.txt")
 
-    # start game loop 
-    game.run()
+    # start game loop
+    game_controller = Controller(game, view)
+    game_controller.run()
 
 if __name__ == "__main__":
     main()
