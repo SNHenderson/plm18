@@ -20,7 +20,8 @@ def main():
 
     # Uncomment this line to play Bartok
     game = game_builder.build_bartok(None)
-    view = views.log_view("logs/mvctest.txt")
+    #view = views.log_view("logs/mvctest.txt")
+    view = views.pretty_view()
 
     # start game loop
     game_controller = Controller(game, view)

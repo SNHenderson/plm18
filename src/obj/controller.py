@@ -29,6 +29,7 @@ class Controller(Validatable):
             if(self.game.win()):
                 self.game_running = False
                 self.view.render(self.game)
+                self.view.end_game(self.game)
 
     def get_input(self):
         def copy_move(m):
