@@ -7,6 +7,9 @@ class base_view():
     def __init__(self):
         pass
 
+    def clear_screen(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
+
     def start_game(self, model):
         raise NotImplementedError()
 
@@ -28,9 +31,6 @@ class base_view():
 class log_view(base_view):
     def __init__(self, file_name = "logs/log.txt"):
         self.log = Logger(file_name)
-
-    def clear_screen(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
 
     def start_game(self, model):
             self.clear_screen()
@@ -65,16 +65,9 @@ class log_view(base_view):
             self.log.print("Game end!")
 
 class view(base_view):
-    def __init__(self):
-        pass
-        #sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
-
-    def clear_screen(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
-
     def start_game(self, model):
-            print("Starting new game of %s!" % model.name)
-            print()
+        print("Starting new game of %s!" % model.name)
+        print()
 
     def render(self, model):
         self.clear_screen()
@@ -104,13 +97,6 @@ class view(base_view):
             print("Game end!")
 
 class pretty_view(base_view):
-    def __init__(self):
-        pass
-        #sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
-
-    def clear_screen(self):
-        os.system('cls' if os.name == 'nt' else 'clear')
-
     def start_game(self, model):
             print("Starting new game of %s!" % model.name)
             print()
