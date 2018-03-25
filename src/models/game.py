@@ -6,8 +6,8 @@ from utils.getch import getch
 from utils.objs import dict_obj
 from utils.logger import Logger
 
-from obj.deck import Deck
-from obj.pile import Pile
+from models.deck import Deck
+from models.pile import Pile
 
 class Game(Validatable):
     def __init__(self, name, turn_based):

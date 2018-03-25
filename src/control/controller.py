@@ -6,9 +6,9 @@ from utils.getch import getch
 from utils.objs import dict_obj
 from utils.logger import Logger
 
-from obj.deck import Deck
-from obj.pile import Pile
-from obj.game import Game
+from models.deck import Deck
+from models.pile import Pile
+from models.game import Game
 
 class Controller(Validatable):
     def __init__(self, game, view):
@@ -19,7 +19,7 @@ class Controller(Validatable):
 
     def run(self):
         self.view.start_game(self.game)
-        self.game.enable_validation()
+        self.enable_validation()
         self.game_running = True
         if self.game.turn_based:
             self.game.turn = 0
@@ -47,7 +47,6 @@ class Controller(Validatable):
                 self.game_running = False;
                 break
 
-
             moves = [ copy_move(move) for move in self.game.moves if move.input == ch ]
 
         return moves
@@ -57,8 +56,9 @@ class Controller(Validatable):
             try:
                 value = input("Enter card index: ")
                 move.card = int(value) - 1
-            except (ValueError, EOFError):
+            except (ValueError, EOFError, KeyboardInterrupt):
                 raise ValidationException
+
             try:
                 self.game.move_card(move)
             except ValidationException:
@@ -76,7 +76,7 @@ class Controller(Validatable):
             # Prompt for a valid move from the player so they can complete their turn
             has_moved = False
             while not has_moved:
-                self.view.display_turn(self.game)                
+                self.view.display_turn(self.game)
                 try:
                     for move in self.get_input():
                         # If player's input corresponds to a move for the other player, don't allow it
@@ -88,7 +88,7 @@ class Controller(Validatable):
                     self.view.invalid_move(self.game)
 
             self.game.update_turn()
-            
+
         else:
             try:
                 [ self.init_and_move(move) for move in self.get_input() ]
