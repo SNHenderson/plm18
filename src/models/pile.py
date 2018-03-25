@@ -1,4 +1,4 @@
-from obj.collection import Collection
+from models.collection import Collection
 
 class Pile(Collection):
 

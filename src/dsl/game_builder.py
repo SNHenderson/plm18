@@ -1,9 +1,9 @@
-from obj.game import Game
-from obj.pile import Pile
-from obj.player import Player
-from obj.rank import Rank
-from obj.suit import Suit
-from obj.hand import Hand
+from models.game import Game
+from models.pile import Pile
+from models.player import Player
+from models.rank import Rank
+from models.suit import Suit
+from models.hand import Hand
 
 from random import shuffle
 

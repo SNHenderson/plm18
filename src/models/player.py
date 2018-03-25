@@ -1,6 +1,6 @@
 from utils.validation import validate
 from utils.validation import Validatable
-from obj.hand import Hand
+from models.hand import Hand
 
 class Player(Validatable):
     def __init__(self, name):

@@ -2,9 +2,9 @@ from itertools import product
 from itertools import chain
 from random import shuffle
 
-from obj.card import Card
-from obj.suit import Suit
-from obj.rank import Rank
+from models.card import Card
+from models.suit import Suit
+from models.rank import Rank
 
 class Deck(object):
     def __init__(self):
