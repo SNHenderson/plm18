@@ -7,5 +7,8 @@ class Pile(Collection):
         self.facedown = facedown
 
     def __str__(self):
-        top = "[X]" if self.facedown else str(self.cards[-1])
+        top = "[X]" if self.facedown else str(self.top_card())
         return "[%s:%s(%d)]" % (self.name, top, len(self.cards))
+
+    def top_card(self):
+    	return self.cards[-1]

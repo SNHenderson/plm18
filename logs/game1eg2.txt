@@ -1,0 +1,140 @@
+Starting game of Bartok
+Table:
+[discard:[FOUR HEARTS](1)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[ACE SPADES],[FOUR SPADES],[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[THREE SPADES]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[FOUR SPADES](2)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[ACE SPADES],[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[THREE SPADES]]
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[THREE SPADES](3)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[ACE SPADES],[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[ACE SPADES](4)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS]]
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[ACE SPADES](4)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[EIGHT HEARTS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[ACE SPADES](4)]
+[draw:[X](39)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS],[EIGHT SPADES]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[EIGHT HEARTS]]
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[ACE SPADES](4)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS],[EIGHT SPADES]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[EIGHT HEARTS],[TEN CLUBS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[EIGHT SPADES](5)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[EIGHT HEARTS],[TEN CLUBS]]
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[EIGHT HEARTS](6)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS],[EIGHT CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[TEN CLUBS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[EIGHT CLUBS](7)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[TEN CLUBS]]
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[TEN CLUBS](8)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[NINE CLUBS],[KING CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[NINE CLUBS](9)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[KING CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS]]
+
+Player Player2's turn:
+Moved the card!
+Table:
+[discard:[NINE CLUBS](9)]
+[draw:[X](37)]
+
+Players:
+Player1 [Player1's hand:[KING CLUBS]]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[ACE DIAMONDS]]
+
+Player Player1's turn:
+Moved the card!
+Table:
+[discard:[KING CLUBS](10)]
+[draw:[X](37)]
+
+Players:
+Player1 [Player1's hand:]
+Player2 [Player2's hand:[SEVEN DIAMONDS],[FIVE HEARTS],[QUEEN HEARTS],[THREE DIAMONDS],[ACE DIAMONDS]]
+
+Game end!
