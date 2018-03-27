@@ -23,11 +23,8 @@ class Action(Move):
         """
         A move from start collection to end is valid if:
 
-        1.) The start collection has the card, and the end doesn't
-        2.) The owner of the start collection is moving the card
-            to a collection available to them (that they own, or
-            is a table collection AKA no owner)
-        3.) The move satisfies the rule
+        1.) The start collection has the card and
+        2.) The move satisfies the rule
         """
         can_move = self.move.start.contains(self.card)
         should_move = self.move.rule(self.move, self.card)
