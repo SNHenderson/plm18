@@ -3,12 +3,13 @@ from utils.validation import validate
 from utils.validation import ValidationException
 
 from utils.getch import getch
-from utils.objs import dict_obj
 from utils.logger import Logger
 
 from models.deck import Deck
 from models.pile import Pile
 from models.game import Game
+from models.moves import Action
+from models.moves import Positions
 
 class Controller(Validatable):
     def __init__(self, game, view):
@@ -32,9 +33,6 @@ class Controller(Validatable):
                 self.view.end_game(self.game)
 
     def get_input(self):
-        def copy_move(m):
-            # TODO: Get rid of this when move is a proper class
-            return dict_obj(card=m.card, start=m.start, end=m.end, input=m.input, rule=m.rule)
         moves = []
 
         # Wait for input until a key that corresponds to an actual move is pressed
@@ -47,28 +45,28 @@ class Controller(Validatable):
                 self.game_running = False;
                 break
 
-            moves = [ copy_move(move) for move in self.game.moves if move.input == ch ]
+            moves = [ move for move in self.game.moves if move.key == ch ]
 
         return moves
 
-    def init_and_move(self, move):
-        if move.card is None:
+    def get_action(self, move):
+        if move.position is Positions.ANY:
             try:
                 value = input("Enter card index: ")
-                move.card = int(value) - 1
+                index = int(value) - 1
+                if index < 0:
+                    raise ValidationException
             except (ValueError, EOFError, KeyboardInterrupt):
                 raise ValidationException
+        elif move.position is Positions.FIRST:
+            index = 0
+        elif move.position is Positions.LAST:
+            index = -1
 
-            try:
-                self.game.move_card(move)
-            except ValidationException:
-                move.card = None
-                raise
+        if not move.start or len(move.start) <= index:
+            raise ValidationException
 
-            move.card = value
-        else:
-            self.game.move_card(move)
-            self.view.move_card(self.game)
+        return Action(move, move.start[index])
 
     @validate()
     def update_game(self):
@@ -82,7 +80,8 @@ class Controller(Validatable):
                         # If player's input corresponds to a move for the other player, don't allow it
                         if self.game.valid_turn(move):
                             raise ValidationException
-                        self.init_and_move(move)
+                        self.get_action(move).execute()
+                        self.view.move_card(self.game)
                     has_moved = True
                 except ValidationException:
                     self.view.invalid_move(self.game)
@@ -91,6 +90,7 @@ class Controller(Validatable):
 
         else:
             try:
-                [ self.init_and_move(move) for move in self.get_input() ]
+                [ self.get_action(move).execute() for move in self.get_input() ]
             except ValidationException as e:
                 self.view.invalid_move(self.game)
+
