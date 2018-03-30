@@ -26,11 +26,11 @@ class Collection(Validatable):
         assert player.owns(self)
         self.owner = player
 
-    def contains_card(self, card):
+    def contains(self, card):
         return card in self.cards
 
-    def size(self):
-        return len(self.cards) 
+    def __len__(self):
+        return len(self.cards)
 
     def __getitem__(self, key):
         return self.cards[key]
