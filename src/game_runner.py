@@ -36,4 +36,5 @@ def run():
     game_controller = Controller(game, view)
     game_controller.run()
 
-run()
+if __name__ == "__main__":
+    run()
