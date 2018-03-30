@@ -43,7 +43,8 @@ def build_bartok(game_rules):
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw, discard]
-    counts = [5, 5, 41, 1]
+    # counts = [5, 5, 41, 1]
+    counts = [1, 1, 49, 1]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
@@ -154,8 +155,7 @@ def build_speed(game_rules):
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw1, draw2, discard1, discard2, replace1, replace2]
-    # counts = [5, 5, 15, 15, 1, 1, 5, 5]
-    counts = [5, 5, 15, 15, 5, 5, 1, 1]
+    counts = [5, 5, 15, 15, 1, 1, 5, 5]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
