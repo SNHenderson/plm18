@@ -75,7 +75,7 @@ def parse(filename):
                 obj_list[idx][k] = obj_type[k](v)
                 line = r(file)
 
-`   # Parse header info
+    # Parse header info
     name_rule = "Name: " + Word(alphas)
     turn_rule = "Turn-based: " + oneOf(yn_rules)
     name = name_rule.parseString(r(file)) [-1]

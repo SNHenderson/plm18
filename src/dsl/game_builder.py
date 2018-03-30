@@ -5,6 +5,7 @@ from models.rank import Rank
 from models.suit import Suit
 from models.hand import Hand
 from models.moves import Move
+from models.events import Event
 from models.moves import Positions
 
 from random import shuffle
@@ -47,7 +48,12 @@ def build_bartok(game_rules):
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
 
-    def replenish_draw(draw):
+    def replenish_draw_trigger():
+        # Replenish the draw pile if empty
+        return not draw and not len(discard) < 2
+            
+
+    def replenish_draw_action(draw):
         """ Takes all the cards but the top one from the discard pile, shuffles them, and replenishes the
         draw pile with this set of cards
         """
@@ -70,16 +76,17 @@ def build_bartok(game_rules):
         return any([appropriate_card(top_card, h) for h in hand])
 
     def valid_draw(move, card):
-        # Replenish the draw pile if empty
-        if not draw:
-            if len(discard) < 2:
-                return False
-            replenish_draw(move.start)
-
         return not has_valid_move(discard, move.end)
 
     def valid_discard(move, card):
         return appropriate_card(discard[-1], card)
+
+    events = [
+        # event for replenishing the draw pile
+        [ replenish_draw_trigger, replenish_draw_action, draw ]
+    ]
+
+    [ game.add_event(Event(*e)) for e in events ]
 
     moves = [
         # move for player one playing a card on the first pile
@@ -147,7 +154,8 @@ def build_speed(game_rules):
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw1, draw2, discard1, discard2, replace1, replace2]
-    counts = [5, 5, 15, 15, 1, 1, 5, 5]
+    # counts = [5, 5, 15, 15, 1, 1, 5, 5]
+    counts = [5, 5, 15, 15, 5, 5, 1, 1]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
@@ -170,19 +178,16 @@ def build_speed(game_rules):
         return any([appropriate_rank(Rank[top_card.rank].value, Rank[h.rank].value) for h in person.hand])
 
     def valid_replacement(move, card):
-        print("Attempt to draw from the replacement piles")
-
-        # Replenish the replace piles if they're depleted
-        if not replace1:
-            replenish_replace()
-
         """ Returns true if neither player has a card in hand that can be discarded
             into either discard pile
         """
         return all([not has_valid_move(d, p) for d in [discard1, discard2] for p in [p1, p2]]) \
                or len(replace1) != len(replace2)
 
-    def replenish_replace():
+    def replenish_replace_trigger():
+        return not replace1
+
+    def replenish_replace_action(replace1, replace2, discard1, discard2):
         """ Replenishes the replace piles by taking the bottom 5 cards from discard1 and discard2
         """
         replace1.cards += discard1[:5]
@@ -196,18 +201,20 @@ def build_speed(game_rules):
     def valid_discard(move, card):
         try:
             played_card_rank = Rank[card.rank].value
-            print("Player is attempting to play card (from %s) of rank %d " % (move.start.name, played_card_rank))
-
             top_card = move.end[-1]
             top_card_rank = Rank[top_card.rank].value
-            print("Top card of selected pile (%s) has rank %d " % (move.end.name, top_card_rank))
-
             return appropriate_rank(top_card_rank, played_card_rank)
 
         # This is used to handle the case when a player's hand is empty
         except IndexError:
             return False
 
+    events = [
+        # event for replenishing the draw pile
+        [ replenish_replace_trigger, replenish_replace_action, replace1, replace2, discard1, discard2 ]
+    ]
+
+    [ game.add_event(Event(*e)) for e in events ]
 
     moves = [
         # move for player one playing a card on the first pile

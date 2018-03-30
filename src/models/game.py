@@ -16,6 +16,7 @@ class Game(Validatable):
         self.players = []
         self.win_conditions = []
         self.moves = []
+        self.events = []
         self.collections = set()
         self.deck = Deck()
         self.turn_based = turn_based
@@ -35,6 +36,10 @@ class Game(Validatable):
     @validate()
     def add_move(self, move):
         self.moves.append(move)
+
+    @validate()
+    def add_event(self, event):
+        self.events.append(event)    
 
     def collections_for(self, player):
         return [ c for c in self.collections if player.owns(c) ]
