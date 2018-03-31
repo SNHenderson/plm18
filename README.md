@@ -9,7 +9,13 @@ Henderson,Samuel
 Link: https://github.com/SNHenderson/plm18/tree/master
 
 ## Installation
-No installation is required outside of cloning this repository.
+
+This project uses several Python libraries that need to be installed 
+
+### Dependencies:
+- pyparsing
+
+After cloning this repo, these can be installed via `pip install -r requirements.txt` using the requirements.txt file in the root.
 
 ## Running
 
