@@ -73,7 +73,6 @@ def build_bartok(game_rules):
         """ Returns true if any card in hand can be discarded onto pile
         """
         top_card = pile[-1]
-
         return any([appropriate_card(top_card, h) for h in hand])
 
     def valid_draw(move, card):
@@ -210,7 +209,7 @@ def build_speed(game_rules):
             return False
 
     events = [
-        # event for replenishing the draw pile
+        # event for replenishing the replace piles
         [ replenish_replace_trigger, replenish_replace_action, replace1, replace2, discard1, discard2 ]
     ]
 
