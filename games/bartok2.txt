@@ -18,7 +18,7 @@ pile1:
 pile0:
     name: draw
     facedown: yes
-    size: 41
+    size: 31
     owner: all
 pile2:
     name: replace1
@@ -34,7 +34,7 @@ pile3:
 Number of rules: 1
 rule0:
     name: validDiscard
-    expr: card.rank == discard.top.rank
+    expr: card.rank == discard.last.rank
 
 Number of moves: 1
 move0:
