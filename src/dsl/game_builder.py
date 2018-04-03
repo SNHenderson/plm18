@@ -10,10 +10,82 @@ from models.moves import Positions
 
 from random import shuffle
 
-def build_game(game_rules):
-    game = Game("Sample", false)
+def build_game(gd):
+    game = Game(gd.name, gd.turn_based)
+    cards = game.deck.shuffled()
 
-    # TODO: Configure game based on the abstract game definition
+    # First, build the players and map the names to the instances
+    namespace = {
+        "first": 0,
+        "last": -1,
+        "any": Positions.ANY
+    }
+
+    players = []
+    for p in gd.players:
+
+        # Build the players
+        players.append(Player(p['name']))
+        namespace[p['name']] = players[-1]
+
+        # Populate their hands
+        size = p['hand.size']
+        players[-1].hand.restrict(lambda self: len(self.hand) <= size)
+        [ players[-1].hand.cards.append(cards.pop(0)) for k in range(size) ]
+
+        # Register with the game
+        game.add_player(players [-1])
+
+    print(namespace)
+
+    # Second, build the piles and map the names to the instances
+    piles = []
+    for p in gd.piles:
+
+        # Build the piles
+        piles.append(Pile(p['name'], p['facedown']))
+        namespace[p['name']] = piles [-1]
+
+        # Populate them
+        size = p['size']
+        [ piles[-1].cards.append(cards.pop(0)) for k in range(size) ]
+
+        # Register with the game
+        game.add_collection(piles [-1])
+
+    print(namespace)
+
+    # At this point, all cards should be distributed
+    assert len(cards) == 0
+
+    # Third, build the rules and map the names to the instances
+    rules = []
+
+    def replace_keywords(words):
+        for i in range(len(words)):
+            try:
+                words [i] = namespace[words [i]]
+            except KeyError:
+                continue
+        print(words)
+
+    def build_rule(expr):
+        # Tokenize
+        toks = [ e.split(".") for e in expr.split(" ") ]
+        print(toks)
+
+
+        # Look for back-references, replace them w. actual refs
+        keywords = list(namespace.keys())
+        for t in toks:
+            if any([ k in t for k in keywords ]):
+                replace_keywords(t)
+        
+        # No idea where to go from here ...
+        
+    # for r in gd.rules:
+    #     rules.append(build_rule(r['expr']))
+    #     namespace[r['name']] = rules [-1]
 
     return game
 

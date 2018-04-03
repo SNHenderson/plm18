@@ -18,15 +18,30 @@ pile1:
 pile0:
     name: draw
     facedown: yes
-    size: 41
+    size: 31
     owner: all
 pile2:
     name: replace1
     facedown: yes
     size: 5
-    owner: p0
+    owner: Player1
 pile3:
     name: replace2
     facedown: yes
     size: 5
-    owner: p1
+    owner: Player2
+
+Number of rules: 1
+rule0:
+    name: validDiscard
+    expr: card.rank == discard.last.rank
+
+Number of moves: 1
+move0:
+    where: any
+    from: Player1.hand
+    to: discard
+    when: q
+    how: validDiscard
+
+Win condition: Player1.hand.size == 0 or Player2.hand.size == 0

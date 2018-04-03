@@ -12,6 +12,9 @@ yn_rules = "yes | no"
 # Legal digits
 digits = "0 1 2 3 4 5 6 7 8 9"
 
+# Special chars (for rules)
+specials = "== ."
+
 # Identifies a Player in config file
 player_id = "p" + oneOf(digits) + ":"
 
@@ -38,13 +41,48 @@ pile = {
 # Legal values for Pile properties
 pile_prop_rules = " | ".join(list(pile.keys()))
 
-class GameDefinition(object):
-    pass
+# Identifies a Rule in config file
+rule_id = "rule" + oneOf(digits) + ":"
 
+# Properties of a Rule
+rule = {
+    "name": str,
+    "expr": str
+}
+
+# Legal values for Rule properties 
+rule_prop_rules = " | ".join(list(rule.keys()))
+
+# Identifies a Move in config file
+move_id = "move" + oneOf(digits) + ":"
+
+# Properties of a Move
+move = {
+    "where": str,
+    "from": str,
+    "to": str,
+    "when": str,
+    "how": str
+}
+
+# Legal values for Move properties 
+move_prop_rules = " | ".join(list(move.keys()))
+
+class GameDefinition(object):
+    def __init__(self):
+        self.name = ""
+        self.turn_based = ""
+        self.players = []
+        self.piles = []
+        self.rules = []
+        self.moves = []
+        self.win_cond = ""
 
 def parse(filename):
     # TODO: read contents and construct a game
     file = open(filename, 'r')
+
+    gd = GameDefinition()
 
     def r(f):
         return f.readline()
@@ -78,8 +116,8 @@ def parse(filename):
     # Parse header info
     name_rule = "Name: " + Word(alphas)
     turn_rule = "Turn-based: " + oneOf(yn_rules)
-    name = name_rule.parseString(r(file)) [-1]
-    turn_based = yn_as_boolean(turn_rule.parseString(r(file)) [-1])
+    gd.name = name_rule.parseString(r(file)) [-1]
+    gd.turn_based = yn_as_boolean(turn_rule.parseString(r(file)) [-1])
 
     # Skip blank line after header
     r(file)
@@ -87,21 +125,52 @@ def parse(filename):
     # Get number of players
     player_count_val_rule = "Number of players: " + Word(digits)
     player_count = int(player_count_val_rule.parseString(r(file)) [-1])
-    print("Player count: %d\n" % player_count)
+    # print("Player count: %d\n" % player_count)
 
     # Parse player config
-    player_defs = [None] * player_count
+    gd.players = [None] * player_count
     player_prop_val_rule = oneOf(player_prop_rules) + ": " + Word(digits + alphas)
-    get_obj_defns(player_defs, player_id, player_prop_val_rule, player)
-    print(player_defs)
+    get_obj_defns(gd.players, player_id, player_prop_val_rule, player)
+    # print(gd.players)
+    # print("\n")
 
     # Get number of piles
     pile_count_val_rule = "Number of piles: " + Word(digits)
     pile_count = int(pile_count_val_rule.parseString(r(file)) [-1])
-    print("Pile count: %d\n" % pile_count)
+    # print("Pile count: %d\n" % pile_count)
 
     # Parse pile config
-    pile_defs = [None] * pile_count
+    gd.piles = [None] * pile_count
     pile_prop_val_rule = oneOf(pile_prop_rules) + ": " + Word(alphas + digits)
-    get_obj_defns(pile_defs, pile_id, pile_prop_val_rule, pile)
-    print(pile_defs)
+    get_obj_defns(gd.piles, pile_id, pile_prop_val_rule, pile)
+    # print(gd.piles)
+    # print("\n")
+
+    # Get number of rules
+    rule_count_val_rule = "Number of rules: " + Word(digits)
+    rule_count = int(rule_count_val_rule.parseString(r(file)) [-1])
+    # print("Rule count: %d\n" % rule_count)
+
+    # Parse rule config
+    gd.rules = [None] * rule_count
+    rule_prop_val_rule = oneOf(rule_prop_rules) + ": " + Word(alphas + digits + specials)
+    get_obj_defns(gd.rules, rule_id, rule_prop_val_rule, rule)
+    # print(gd.rules)
+    # print("\n")
+
+    # Get number of moves
+    move_count_val_rule = "Number of moves: " + Word(digits)
+    move_count = int(move_count_val_rule.parseString(r(file)) [-1])
+    # print("Move count: %d\n" % move_count)
+
+    # Parse move config
+    gd.moves = [None] * move_count
+    move_prop_val_rule = oneOf(move_prop_rules) + ": " + Word(alphas + digits + ".")
+    get_obj_defns(gd.moves, move_id, move_prop_val_rule, move)
+    # print(gd.moves)
+
+    # Get win condition
+    win_cond_rule = "Win condition: " + Word(alphas + digits + specials)
+    gd.win_cond = win_cond_rule.parseString(r(file)) [-1]
+
+    return gd
