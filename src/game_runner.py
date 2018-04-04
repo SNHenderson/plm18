@@ -11,8 +11,9 @@ def run():
     #args = arg_parser.parse()
 
     # parse game file
-    game_rules = game_parser.parse(args.game)
-    game_parser.parse("games/bartok2.txt")
+    #game_rules = game_parser.parse(args.game)
+    gd = game_parser.parse("games/bartok2.txt")
+    game_builder.build_game(gd)
 
     # create game
     # game = game_builder.build_game(game_rules)

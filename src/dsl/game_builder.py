@@ -25,7 +25,7 @@ def build_game(gd):
 
         # Build the players
         players.append(Player(p['name']))
-        namespace[p['name']] = players[-1]
+        namespace[p['name']] = "players[" + str(len(players) - 1) + "]"
 
         # Populate their hands
         size = p['hand.size']
@@ -43,7 +43,7 @@ def build_game(gd):
 
         # Build the piles
         piles.append(Pile(p['name'], p['facedown']))
-        namespace[p['name']] = piles [-1]
+        namespace[p['name']] = "piles[" + str(len(piles) - 1) + "]"
 
         # Populate them
         size = p['size']
@@ -73,19 +73,33 @@ def build_game(gd):
         toks = [ e.split(".") for e in expr.split(" ") ]
         print(toks)
 
-
         # Look for back-references, replace them w. actual refs
-        keywords = list(namespace.keys())
         for t in toks:
-            if any([ k in t for k in keywords ]):
-                replace_keywords(t)
+            replace_keywords(t)
         
-        # No idea where to go from here ...
-        
-    # for r in gd.rules:
-    #     rules.append(build_rule(r['expr']))
-    #     namespace[r['name']] = rules [-1]
+        # Build a lambda expression
+        print(toks)
+        lambda_str = ""
+        for t in toks:
+            lambda_str += t[0]
+            for k in range(1, len(t)):
+                if type(t[k]) != str:
+                    lambda_str += "[" + str(t[k]) + "]"
+                else:
+                    lambda_str += "['" + str(t[k]) + "']"
 
+        print(lambda_str)
+        def f(card, players, piles):
+            return eval(lambda_str)
+        return f
+        
+    for r in gd.rules:
+        rules.append(build_rule(r['expr']))
+        namespace[r['name']] = "rules[" + str(len(rules) - 1) + "]"
+
+    print("Player's card: %s" % players[0].hand.cards[0])
+    print("Discard: %s" % piles[1][-1])
+    print(rules[1](players[0].hand.cards[0], players, piles))
     return game
 
 def build_bartok(game_rules):

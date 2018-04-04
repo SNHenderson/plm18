@@ -5,6 +5,9 @@ class Card(object):
         self.suit = suit
         self.rank = rank
 
+    def __getitem__(self, key):
+        return self.__dict__[key]
+
     def __eq__(self, other):
         same_suit = self.suit == other.suit
         same_rank = self.rank == other.rank

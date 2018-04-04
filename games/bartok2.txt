@@ -31,10 +31,13 @@ pile3:
     size: 5
     owner: Player2
 
-Number of rules: 1
+Number of rules: 2
 rule0:
     name: validDiscard
     expr: card.rank == discard.last.rank
+rule1:
+    name: validDraw
+    expr: card.rank != discard.last.rank
 
 Number of moves: 1
 move0:
