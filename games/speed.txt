@@ -76,3 +76,14 @@ Win Condition: Player has an empty pile
 
 # Do we ask the users to associate discarding with specific keys?
 # Would probably make things simpler
+
+pile2:
+    name: replace1
+    facedown: yes
+    size: 5
+    owner: Player1
+pile3:
+    name: replace2
+    facedown: yes
+    size: 5
+    owner: Player2

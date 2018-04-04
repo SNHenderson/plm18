@@ -1,6 +1,7 @@
-from pyparsing import Word, alphas, oneOf
+from pyparsing import Word, alphas, alphanums, oneOf, printables, delimitedList, Group
 from models.player import Player
 from models.game import Game
+from utils.objs import dict_obj
 
 # Converts yes/no strings to True/False
 def yn_as_boolean(str):
@@ -21,13 +22,14 @@ player_id = "p" + oneOf(digits) + ":"
 # Properties of a Player
 player = {
     "name": str,
-    "hand.size": int
+    "hand_size": int,
+    "collection_count": int
 }
 
 # Legal values for Player properties
 player_prop_rules = " | ".join(list(player.keys()))
 
-# Identifies a Ple in config file
+# Identifies a Pile in config file
 pile_id = "pile" + oneOf(digits) + ":"
 
 # Properties of a Pile
@@ -72,11 +74,13 @@ class GameDefinition(object):
     def __init__(self):
         self.name = ""
         self.turn_based = ""
+        self.collection_count = 0
+        self.win_condition = ""
         self.players = []
         self.piles = []
         self.rules = []
         self.moves = []
-        self.win_cond = ""
+        
 
 def parse(filename):
     # TODO: read contents and construct a game

@@ -29,7 +29,7 @@ def build_game(gd):
         namespace[p['name']] = players[-1]
 
         # Populate their hands
-        size = p['hand.size']
+        size = p['hand_size']
         players[-1].hand.restrict(lambda self: len(self.hand) <= size)
         [ players[-1].hand.cards.append(cards.pop(0)) for k in range(size) ]
 
@@ -115,7 +115,8 @@ def build_bartok(game_rules):
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw, discard]
-    counts = [5, 5, 41, 1]
+    # counts = [5, 5, 41, 1]
+    counts = [1, 1, 49, 1]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
@@ -144,7 +145,6 @@ def build_bartok(game_rules):
         """ Returns true if any card in hand can be discarded onto pile
         """
         top_card = pile[-1]
-
         return any([appropriate_card(top_card, h) for h in hand])
 
     def valid_draw(move, card):
@@ -226,8 +226,7 @@ def build_speed(game_rules):
 
     cards = game.deck.shuffled()
     collections = [p1.hand, p2.hand, draw1, draw2, discard1, discard2, replace1, replace2]
-    # counts = [5, 5, 15, 15, 1, 1, 5, 5]
-    counts = [5, 5, 15, 15, 5, 5, 1, 1]
+    counts = [5, 5, 15, 15, 1, 1, 5, 5]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
@@ -282,7 +281,7 @@ def build_speed(game_rules):
             return False
 
     events = [
-        # event for replenishing the draw pile
+        # event for replenishing the replace piles
         [ replenish_replace_trigger, replenish_replace_action, replace1, replace2, discard1, discard2 ]
     ]
 

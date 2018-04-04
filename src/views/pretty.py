@@ -24,8 +24,12 @@ class PrettyView(BaseView):
         print()
 
         print("Players:")
-        for p in model.players:
-            print("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
+        if model.turn_based:
+        	p = model.players[model.turn]
+        	print("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
+        else:
+	        for p in model.players:
+	            print("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
         print()
 
     def move_card(self, model):

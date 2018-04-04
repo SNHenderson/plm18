@@ -27,7 +27,7 @@ class Controller(Validatable):
         while self.game_running:
             self.view.render(self.game)
             self.update_game()
-            if(self.game.win()):
+            if self.game.win():
                 self.game_running = False
                 self.view.render(self.game)
                 self.view.end_game(self.game)
@@ -93,6 +93,7 @@ class Controller(Validatable):
                 [ self.get_action(move).execute() for move in self.get_input() ]
             except ValidationException as e:
                 self.view.invalid_move(self.game)
+        
         # Check and run any events:
         [ event.run() for event in self.game.events ] 
 

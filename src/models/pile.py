@@ -12,3 +12,6 @@ class Pile(Collection):
 
     def top_card(self):
     	return self.cards[-1]
+
+    def bottom_card(self):
+    	return self.cards[0]    	

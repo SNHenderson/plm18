@@ -56,4 +56,3 @@ class Game(Validatable):
     def valid_turn(self, move):
         current_player = self.players[self.turn]
         return move.start.owner != current_player and move.end.owner != current_player
-
