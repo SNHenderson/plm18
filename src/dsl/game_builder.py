@@ -13,7 +13,7 @@ def build_game(gd):
     game = Game(gd.name, gd.turn_based)
     cards = game.deck.shuffled()
 
-    # First, build the players and map the names to the instances
+    # Dictionary mapping special keywords to their meanings
     namespace = {
         "first": 0,
         "last": -1,
@@ -25,6 +25,8 @@ def build_game(gd):
 
         # Build the players
         players.append(Player(p['name']))
+
+        # This way, "Player1" maps to the right instance of Player in the `players` list
         namespace[p['name']] = "players[" + str(len(players) - 1) + "]"
 
         # Populate their hands
@@ -43,6 +45,8 @@ def build_game(gd):
 
         # Build the piles
         piles.append(Pile(p['name'], p['facedown']))
+
+        # This way, "discard" maps to the right instance of Pile in the `piles` list
         namespace[p['name']] = "piles[" + str(len(piles) - 1) + "]"
 
         # Populate them
@@ -60,6 +64,7 @@ def build_game(gd):
     # Third, build the rules and map the names to the instances
     rules = []
 
+    # Replace all keywords in the expression with their actual meanings
     def replace_keywords(words):
         for i in range(len(words)):
             try:
@@ -97,6 +102,7 @@ def build_game(gd):
         rules.append(build_rule(r['expr']))
         namespace[r['name']] = "rules[" + str(len(rules) - 1) + "]"
 
+    # Test the rule
     print("Player's card: %s" % players[0].hand.cards[0])
     print("Discard: %s" % piles[1][-1])
     print(rules[1](players[0].hand.cards[0], players, piles))
