@@ -6,8 +6,10 @@ from models.suit import Suit
 from models.hand import Hand
 from models.moves import Move
 from models.events import Event
+from models.rules import Rule
 from models.moves import Positions
 from utils.objs import dict_obj
+from collections import OrderedDict
 
 from random import shuffle
 
@@ -94,17 +96,15 @@ def build_abstract(game_data):
     namespace = {
         "first": "bottom_card",
         "last": "top_card",
-        "any": Positions.ANY
+        "all": Positions.ANY,
+        "top": Positions.LAST
     }
 
     game = Game(game_data.name, game_data.turn_based)
     game.restrict(lambda self: len(self.collections) == game_data.collections)
 
-    # Game ends when either player runs out of cards
-    game.add_win_condition(game_data.win_condition)
-
     # Players
-    players = {}
+    players = OrderedDict()
     for p in game_data.players:
         player = Player(p.get('name'))
         player.restrict(lambda self: len(self.collections) == p.get('collection_count'))
@@ -117,7 +117,7 @@ def build_abstract(game_data):
         namespace[player.name] = player
 
     # Draw and discard piles
-    piles = {}
+    piles = OrderedDict()
     for p in game_data.piles:
         pile = Pile(p.get('name'), p.get('facedown'))
         piles[p.get('name')] = pile
@@ -137,8 +137,10 @@ def build_abstract(game_data):
     for player in game_data.players:
         counts.append(player.get('hand_size'))
 
-    for pile in game_data.piles:
-        counts.append(pile.get('size'))
+    #for pile in game_data.piles:
+    #    counts.append(pile.get('size'))
+    counts.append(0)
+    counts.append(42)
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
@@ -149,101 +151,169 @@ def build_abstract(game_data):
     def build_rule(expr):
         # Tokenize
         toks = [ e.split(".") for e in expr.split(" ") ]
-        replaced = []
-        for t in toks:
-            
-            replaced.append(replace_keywords(t))
-        return replaced
+        return [ replace_keywords(t) for t in toks ]
 
-    rules = {}
+    rules = OrderedDict()
 
     for rule in game_data.rules:
         rules[rule.get('name')] = build_rule(rule.get('expr'))
         namespace[rule.get('name')] = rules[rule.get('name')]
 
-    def checkRule(name, card):
-        ruleList = rules.get(name)
+    def check_rule(rule_list, move, card):
+        #rule_list = rules.get(name)
         loc = []
-        for l in ruleList:
+        for l in rule_list:
             if len(l) > 1:
+                if l[0] == "for":
+                    if l[1] == "move":
+                        for card in getattr(move, l[2]):
+                            loc.append(check_rule(l[3], move, card))
+                if l[0] == "rules" :
+                    loc.append(check_rule(l[1], move, card))
                 if l[0] == "card" :
-                    if l[1] == "rank" :
-                        loc.append(card.rank)
-                    elif l[1] == "suit" :    
-                        loc.append(card.suit)
+                    loc.append(getattr(card, l[1]))
                 elif type(l[0]) is Pile :
-                    try:
-                        func = getattr(l[0], l[1])
-                        if l[2] == "rank" :
-                            loc.append(func().rank)
-                        elif l[2] == "suit" :    
-                            loc.append(func().suit)
-                    except AttributeError:
-                        pass
+                    func = getattr(l[0], l[1])
+                    loc.append(getattr(func(), l[2]))
+            elif l[0] == "=":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 == l2)
+            elif l[0] == "or":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 or l2)    
+            elif l[0] == "not":
+                l1 = loc.pop()
+                loc.append(not l1)
+            elif l[0] == "any":
+                loc = [any(loc)]
+            #else:
+                #loc.append(l[0])
+        return loc[0]
+
+    def build_move(moves):
+        for key, value in moves.items():
+            moves[key] = replace_keywords(value.split("."))
+        return moves
+
+    moves = []
+
+    for m in game_data.moves:
+        m = build_move(m)
+        for key, value in m.items():
+            if len(value) > 1:
+                for l in value[1:]:
+                    m[key] = getattr(m[key][0], l)
+            elif type(value) is list:
+                m[key] = value[0]
+        rule = Rule(m.get('how'), check_rule)
+        moves.append([m.get('where'), m.get('from'), m.get('to'), m.get('when'), rule.check])
+    
+    [ game.add_move(Move(*m)) for m in moves ]
+
+    def build_event(events):
+        for key, value in events.items():
+            toks = [ e.split(".") for e in value.split(" ") ]
+            events[key] = [ replace_keywords(t) for t in toks ]
+        return events
+
+    events = [build_event(e) for e in game_data.events]
+
+    for event in events:
+        for key, lis in event.items():
+            for value in lis:
+                if len(value) > 1:
+                    for l in value[1:]:
+                        value[0] = getattr(value[0], l)
+                    del value[1:]
+    
+    def checkEvent(trigger):
+        loc = []
+        for l in trigger:
+            if callable(l[0]):
+                loc.append(l[0]())
+            elif l[0].isdigit():
+                loc.append(int(l[0]))
+            elif l[0] == "=":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 == l2)
+            elif l[0] == "<":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l2 < l1)
+            elif l[0] == "or":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 or l2)    
+            elif l[0] == "and":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 and l2)    
+            elif l[0] == "not":
+                l1 = loc.pop()
+                loc.append(not l1)
+            elif l[0] == "any":
+                loc = [any(loc)]
             else:
                 loc.append(l[0])
-        print(loc)
 
+        return loc[0]
 
-    # def appropriate_card(top_card, played_card):
-    #     """ Verifies that the card to be played is of same rank or suit as top_card
-    #     """
-    #     return Rank[top_card.rank].value == Rank[played_card.rank].value or \
-    #            Suit[top_card.suit].value == Suit[played_card.suit].value
-
-    # def has_valid_move(pile, hand):
-    #     """ Returns true if any card in hand can be discarded onto pile
-    #     """
-    #     top_card = pile[-1]
-    #     return any([appropriate_card(top_card, h) for h in hand])
-
-    # def valid_draw(move, card):
-    #     return not has_valid_move(discard, move.end)
-
-    # def valid_discard(move, card):
-    #     return appropriate_card(discard[-1], card)
-
-    # def replenish_draw_trigger():
-    #     # Replenish the draw pile if empty
-    #     return not draw and not len(discard) < 2
-
-    # def replenish_draw_action(draw):
-    #     """ Takes all the cards but the top one from the discard pile, shuffles them, and replenishes the
-    #     draw pile with this set of cards
-    #     """
-    #     draw.cards = discard[:-1]
-    #     shuffle(draw.cards)
-    #     del discard[:-1]
+    def doEvent(action):
+        loc = []
+        for l in action:
+            if callable(l[0]) and len(loc) > 0:
+                l[0](*loc)
+                loc = []
+            else:
+                loc.append(l[0])
     
-    # events = [
-    #     # event for replenishing the draw pile
-    #     [ replenish_draw_trigger, replenish_draw_action, draw ]
-    # ]
+    [ game.add_event(Event(lambda : checkEvent(e.get('trigger')), lambda : doEvent(e.get('action')))) for e in events ]    
 
-    # [ game.add_event(Event(*e)) for e in events ]
+    def build_win(win_condition):
+        toks = [ e.split(".") for e in win_condition.split(" ") ]
+        return [ replace_keywords(t) for t in toks ]
 
-    # moves = [
-    #     # move for player one playing a card on the first pile
-    #     [ Positions.ANY, p1.hand, discard, "q", valid_discard ],
+    win_condition = build_win(game_data.win_condition)
+    for value in win_condition:
+        if len(value) > 1:
+            for l in value[1:]:
+                value[0] = getattr(value[0], l)
+            del value[1:]
 
-    #     # move for player one drawing a card
-    #     [ Positions.LAST, draw, p1.hand, "e", valid_draw ],
+    def checkWin(win_list):
+        loc = []
+        for l in win_list:
+            if callable(l[0]):
+                loc.append(l[0]())
+            elif l[0].isdigit():
+                loc.append(int(l[0]))
+            elif l[0] == "=":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 == l2)
+            elif l[0] == "or":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 or l2)    
+            elif l[0] == "not":
+                l1 = loc.pop()
+                loc.append(not l1)
+            elif l[0] == "any":
+                loc = [any(loc)]
+            else:
+                loc.append(l[0])
 
-    #     # move for player two playing a card on the first pile
-    #     [ Positions.ANY, p2.hand, discard, "i", valid_discard ],
+        return loc[0]
 
-    #     # move for player two drawing a card
-    #     [ Positions.LAST, draw, p2.hand, "p", valid_draw]
-    # ]
-
-    # [ game.add_move(Move(*m)) for m in moves ]
+    game.add_win_condition(lambda self: checkWin(win_condition))
 
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):
         for _ in range(count):
             collection.add(cards.pop(0))
     assert len(cards) == 0
-
-    checkRule("validDiscard", piles.get('discard').top_card())
 
     return game

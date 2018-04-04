@@ -14,4 +14,11 @@ class Pile(Collection):
     	return self.cards[-1]
 
     def bottom_card(self):
-    	return self.cards[0]    	
+    	return self.cards[0]    
+
+    def facedown_cards(self):
+        return self.cards[:-1]	
+
+    def replenish(self, pile):
+        self.cards = pile[:-1]
+        del pile[:-1]

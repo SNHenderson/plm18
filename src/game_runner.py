@@ -4,6 +4,7 @@ from dsl import abstract_builder
 from dsl import game_parser
 from models import collection
 from utils import arg_parser
+from views.view import View
 from views.log import LogView
 from views.pretty import PrettyView
 
@@ -26,6 +27,7 @@ def run():
     #     game = game_builder.build_speed(None)
 
     # view = LogView(args.log) if args.log else PrettyView()
+    view = View()
     # Uncomment this line to play Speed
     #game = game_builder.build_speed(None)
 
@@ -36,8 +38,8 @@ def run():
     #game.run()
 
     # start game loop
-    #game_controller = Controller(game, view)
-    #game_controller.run()
+    game_controller = Controller(game, view)
+    game_controller.run()
 
 if __name__ == "__main__":
     run()

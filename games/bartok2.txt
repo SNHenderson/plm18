@@ -26,20 +26,43 @@ pile0:
 Number of rules: 3
 rule0:
     name: validDiscard
-    expr: card.rank = discard.last.rank or card.suit = discard.last.suit
+    expr: card.rank discard.last.rank = card.suit discard.last.suit = or
 rule1:
     name: hasValidMove
-    expr: any validDiscard for card in hand
+    expr: for.move.end.validDiscard any
 rule2:
     name: validDraw
-    expr: not hasValidMove
+    expr: rules.hasValidMove not
 
-Number of moves: 1
+Number of moves: 4
 move0:
-    where: any
+    where: all
     from: Player1.hand
     to: discard
     when: q
     how: validDiscard
+move1:
+    where: top
+    from: draw
+    to: Player1.hand
+    when: e
+    how: validDraw
+move2:
+    where: all
+    from: Player2.hand
+    to: discard
+    when: i
+    how: validDiscard
+move3:
+    where: top
+    from: draw
+    to: Player2.hand
+    when: p
+    how: validDraw
 
-Win condition: Player1.hand.size == 0 or Player2.hand.size == 0
+Number of events: 1
+event0:
+    trigger: draw.size 0 = discard.size 2 < not and
+    action: discard draw.replenish draw.cards shuffle
+
+Win condition: Player1.hand.size 0 = Player2.hand.size 0 = or

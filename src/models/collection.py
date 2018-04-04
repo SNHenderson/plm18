@@ -29,6 +29,9 @@ class Collection(Validatable):
     def contains(self, card):
         return card in self.cards
 
+    def size(self):
+        return self.__len__()
+
     def __len__(self):
         return len(self.cards)
 

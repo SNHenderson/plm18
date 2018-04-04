@@ -13,8 +13,8 @@ yn_rules = "yes | no"
 # Legal digits
 digits = "0 1 2 3 4 5 6 7 8 9"
 
-# Special chars (for rules)
-specials = "== ."
+# Special chars 
+specials = "= . <"
 
 # Identifies a Player in config file
 player_id = "p" + oneOf(digits) + ":"
@@ -70,6 +70,19 @@ move = {
 # Legal values for Move properties 
 move_prop_rules = " | ".join(list(move.keys()))
 
+# Identifies a Event in config file
+event_id = "event" + oneOf(digits) + ":"
+
+# Properties of a Event
+event = {
+    "trigger": str,
+    "action": str,
+    "params": str
+}
+
+# Legal values for Event properties 
+event_prop_rules = " | ".join(list(event.keys()))
+
 class GameDefinition(object):
     def __init__(self):
         self.name = ""
@@ -80,6 +93,7 @@ class GameDefinition(object):
         self.piles = []
         self.rules = []
         self.moves = []
+        self.events = []
         
 
 def parse(filename):
@@ -173,8 +187,17 @@ def parse(filename):
     get_obj_defns(gd.moves, move_id, move_prop_val_rule, move)
     # print(gd.moves)
 
+     # Get number of events
+    event_count_val_rule = "Number of events: " + Word(digits)
+    event_count = int(event_count_val_rule.parseString(r(file)) [-1])
+
+    # Parse event config
+    gd.events = [None] * event_count
+    event_prop_val_rule = oneOf(event_prop_rules) + ": " + Word(alphas + digits + specials)
+    get_obj_defns(gd.events, event_id, event_prop_val_rule, event)
+
     # Get win condition
     win_cond_rule = "Win condition: " + Word(alphas + digits + specials)
-    gd.win_cond = win_cond_rule.parseString(r(file)) [-1]
+    gd.win_condition = win_cond_rule.parseString(r(file)) [-1]
 
     return gd
