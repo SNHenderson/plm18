@@ -29,7 +29,7 @@ def build_game(gd):
         namespace[p['name']] = players[-1]
 
         # Populate their hands
-        size = p['hand.size']
+        size = p['hand_size']
         players[-1].hand.restrict(lambda self: len(self.hand) <= size)
         [ players[-1].hand.cards.append(cards.pop(0)) for k in range(size) ]
 
