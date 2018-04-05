@@ -62,7 +62,7 @@ move3:
 
 Number of events: 1
 event0:
-    trigger: (draw.size 0 =) (discard.size 2 < not) and
+    trigger: (draw.size 0 =) (discard.size 1 >) and
     action: discard draw.replenish draw.cards shuffle
 
 Win condition: (Player1.hand.size 0 =) (Player2.hand.size 0 =) or

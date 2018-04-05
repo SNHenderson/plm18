@@ -1,3 +1,4 @@
+from random import shuffle
 from models.game import Game
 from models.pile import Pile
 from models.player import Player
@@ -6,86 +7,58 @@ from models.suit import Suit
 from models.hand import Hand
 from models.moves import Move
 from models.events import Event
+from models.rules import Rule
 from models.moves import Positions
-
+from models.collection import Collection
+from dsl.utils import *
+from utils.objs import dict_obj
+from utils.environment import global_env
+from collections import OrderedDict
 from random import shuffle
 
-def build_game(gd):
-    game = Game(gd.name, gd.turn_based)
+def build_game(game_data):
+    game = Game(game_data.name, game_data.turn_based)
+    game.restrict(lambda self: len(self.collections) == game_data.collections)
+
+    # Create and register players
+    print(build_players(game_data.players))
+    players = build_players(game_data.players)
+    [ game.add_player(player) for name, player in players ]
+
+    # Create and register piles
+    piles = build_piles(game_data.piles)
+
+    # Shuffle the cards
     cards = game.deck.shuffled()
 
-    # First, build the players and map the names to the instances
-    namespace = {
-        "first": 0,
-        "last": -1,
-        "any": Positions.ANY
-    }
+    # Set the collections
+    collections = [player.hand for name, player in players]
+    collections += [pile for name, pile in piles]
 
-    players = []
-    for p in gd.players:
+    # Set the card count
+    counts = [player.get('hand_size') for player in game_data.players]
+    counts += [pile.get('size') for pile in game_data.piles]   
 
-        # Build the players
-        players.append(Player(p['name']))
-        namespace[p['name']] = players[-1]
+    # Register collections with the game
+    [ game.add_collection(c) for c in collections ]
 
-        # Populate their hands
-        size = p['hand_size']
-        players[-1].hand.restrict(lambda self: len(self.hand) <= size)
-        [ players[-1].hand.cards.append(cards.pop(0)) for k in range(size) ]
+    # Build rules to be used for moves
+    rules = build_rules(game_data.rules)
+    
+    # Build and add moves
+    [ game.add_move(Move(*m)) for m in build_moves(game_data.moves) ]
 
-        # Register with the game
-        game.add_player(players [-1])
+    # Build and add events
+    [ game.add_event(Event(*e)) for e in build_events(game_data.events) ]    
 
-    print(namespace)
+    # Build and add the win condition
+    game.add_win_condition(build_wins(game_data.win_condition))
 
-    # Second, build the piles and map the names to the instances
-    piles = []
-    for p in gd.piles:
-
-        # Build the piles
-        piles.append(Pile(p['name'], p['facedown']))
-        namespace[p['name']] = piles [-1]
-
-        # Populate them
-        size = p['size']
-        [ piles[-1].cards.append(cards.pop(0)) for k in range(size) ]
-
-        # Register with the game
-        game.add_collection(piles [-1])
-
-    print(namespace)
-
-    # At this point, all cards should be distributed
+    # Distribute cards to the game's collections
+    for (collection, count) in zip(collections, counts):
+        for _ in range(count):
+            collection.add(cards.pop(0))
     assert len(cards) == 0
-
-    # Third, build the rules and map the names to the instances
-    rules = []
-
-    def replace_keywords(words):
-        for i in range(len(words)):
-            try:
-                words [i] = namespace[words [i]]
-            except KeyError:
-                continue
-        print(words)
-
-    def build_rule(expr):
-        # Tokenize
-        toks = [ e.split(".") for e in expr.split(" ") ]
-        print(toks)
-
-
-        # Look for back-references, replace them w. actual refs
-        keywords = list(namespace.keys())
-        for t in toks:
-            if any([ k in t for k in keywords ]):
-                replace_keywords(t)
-        
-        # No idea where to go from here ...
-        
-    # for r in gd.rules:
-    #     rules.append(build_rule(r['expr']))
-    #     namespace[r['name']] = rules [-1]
 
     return game
 
