@@ -8,6 +8,7 @@ from models.moves import Move
 from models.events import Event
 from models.rules import Rule
 from models.moves import Positions
+from models.collection import Collection
 from utils.objs import dict_obj
 from collections import OrderedDict
 
@@ -95,7 +96,8 @@ def build_game(gd):
 def build_abstract(game_data):
     namespace = {
         "first": "bottom_card",
-        "last": "top_card",
+        "toprank": "top_rank",
+        "topsuit": "top_suit",
         "all": Positions.ANY,
         "top": Positions.LAST
     }
@@ -137,10 +139,8 @@ def build_abstract(game_data):
     for player in game_data.players:
         counts.append(player.get('hand_size'))
 
-    #for pile in game_data.piles:
-    #    counts.append(pile.get('size'))
-    counts.append(0)
-    counts.append(42)
+    for pile in game_data.piles:
+        counts.append(pile.get('size'))
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
@@ -159,22 +159,40 @@ def build_abstract(game_data):
         rules[rule.get('name')] = build_rule(rule.get('expr'))
         namespace[rule.get('name')] = rules[rule.get('name')]
 
+    for key, lis in rules.items():
+        for value in lis:
+            if len(value) > 1:
+                if not value[0] == "card" and not value[0] == "move" and not value[0] == "rules":
+                    for l in value[1:]: 
+                        value[0] = getattr(value[0], l)
+                    del value[1:]
+
     def check_rule(rule_list, move, card):
-        #rule_list = rules.get(name)
         loc = []
+        if type(card) == Hand:
+            return any([check_rule(rule_list, move, c) for c in card])
         for l in rule_list:
             if len(l) > 1:
-                if l[0] == "for":
-                    if l[1] == "move":
-                        for card in getattr(move, l[2]):
-                            loc.append(check_rule(l[3], move, card))
-                if l[0] == "rules" :
-                    loc.append(check_rule(l[1], move, card))
-                if l[0] == "card" :
-                    loc.append(getattr(card, l[1]))
-                elif type(l[0]) is Pile :
-                    func = getattr(l[0], l[1])
-                    loc.append(getattr(func(), l[2]))
+                if l[0] == "rules":
+                    if len(loc) > 0:
+                        l1 = loc.pop()
+                        loc.append(check_rule(l[1], move, l1))
+                    else:
+                        loc.append(check_rule(l[1], move, card))
+                if l[0] == "card":
+                    val = [getattr(card, l[1])]
+                    for j in l[2:]: 
+                        val = getattr(val, j)
+                    loc.append(val[0])
+                elif l[0] == "move":
+                    val = [getattr(move, l[1])]
+                    for j in l[2:]: 
+                        val = getattr(val, j)
+                    loc.append(val[0])
+            elif callable(l[0]):
+                loc.append(l[0]())
+            elif l[0] == "card":
+                loc.append(card)    
             elif l[0] == "=":
                 l1 = loc.pop()
                 l2 = loc.pop()
@@ -182,14 +200,22 @@ def build_abstract(game_data):
             elif l[0] == "or":
                 l1 = loc.pop()
                 l2 = loc.pop()
-                loc.append(l1 or l2)    
+                loc.append(l1 or l2) 
             elif l[0] == "not":
                 l1 = loc.pop()
                 loc.append(not l1)
+            elif l[0] == "<":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l2 < l1)
+            elif l[0] == "and":
+                l1 = loc.pop()
+                l2 = loc.pop()
+                loc.append(l1 and l2)    
             elif l[0] == "any":
                 loc = [any(loc)]
-            #else:
-                #loc.append(l[0])
+            else:
+                loc.append(l[0])
         return loc[0]
 
     def build_move(moves):

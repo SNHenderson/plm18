@@ -26,10 +26,10 @@ pile0:
 Number of rules: 3
 rule0:
     name: validDiscard
-    expr: card.rank discard.last.rank = card.suit discard.last.suit = or
+    expr: (card.rank discard.rank =) (card.suit discard.suit =) or
 rule1:
     name: hasValidMove
-    expr: for.move.end.validDiscard any
+    expr: move.end rules.validDiscard
 rule2:
     name: validDraw
     expr: rules.hasValidMove not
@@ -62,7 +62,7 @@ move3:
 
 Number of events: 1
 event0:
-    trigger: draw.size 0 = discard.size 2 < not and
+    trigger: (draw.size 0 =) (discard.size 2 < not) and
     action: discard draw.replenish draw.cards shuffle
 
-Win condition: Player1.hand.size 0 = Player2.hand.size 0 = or
+Win condition: (Player1.hand.size 0 =) (Player2.hand.size 0 =) or

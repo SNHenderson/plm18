@@ -14,7 +14,7 @@ yn_rules = "yes | no"
 digits = "0 1 2 3 4 5 6 7 8 9"
 
 # Special chars 
-specials = "= . <"
+specials = "= . < ( )"
 
 # Identifies a Player in config file
 player_id = "p" + oneOf(digits) + ":"
@@ -171,7 +171,7 @@ def parse(filename):
 
     # Parse rule config
     gd.rules = [None] * rule_count
-    rule_prop_val_rule = oneOf(rule_prop_rules) + ": " + Word(alphas + digits + specials)
+    rule_prop_val_rule = oneOf(rule_prop_rules) + ": " + Word(alphas + digits + specials).setParseAction(lambda t: t[0].replace('(','').replace(')', ''))
     get_obj_defns(gd.rules, rule_id, rule_prop_val_rule, rule)
     # print(gd.rules)
     # print("\n")
@@ -183,7 +183,7 @@ def parse(filename):
 
     # Parse move config
     gd.moves = [None] * move_count
-    move_prop_val_rule = oneOf(move_prop_rules) + ": " + Word(alphas + digits + ".")
+    move_prop_val_rule = oneOf(move_prop_rules) + ": " + Word(alphas + digits + specials).setParseAction(lambda t: t[0].replace('(','').replace(')', ''))
     get_obj_defns(gd.moves, move_id, move_prop_val_rule, move)
     # print(gd.moves)
 
@@ -193,11 +193,11 @@ def parse(filename):
 
     # Parse event config
     gd.events = [None] * event_count
-    event_prop_val_rule = oneOf(event_prop_rules) + ": " + Word(alphas + digits + specials)
+    event_prop_val_rule = oneOf(event_prop_rules) + ": " + Word(alphas + digits + specials).setParseAction(lambda t: t[0].replace('(','').replace(')', ''))
     get_obj_defns(gd.events, event_id, event_prop_val_rule, event)
 
     # Get win condition
-    win_cond_rule = "Win condition: " + Word(alphas + digits + specials)
+    win_cond_rule = "Win condition: " + Word(alphas + digits + specials).setParseAction(lambda t: t[0].replace('(','').replace(')', ''))
     gd.win_condition = win_cond_rule.parseString(r(file)) [-1]
 
     return gd
