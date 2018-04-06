@@ -22,8 +22,6 @@ player_id = "p" + oneOf(digits) + ":"
 # Properties of a Player
 player = {
     "name": str,
-    "hand_size": int,
-    "collection_count": int
 }
 
 # Legal values for Player properties
@@ -89,6 +87,8 @@ class GameDefinition(object):
         self.turn_based = ""
         self.collection_count = 0
         self.win_condition = ""
+        self.player_hand_size = 0
+        self.player_collections = 0
         self.players = []
         self.piles = []
         self.rules = []
@@ -144,6 +144,14 @@ def parse(filename):
     player_count_val_rule = "Number of players: " + Word(digits)
     player_count = int(player_count_val_rule.parseString(r(file)) [-1])
     # print("Player count: %d\n" % player_count)
+
+    # Get player hand sizes
+    player_hand_size_val_rule = "Player hand size: " + Word(digits)
+    gd.player_hand_size = int(player_hand_size_val_rule.parseString(r(file)) [-1])
+
+    # Get player collection count
+    player_collections_val_rule = "Player collections: " + Word(digits)
+    gd.player_collections = int(player_collections_val_rule.parseString(r(file)) [-1])
 
     # Parse player config
     gd.players = [None] * player_count

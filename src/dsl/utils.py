@@ -101,12 +101,12 @@ def build_piles(pile_dict):
 
     return piles.items()
 
-def build_players(player_dict):
+def build_players(player_dict, size, count):
     players = OrderedDict()
     for p in player_dict:
         player = Player(p.get('name'))
-        player.restrict(lambda self: len(self.collections) == p.get('collection_count'))
-        player.hand.restrict(lambda self: len(self.hand) <= p.get('hand_size'))
+        player.restrict(lambda self: len(self.collections) == count)
+        player.hand.restrict(lambda self: len(self.hand) <= size)
         player.add_collection(player.hand)
         players[p.get('name')] = player
 

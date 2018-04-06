@@ -21,8 +21,7 @@ def build_game(game_data):
     game.restrict(lambda self: len(self.collections) == game_data.collections)
 
     # Create and register players
-    print(build_players(game_data.players))
-    players = build_players(game_data.players)
+    players = build_players(game_data.players, game_data.player_hand_size, game_data.player_collections)
     [ game.add_player(player) for name, player in players ]
 
     # Create and register piles
@@ -36,7 +35,7 @@ def build_game(game_data):
     collections += [pile for name, pile in piles]
 
     # Set the card count
-    counts = [player.get('hand_size') for player in game_data.players]
+    counts = [game_data.player_hand_size for player in game_data.players]
     counts += [pile.get('size') for pile in game_data.piles]   
 
     # Register collections with the game

@@ -2,22 +2,16 @@ Name: Bartok
 Turn-based: yes
 
 Number of players: 4
+Player hand size: 5
+Player collections: 1
 p0: 
     name: Player1
-    hand_size: 5
-    collection_count: 1
 p1:
     name: Player2
-    hand_size: 5
-    collection_count: 1
 p2: 
     name: Player3
-    hand_size: 5
-    collection_count: 1
 p3:
     name: Player4
-    hand_size: 5
-    collection_count: 1
 
 Number of piles: 2
 pile1:
