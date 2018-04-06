@@ -17,10 +17,9 @@ from random import shuffle
 
 namespace = {
     "first": "bottom_card",
-    "toprank": "top_rank",
-    "topsuit": "top_suit",
     "all": Positions.ANY,
-    "top": Positions.LAST
+    "top": Positions.LAST,
+    "bottom": Positions.FIRST
 }
 
 def replace_keywords(words):
@@ -74,19 +73,28 @@ def check_rule(rule_list, move, card):
             if l[0] == "rules":
                 if len(loc) > 0:
                     l1 = loc.pop()
-                    loc.append(check_rule(l[1], move, l1))
+                    if len(loc) > 0:
+                        l2 = loc.pop()
+                        loc.append(check_rule(l[1], l2, l1))
+                    else:
+                        loc.append(check_rule(l[1], move, l1))                        
                 else:
                     loc.append(check_rule(l[1], move, card))
             if l[0] == "card":
-                val = [getattr(card, l[1])]
-                for j in l[2:]: 
-                    val = getattr(val, j)
-                loc.append(val[0])
+                val = [card]
+                for j in l[1:]: 
+                    if callable(val):
+                        val = val()
+                    val = [getattr(val.pop(), j)]
+                check_env(loc, val[0])
             elif l[0] == "move":
-                val = [getattr(move, l[1])]
-                for j in l[2:]: 
-                    val = getattr(val, j)
-                loc.append(val[0])
+                val = [move]
+                for j in l[1:]:
+                    pop = val[-1]
+                    if callable(pop):
+                        val = [pop()]
+                    val = [getattr(val.pop(), j)]
+                check_env(loc, val[0])
         else: check_env(loc, l[0])
     return loc[0]
 

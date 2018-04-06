@@ -1,9 +1,12 @@
+from models.rank import Rank
+
 class Card(object):
     # TODO: maybe make this immutable?
 
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
+        self.value = Rank[self.rank].value
 
     def __eq__(self, other):
         same_suit = self.suit == other.suit

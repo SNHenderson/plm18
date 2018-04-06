@@ -21,16 +21,13 @@ pile0:
     size: 41
     owner: all
 
-Number of rules: 3
+Number of rules: 2
 rule0:
     name: validDiscard
     expr: (card.rank discard.rank =) (card.suit discard.suit =) or
 rule1:
-    name: hasValidMove
-    expr: move.end rules.validDiscard
-rule2:
     name: validDraw
-    expr: rules.hasValidMove not
+    expr: move.end rules.validDiscard not
 
 Number of moves: 4
 move0:
@@ -61,6 +58,6 @@ move3:
 Number of events: 1
 event0:
     trigger: (draw.size 0 =) (discard.size 1 >) and
-    action: discard draw.replenish draw.cards shuffle
+    action: discard -1 draw.replenish draw.cards shuffle
 
 Win condition: (Player1.hand.size 0 =) (Player2.hand.size 0 =) or
