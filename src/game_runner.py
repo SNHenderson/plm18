@@ -17,6 +17,7 @@ def run():
     # create game
     game = game_builder.build_game(game_rules)
     
+    # create view
     view = LogView(args.log) if args.log else PrettyView()
 
     # start game loop

@@ -10,7 +10,7 @@ Link: https://github.com/SNHenderson/plm18/tree/master
 
 ## Installation
 
-This project uses several Python libraries that need to be installed 
+This project uses several Python libraries that need to be installed
 
 ### Dependencies:
 - pyparsing

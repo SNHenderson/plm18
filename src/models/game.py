@@ -39,7 +39,7 @@ class Game(Validatable):
 
     @validate()
     def add_event(self, event):
-        self.events.append(event)    
+        self.events.append(event)
 
     def collections_for(self, player):
         return [ c for c in self.collections if player.owns(c) ]

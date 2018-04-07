@@ -1,16 +1,9 @@
-from models.game import Game
 from models.pile import Pile
 from models.player import Player
-from models.rank import Rank
-from models.suit import Suit
 from models.hand import Hand
 from models.moves import Move
-from models.events import Event
 from models.rules import Rule
 from models.moves import Positions
-from models.collection import Collection
-from dsl.utils import *
-from utils.objs import dict_obj
 from utils.environment import global_env
 from collections import OrderedDict
 from random import shuffle
@@ -27,6 +20,12 @@ def replace_keywords(words):
     return [namespace.get(word) if word in namespace else word for word in ints]
 
 def build_list(expr):
+    # Sanatize
+    dirty_chars = [ "(", ")", "'s ", "  ", " . "]
+    replacements = [ "", "" , ".",   " " , "."  ]
+    for (d, r) in zip(dirty_chars, replacements):
+        expr = expr.replace(d, r)
+
     # Tokenize
     toks = [ e.split(".") for e in expr.split(" ")]
     return [ replace_keywords(t) for t in toks ]
@@ -130,11 +129,12 @@ def build_rules(rule_dict):
         namespace[rule.get('name')] = rules[rule.get('name')]
 
     for key, value in rules.items():
-        find_attributes(value, ["card", "move", "rules"]) 
+        find_attributes(value, ["card", "move", "rules"])
 
     return rules
 
 def build_moves(move_dict):
+    print(move_dict)
     def build_move(move):
         m = {key : build_list(value) for key, value in move.items()}
         for key, value in m.items():

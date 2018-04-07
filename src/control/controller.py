@@ -93,7 +93,7 @@ class Controller(Validatable):
                 [ self.get_action(move).execute() for move in self.get_input() ]
             except ValidationException as e:
                 self.view.invalid_move(self.game)
-        
+
         # Check and run any events:
-        [ event.run() for event in self.game.events ] 
+        [ event.run() for event in self.game.events ]
 

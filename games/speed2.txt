@@ -4,7 +4,7 @@ Turn-based: no
 Number of players: 2
 Player hand size: 5
 Player collections: 3
-p0: 
+p0:
     name: Player1
 p1:
     name: Player2
