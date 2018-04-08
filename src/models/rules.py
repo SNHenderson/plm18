@@ -1,6 +1,4 @@
-from utils.objs import dict_obj
- 
-class Rule(dict_obj):
+class Rule(object):
     def __init__(self, rules_list, func):
         self.rules_list = rules_list
         self.func = func

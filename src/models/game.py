@@ -1,12 +1,8 @@
 from utils.validation import Validatable
 from utils.validation import validate
 from utils.validation import ValidationException
-
 from utils.getch import getch
-from utils.logger import Logger
-
 from models.deck import Deck
-from models.pile import Pile
 
 
 class Game(Validatable):

@@ -21,24 +21,28 @@ def replace_keywords(words):
 
 def build_list(expr):
     # Sanatize
-    dirty_chars = [ "(", ")", "'s ", "  ", " . "]
-    replacements = [ "", "" , ".",   " " , "."  ]
+    dirty_chars =  [ "(", ")", "'s ", " . "]
+    replacements = [ "" , "" , "."  , "."  ]
     for (d, r) in zip(dirty_chars, replacements):
         expr = expr.replace(d, r)
 
     # Tokenize
-    toks = [ e.split(".") for e in expr.split(" ")]
+    toks = [ e.split(".") for e in expr.split()]
     return [ replace_keywords(t) for t in toks ]
 
-def find_attributes(items, ignore = None):
+def resolve_attributes(items, ignore=None):
     if not ignore:
         ignore = []
-    for value in items:
-        if len(value) > 1:
-            if value[0] not in ignore:
-                for l in value[1:]: 
-                    value[0] = getattr(value[0], l)
-                del value[1:]
+
+    for value_chain in items:
+        if len(value_chain) > 1:
+            value = value_chain[0]
+            if value not in ignore:
+                for attr in value_chain[1:]: 
+                    value = getattr(value, attr)
+                value_chain[0] = value
+                del value_chain[1:]
+    return items
 
 def check_env(loc, item, env=global_env):
     if callable(item):
@@ -128,37 +132,30 @@ def build_rules(rule_dict):
         rules[rule.get('name')] = build_list(rule.get('expr'))
         namespace[rule.get('name')] = rules[rule.get('name')]
 
-    for key, value in rules.items():
-        find_attributes(value, ["card", "move", "rules"])
+    for rule in rules.values():
+        resolve_attributes(rule, ["card", "move", "rules"])
 
     return rules
 
-def build_moves(move_dict):
-    print(move_dict)
+def build_moves(move_data):
     def build_move(move):
-        m = {key : build_list(value) for key, value in move.items()}
-        for key, value in m.items():
-            find_attributes(value)
+        m = {key: resolve_attributes(build_list(value)) for key, value in move.items()}
         rule = Rule(m.get('how')[0][0], check_rule)
         return [m.get('where')[0][0], m.get('from')[0][0], m.get('to')[0][0], m.get('when')[0][0], rule.check]  
-    return [ build_move(m) for m in move_dict ] 
+    return [build_move(m) for m in move_data]
 
-def build_events(event_dict):
+def build_events(event_data):
     def build_event(events):
-        e = {key : build_list(value) for key, value in events.items()}
-        for key, value in e.items():
-            find_attributes(value)
-        return [lambda : check_list(e.get('trigger')), lambda : doEvent(e.get('action'))]
-    return [build_event(e) for e in event_dict]
+        e = {key : resolve_attributes(build_list(value)) for key, value in events.items()}
+        return [lambda : check_list(e.get('trigger')), lambda : do_event(e.get('action'))]
+    return [ build_event(e) for e in event_data ]
 
 def build_wins(win_dict):
-    def build_win(win_condition):
-        w = build_list(win_condition)
-        find_attributes(w)
-        return w
-    return lambda self: check_list(build_win(win_dict))
+    w = build_list(win_dict)
+    resolve_attributes(w)
+    return lambda self: check_list(w)
 
-def doEvent(action):
+def do_event(action):
     loc = []
     for l in action:
         if callable(l[0]) and len(loc) > 0:

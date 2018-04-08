@@ -1,5 +1,4 @@
 from enum import Enum
-from utils.objs import dict_obj
 from utils.validation import ValidationException
 
 class Positions(Enum):
@@ -7,7 +6,7 @@ class Positions(Enum):
     LAST = 2
     ANY = 3
 
-class Move(dict_obj):
+class Move(object):
     def __init__(self, position, start, end, key, rule):
         self.position = position
         self.start = start

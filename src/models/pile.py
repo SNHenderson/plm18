@@ -7,29 +7,31 @@ class Pile(Collection):
         self.facedown = facedown
 
     def __str__(self):
-        top = "[X]" if self.facedown else str(self.top_card())
+        if self.cards:
+            top = "[X]" if self.facedown else str(self.top_card())
+        else:
+            top = "[?]"
         return "[%s:%s(%d)]" % (self.name, top, len(self.cards))
 
     def value(self):
-        return self.cards[-1].value
+        return self.top_card().value
 
     def rank(self):
-        return self.cards[-1].rank
+        return self.top_card().rank
 
     def suit(self):
-        return self.cards[-1].suit    
+        return self.top_card().suit
 
     def end(self):
-        return self.cards[-1]    
+        return self.top_card()
 
     def top_card(self):
-        return self.cards[-1]
+        if self.cards:
+            return self.cards[-1]
 
     def bottom_card(self):
-        return self.cards[0]    
-
-    def facedown_cards(self):
-        return self.cards[:-1]  
+        if self.cards:
+            return self.cards[0]    
 
     def replenish(self, pile, count):
         count = int(count)

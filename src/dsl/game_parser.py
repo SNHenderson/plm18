@@ -3,7 +3,6 @@ from pyparsing import oneOf
 from pyparsing import alphas, alphanums, nums, printables
 from models.player import Player
 from models.game import Game
-from utils.objs import dict_obj
 
 # Converts yes/no strings to True/False
 def string_to_bool(string):
@@ -180,6 +179,6 @@ def parse(filename):
         gd.events = get_obj_defns(event, event_count)
 
         # Get win condition
-        gd.win_cond_rule = parse_line(KeyValue("Win condition", Expression)).value
+        gd.win_condition = parse_line(KeyValue("Win condition", Expression)).value
 
         return gd

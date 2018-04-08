@@ -10,7 +10,6 @@ from models.events import Event
 from models.rules import Rule
 from models.moves import Positions
 from models.collection import Collection
-from utils.objs import dict_obj
 from utils.environment import global_env
 from collections import OrderedDict
 from random import shuffle

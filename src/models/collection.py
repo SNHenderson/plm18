@@ -4,7 +4,7 @@ from utils.validation import Validatable
 class Collection(Validatable):
     def __init__(self, name=None):
         super().__init__()
-        self.cards = [] # TODO: an ordered set would be better
+        self.cards = []
         self.name = name
         self.owner = None
 
@@ -45,4 +45,8 @@ class Collection(Validatable):
         self.cards[key] = item
 
     def __repr__(self):
-        return "[" + self.name + ":" + ",".join(map(str, self.cards)) + "]"
+        val = self.name
+        if self.cards:
+            val += ":" + ",".join(map(str, self.cards))
+        return "[" + val + "]"
+
