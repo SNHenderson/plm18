@@ -1,176 +1,184 @@
-from pyparsing import Word, alphas, oneOf
+from pyparsing import Word, OneOrMore, ZeroOrMore, Or, Literal
+from pyparsing import oneOf
+from pyparsing import alphas, alphanums, nums, printables
 from models.player import Player
 from models.game import Game
 
 # Converts yes/no strings to True/False
-def yn_as_boolean(str):
-    return True if str == 'yes' else False
+def string_to_bool(string):
+    val = { "yes": True, "no": False }.get(string);
+    if val is None:
+        raise ValueError
+    return val
 
-# Legal values for yes/no
-yn_rules = "yes | no"
+def props_for(obj):
+    return obj.keys()
 
-# Legal digits
-digits = "0 1 2 3 4 5 6 7 8 9"
+def KeyValue(key_type, val_type):
+    if type(key_type) is str:
+        key_type = Literal(key_type)
+    if type(val_type) is str:
+        val_type = Literal(val_type)
+    key_type = key_type.setResultsName("key")
+    val_type = val_type.setResultsName("value")
 
-# Special chars (for rules)
-specials = "== . !="
+    return key_type + ":" + val_type
 
-# Identifies a Player in config file
-player_id = "p" + oneOf(digits) + ":"
+# Legal values for yes/no properties
+YesNo = oneOf("yes no") \
+            .setName("YesNo") \
+            .addParseAction(lambda toks: string_to_bool(toks[0]))
+
+Name = Word(alphas) \
+            .setName("Name");
+
+Number = Word(nums) \
+            .setName("Number") \
+            .addParseAction(lambda toks: int(toks[0]))
+
+KeyboardChar = Word(printables) \
+            .setName("KeyboardChar")
+
+Identifier = Word(alphanums) \
+            .setName("Identifier");
+
+Possessive = (Identifier + ZeroOrMore(oneOf(["'s ", "."]) + Identifier)) \
+                .setName("Possessive") \
+                .addParseAction(lambda toks: "".join(toks))
+
+Operator = oneOf("+ - * / > < >= <= = . ( )")
+Expression = OneOrMore(Operator | Identifier) \
+                .setName("Expression") \
+                .addParseAction(lambda toks: " ".join(toks))
 
 # Properties of a Player
 player = {
-    "name": str,
-    "hand.size": int
+    "name": Identifier
 }
-
-# Legal values for Player properties
-player_prop_rules = " | ".join(list(player.keys()))
-
-# Identifies a Ple in config file
-pile_id = "pile" + oneOf(digits) + ":"
 
 # Properties of a Pile
 pile = {
-    "name": str,
-    "facedown": yn_as_boolean,
-    "size": int,
-    "owner": str
+    "name": Identifier,
+    "facedown": YesNo,
+    "size": Number,
+    "owner": Identifier
 }
-
-# Legal values for Pile properties
-pile_prop_rules = " | ".join(list(pile.keys()))
-
-# Identifies a Rule in config file
-rule_id = "rule" + oneOf(digits) + ":"
 
 # Properties of a Rule
 rule = {
-    "name": str,
-    "expr": str
+    "name": Identifier,
+    "expr": Expression
 }
-
-# Legal values for Rule properties 
-rule_prop_rules = " | ".join(list(rule.keys()))
-
-# Identifies a Move in config file
-move_id = "move" + oneOf(digits) + ":"
 
 # Properties of a Move
 move = {
-    "where": str,
-    "from": str,
-    "to": str,
-    "when": str,
-    "how": str
+    "where": Possessive,
+    "from": Possessive,
+    "to": Possessive,
+    "when": KeyboardChar,
+    "how": Expression
 }
 
-# Legal values for Move properties 
-move_prop_rules = " | ".join(list(move.keys()))
+# Properties of a Event
+event = {
+    "trigger": Expression,
+    "action": Expression
+}
 
 class GameDefinition(object):
     def __init__(self):
         self.name = ""
         self.turn_based = ""
+        self.collection_count = 0
+        self.win_condition = ""
+        self.player_hand_size = 0
+        self.player_collections = 0
         self.players = []
         self.piles = []
         self.rules = []
         self.moves = []
-        self.win_cond = ""
+        self.events = []
+
 
 def parse(filename):
-    # TODO: read contents and construct a game
-    file = open(filename, 'r')
+    with open(filename) as f:
+        def line():
+            """ Returns the next non-empty line in file f """
+            ln = f.readline()
+            return line() if ln.isspace() else ln
 
-    gd = GameDefinition()
+        def parse_line(rule):
+            # return rule.parseString(line())
+            ln = line()
+            return rule.parseString(ln)
 
-    def r(f):
-        return f.readline()
+        def parse_obj_defn(obj_type):
+            """
+            Collects all the properties of an object and stores it in an object
+            """
+            obj = {}
+            props = props_for(obj_type)
 
-    def get_obj_defns(obj_list, obj_id, obj_prop_val_rule, obj_type):
-        """
-        Collects all the properties of an object and stores it in 
-        an object, storing all such objects in obj_list
-        """
-        line = ""
+            id_rule = Identifier + ":" 
+            prop_rule = Or([KeyValue(p, obj_type[p]) for p in props])
 
-        # Process each obj defn
-        for i in range(len(obj_list)):
-            line = r(file) if line == "" else line
-
-            # Create object in right location in obj_list
-            idx = int(obj_id.parseString(line)[-2])
-            obj_list[idx] = {}
-            line = r(file)
-
-            # Store each k,v pair (with proper type) for the curr obj
-            while line.startswith("    "):
-                prop = obj_prop_val_rule.parseString(line)
-
+            parse_line(id_rule)
+            for _ in props:
                 # Convert the value to the right type, store with key k
-                k = prop[0]
-                v = prop[-1]
-                obj_list[idx][k] = obj_type[k](v)
-                line = r(file)
+                (k, _, v) = parse_line(prop_rule)
+                obj[k] = v
+            return obj
 
-    # Parse header info
-    name_rule = "Name: " + Word(alphas)
-    turn_rule = "Turn-based: " + oneOf(yn_rules)
-    gd.name = name_rule.parseString(r(file)) [-1]
-    gd.turn_based = yn_as_boolean(turn_rule.parseString(r(file)) [-1])
+        def get_obj_defns(obj_type, count, ):
+            return [parse_obj_defn(obj_type) for _ in range(count)]
 
-    # Skip blank line after header
-    r(file)
+        def get_number(prompt):
+            prompt_rule = KeyValue(prompt, Number)
+            return parse_line(prompt_rule).value
 
-    # Get number of players
-    player_count_val_rule = "Number of players: " + Word(digits)
-    player_count = int(player_count_val_rule.parseString(r(file)) [-1])
-    # print("Player count: %d\n" % player_count)
+        gd = GameDefinition()
 
-    # Parse player config
-    gd.players = [None] * player_count
-    player_prop_val_rule = oneOf(player_prop_rules) + ": " + Word(digits + alphas)
-    get_obj_defns(gd.players, player_id, player_prop_val_rule, player)
-    # print(gd.players)
-    # print("\n")
+        # Parse header info
+        gd.name = parse_line(KeyValue("Name", Name)).value
+        gd.turn_based = parse_line(KeyValue("Turn-based", YesNo)).value
 
-    # Get number of piles
-    pile_count_val_rule = "Number of piles: " + Word(digits)
-    pile_count = int(pile_count_val_rule.parseString(r(file)) [-1])
-    # print("Pile count: %d\n" % pile_count)
+        # Get number of players
+        player_count = get_number("Number of players")
 
-    # Parse pile config
-    gd.piles = [None] * pile_count
-    pile_prop_val_rule = oneOf(pile_prop_rules) + ": " + Word(alphas + digits)
-    get_obj_defns(gd.piles, pile_id, pile_prop_val_rule, pile)
-    # print(gd.piles)
-    # print("\n")
+        # Get player hand sizes
+        gd.player_hand_size = get_number("Player hand size")
 
-    # Get number of rules
-    rule_count_val_rule = "Number of rules: " + Word(digits)
-    rule_count = int(rule_count_val_rule.parseString(r(file)) [-1])
-    # print("Rule count: %d\n" % rule_count)
+        # Get player collection count
+        gd.player_collections = get_number("Player collections")
 
-    # Parse rule config
-    gd.rules = [None] * rule_count
-    rule_prop_val_rule = oneOf(rule_prop_rules) + ": " + Word(alphas + digits + specials)
-    get_obj_defns(gd.rules, rule_id, rule_prop_val_rule, rule)
-    # print(gd.rules)
-    # print("\n")
+        # Parse player config
+        gd.players = get_obj_defns(player, player_count)
 
-    # Get number of moves
-    move_count_val_rule = "Number of moves: " + Word(digits)
-    move_count = int(move_count_val_rule.parseString(r(file)) [-1])
-    # print("Move count: %d\n" % move_count)
+        # Get number of piles
+        pile_count = get_number("Number of piles")
 
-    # Parse move config
-    gd.moves = [None] * move_count
-    move_prop_val_rule = oneOf(move_prop_rules) + ": " + Word(alphas + digits + ".")
-    get_obj_defns(gd.moves, move_id, move_prop_val_rule, move)
-    # print(gd.moves)
+        # Parse pile config
+        gd.piles = get_obj_defns(pile, pile_count)
 
-    # Get win condition
-    win_cond_rule = "Win condition: " + Word(alphas + digits + specials)
-    gd.win_cond = win_cond_rule.parseString(r(file)) [-1]
+        # Get number of rules
+        rule_count = get_number("Number of rules")
 
-    return gd
+        # Parse rule config
+        gd.rules = get_obj_defns(rule, rule_count)
+
+        # Get number of moves
+        move_count = get_number("Number of moves")
+
+        # Parse move config
+        gd.moves = get_obj_defns(move, move_count)
+
+         # Get number of events
+        event_count = get_number("Number of events")
+
+        # Parse event config
+        gd.events = get_obj_defns(event, event_count)
+
+        # Get win condition
+        gd.win_condition = parse_line(KeyValue("Win condition", Expression)).value
+
+        return gd

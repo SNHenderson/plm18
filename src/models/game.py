@@ -1,12 +1,8 @@
 from utils.validation import Validatable
 from utils.validation import validate
 from utils.validation import ValidationException
-
 from utils.getch import getch
-from utils.logger import Logger
-
 from models.deck import Deck
-from models.pile import Pile
 
 
 class Game(Validatable):
@@ -16,6 +12,7 @@ class Game(Validatable):
         self.players = []
         self.win_conditions = []
         self.moves = []
+        self.events = []
         self.collections = set()
         self.deck = Deck()
         self.turn_based = turn_based
@@ -36,6 +33,10 @@ class Game(Validatable):
     def add_move(self, move):
         self.moves.append(move)
 
+    @validate()
+    def add_event(self, event):
+        self.events.append(event)
+
     def collections_for(self, player):
         return [ c for c in self.collections if player.owns(c) ]
 
@@ -51,4 +52,3 @@ class Game(Validatable):
     def valid_turn(self, move):
         current_player = self.players[self.turn]
         return move.start.owner != current_player and move.end.owner != current_player
-

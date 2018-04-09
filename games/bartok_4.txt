@@ -1,13 +1,17 @@
 Name: Bartok
 Turn-based: yes
 
-Number of players: 2
+Number of players: 4
 Player hand size: 5
 Player collections: 1
 p0:
     name: Player1
 p1:
     name: Player2
+p2:
+    name: Player3
+p3:
+    name: Player4
 
 Number of piles: 2
 pile1:
@@ -18,18 +22,21 @@ pile1:
 pile0:
     name: draw
     facedown: yes
-    size: 41
+    size: 31
     owner: all
 
-Number of rules: 2
+Number of rules: 3
 rule0:
     name: validDiscard
     expr: (card.rank discard.rank =) (card.suit discard.suit =) or
 rule1:
+    name: hasValidMove
+    expr: move.end rules.validDiscard
+rule2:
     name: validDraw
-    expr: move.end rules.validDiscard not
+    expr: rules.hasValidMove not
 
-Number of moves: 4
+Number of moves: 8
 move0:
     where: all
     from: Player1.hand
@@ -54,10 +61,34 @@ move3:
     to: Player2.hand
     when: p
     how: validDraw
+move4:
+    where: all
+    from: Player3.hand
+    to: discard
+    when: z
+    how: validDiscard
+move5:
+    where: top
+    from: draw
+    to: Player3.hand
+    when: c
+    how: validDraw
+move6:
+    where: all
+    from: Player4.hand
+    to: discard
+    when: b
+    how: validDiscard
+move7:
+    where: top
+    from: draw
+    to: Player4.hand
+    when: m
+    how: validDraw
 
 Number of events: 1
 event0:
     trigger: (draw.size 0 =) (discard.size 1 >) and
-    action: discard -1 draw.replenish draw.cards shuffle
+    action: discard draw.replenish draw.cards shuffle
 
-Win condition: (Player1.hand.size 0 =) (Player2.hand.size 0 =) or
+Win condition: (Player1.hand.size 0 =) (Player2.hand.size 0 =) or (Player3.hand.size 0 =) (Player4.hand.size 0 =) or or

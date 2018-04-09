@@ -1,78 +1,110 @@
-# DSL thoughts
-
-# Speed definition:
-
-# imperitive style. Tells system what to do what 
-
-use a standard deck
-add one discard pile
-add one discard pile
-...
-
-
-# declarative could work something like this
-# we could definitely make it more english-y
-Speed:
-    deck:
-        standard
-        no jokers
-    table:
-        piles:
-            discard:
-                face up
-                start empty
-            discard:
-                face up
-                ...
-    
-        
-#Something similar:
-
-Name of Game: Speed
-
-Jokers?: No
+Name: Speed
+Turn-based: no
 
 Number of players: 2
+Player hand size: 5
+Player collections: 3
+p0:
+    name: Player1
+p1:
+    name: Player2
 
-Turns?:No
+Number of piles: 6
+pile0:
+    name: draw1
+    facedown: yes
+    size: 15
+    owner: Player1
+pile1:
+    name: draw2
+    facedown: yes
+    size: 15
+    owner: Player2
+pile2:
+    name: replace1
+    facedown: yes
+    size: 5
+    owner: all
+pile3:
+    name: replace2
+    facedown: yes
+    size: 5
+    owner: all
+pile4:
+    name: discard1
+    facedown: no
+    size: 1
+    owner: all
+pile5:
+    name: discard2
+    facedown: no
+    size: 1
+    owner: all
 
-Piles: 6
+Number of rules: 3
+rule0:
+    name: validDiscard
+    expr: (card.value move.end.value 1 + =) (card.value move.end.value 1 - =) or ((card.value 1 =) (move.end.value 13 =) and) ((move.end.value 1 =) (card.value 13 =) and) or or
+rule1:
+    name: validDraw
+    expr: (move.start.size 0 >) (move.end.size 5 <) and
+rule2:
+    name: validReplacement
+    expr: (discard1 Player1.hand rules.validDiscard) (discard2 Player1.hand rules.validDiscard) or (discard1 Player2.hand rules.validDiscard) (discard2 Player2.hand rules.validDiscard) or or (replace1.size replace2.size =) and not
 
-Initial Hand Size: 5
+Number of moves: 8
+move0:
+    where: all
+    from: Player1.hand
+    to: discard1
+    when: q
+    how: validDiscard
+move1:
+    where: all
+    from: Player1.hand
+    to: discard2
+    when: w
+    how: validDiscard
+move2:
+    where: top
+    from: draw1
+    to: Player1.hand
+    when: e
+    how: validDraw
+move3:
+    where: all
+    from: Player2.hand
+    to: discard1
+    when: i
+    how: validDiscard
+move4:
+    where: all
+    from: Player2.hand
+    to: discard2
+    when: o
+    how: validDiscard
+move5:
+    where: top
+    from: draw2
+    to: Player2.hand
+    when: p
+    how: validDraw
+move6:
+    where: bottom
+    from: replace1
+    to: discard1
+    when: b
+    how: validReplacement
+move7:
+    where: bottom
+    from: replace2
+    to: discard2
+    when: b
+    how: validReplacement
 
-Pile 1 Type: Discard Pile
-Pile 1 Owner: Player 1
-Pile 1 Discard Rule: playedvalue = topvalue + 1 OR playedvalue = topvalue - 1 OR (playedvalue = 1 AND topvalue = 13) OR (playedvalue = 13 AND topvalue = 1)
-Pile 1 Initial Size: 1
+Number of events: 1
+event0:
+    trigger: replace1.size 0 =
+    action: discard1 5 replace1.replenish discard2 5 replace2.replenish
 
-Pile 2 Type: Discard Pile
-Pile 2 Owner: Player 2
-Pile 2 Discard Rule: playedvalue = topvalue + 1 OR playedvalue = topvalue - 1 OR (playedvalue = 1 AND topvalue = 13)
-Pile 2 Initial Size: 1
-
-Pile 3 Type: Draw Pile
-Pile 3 Owner: Player 1
-Pile 3 Draw Rule: none
-Pile 3 Initial Size: 15
-
-Pile 4 Type: Draw Pile
-Pile 4 Owner: Player 2
-Pile 4 Draw Rule: none
-Pile 4 Initial Size: 15
-
-Pile 5 Type: Transfer Pile
-Pile 5 Owner: Player 1
-Pile 5 Transfer Pile: Pile 1 
-Pile 5 Transfer Rule: #Do we need to know if a player can play or not? If not, don't need this
-Pile 5 Initial Size: 5
-
-Pile 6 Type: Transfer Pile
-Pile 6 Owner: Player 2
-Pile 6 Transfer Pile: Pile 2
-Pile 6 Transfer Rule: #Do we need to know if a player can play or not? If not, don't need this
-Pile 6 Initial Size: 5
-
-Win Condition: Player has an empty pile
-
-# Do we ask the users to associate discarding with specific keys?
-# Would probably make things simpler
+Win condition: (Player1.hand.size 0 =) (Player2.hand.size 0 =) or
