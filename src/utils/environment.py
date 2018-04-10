@@ -1,8 +1,8 @@
 import operator as op
 
-#Source: http://norvig.com/lispy.html
+#Source: http://norvig.com/lispy.html. Modified as needed.
 class Env(dict):
-    "An environment: a dict of {'var':val} pairs, with an outer Env."
+    "An environment: a dict of {'var':[val, precedence]} pairs, with an outer Env."
     def __init__(self, parms=(), args=(), outer=None):
         self.update(zip(parms, args))
         self.outer = outer
@@ -14,9 +14,11 @@ def standard_env() -> Env:
     "An environment with some standard procedures."
     env = Env()
     env.update({
-        '+':op.add, '-':op.sub, '*':op.mul, '/':op.truediv, 
-        '>':op.gt, '<':op.lt, '>=':op.ge, '<=':op.le, '=':op.eq, 
-        'not':op.not_, 'and':op.and_, 'or':op.or_,
+        '*': [op.mul, 5], '/': [op.truediv, 5],
+        '+': [op.add, 4], '-': [op.sub, 4],
+        '>': [op.gt, 3], '<': [op.lt, 3], '>=': [op.ge, 3], '<=': [op.le, 3], '=': [op.eq, 3],
+        'and': [op.and_, 2], 
+        'or': [op.or_, 1], 'not': [op.not_, 1]
     })
     return env
 

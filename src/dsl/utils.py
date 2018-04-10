@@ -20,24 +20,12 @@ def replace_keywords(words):
     return [namespace.get(word) if word in namespace else word for word in ints]
 
 
-def shunt(expr):
-    #print("Converting expr: %s" % expr)
+def build_list(expr):
     ops = []
     out = []
-
-    prec = {
-        '*': 5,
-        '/': 5,
-        '+': 4,
-        '-': 4,
-        '=': 3,
-        '>': 3,
-        'and': 2,
-        'or': 1,
-        'not': 1,
-    }
     level = 0
 
+    # Purges the operator stack of all operators part of current level of nesting
     def purge():
         for i in range(len(ops) - 1, -1, -1):
             if ops[i][1] == level:
@@ -50,27 +38,22 @@ def shunt(expr):
     for (d, r) in zip(dirty_chars, replacements):
         expr = expr.replace(d, r)
     toks = [ e.split(".") for e in expr.split()]
-    # print("The toks are: ")
-    # print(toks)
 
     # Shunt
     for tok in toks:
 
-        # Operators
+        # Operators and lambdas
         if tok[0] in global_env.keys() or tok[0] == 'Fn':
-            # print("Putting %s onto op stack" % tok[0])
-
-            # Purge operator stack if lower precedence op is found
             try:
-                if len(ops) > 0 and prec[tok[0]] < prec[ops[-1][0][0]]:
-                    # print("Purging op stack on level %d" % level)
+                # Purge operator stack if lower precedence op is found
+                if len(ops) > 0 and global_env[tok[0]][1] < global_env[ops[-1][0][0]][1]:
                     purge()
             
             # Operators not in operator dict. are lambdas, with highest precedence
             except KeyError:
                 pass
 
-            # Remove the 'Fn' marker 
+            # Remove the 'Fn' marker from lambdas
             if tok [0] == 'Fn':
                 tok = tok [1:]
 
@@ -89,34 +72,11 @@ def shunt(expr):
         else:
             out.append(tok)
 
-        # print("Operands:")
-        # print(out)
-        # print()
-        # print("Op stack:")
-        # print(ops)
-        # print()
-
-    # Add all tokens left on operator stack
+    # Add all tokens left on operator stack and replace keywords w. variable references
     [ out.append(ops.pop()[0]) for i in range(len(ops)) ]
-    # print("Final expression: ")
-    # print(out)
-    # print()
+    print(out)
     out = [ replace_keywords(o) for o in out ]
     return out
-
-
-def build_list(expr):
-    # Sanitize
-    # dirty_chars =  [ "(", ")", "'s ", " . "]
-    # replacements = [ "" , "" , "."  , "."  ]
-    # for (d, r) in zip(dirty_chars, replacements):
-    #     expr = expr.replace(d, r)
-
-    # # Tokenize
-    # toks = [ e.split(".") for e in expr.split()]
-    # print(toks)
-    # return [ replace_keywords(t) for t in toks ]
-    return shunt(expr)
 
 def resolve_attributes(items, ignore=None):
     if not ignore:
@@ -137,7 +97,7 @@ def check_env(loc, item, env=global_env):
         loc.append(item())
     else:
         try:
-            op = env.find(item)[item]
+            op = env.find(item)[item][0]
             args = [loc.pop()]
             if len(loc) > 0:
                 args.append(loc.pop())

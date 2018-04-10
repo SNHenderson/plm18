@@ -31,10 +31,10 @@ rule0:
     expr: (card.rank = discard.rank) or (card.suit = discard.suit)
 rule1:
     name: hasValidMove
-    expr: rules.validDiscard move.end 
+    expr: Fn.rules.validDiscard move.end 
 rule2:
     name: validDraw
-    expr: not rules.hasValidMove
+    expr: not Fn.rules.hasValidMove
 
 Number of moves: 8
 move0:
