@@ -19,16 +19,104 @@ def replace_keywords(words):
     ints = [int(word) if word.isdigit() else word for word in words]
     return [namespace.get(word) if word in namespace else word for word in ints]
 
-def build_list(expr):
-    # Sanatize
-    dirty_chars =  [ "(", ")", "'s ", " . "]
-    replacements = [ "" , "" , "."  , "."  ]
+
+def shunt(expr):
+    #print("Converting expr: %s" % expr)
+    ops = []
+    out = []
+
+    prec = {
+        '*': 5,
+        '/': 5,
+        '+': 4,
+        '-': 4,
+        '=': 3,
+        '>': 3,
+        'and': 2,
+        'or': 1,
+        'not': 1,
+    }
+    level = 0
+
+    def purge():
+        for i in range(len(ops) - 1, -1, -1):
+            if ops[i][1] == level:
+                out.append(ops[i][0])
+                ops.pop()
+
+    # Sanitize and tokenize
+    dirty_chars =  [ "'s ", " . "]
+    replacements = [ "."  , "."  ]
     for (d, r) in zip(dirty_chars, replacements):
         expr = expr.replace(d, r)
-
-    # Tokenize
     toks = [ e.split(".") for e in expr.split()]
-    return [ replace_keywords(t) for t in toks ]
+    # print("The toks are: ")
+    # print(toks)
+
+    # Shunt
+    for tok in toks:
+
+        # Operators
+        if tok[0] in global_env.keys() or tok[0] == 'Fn':
+            # print("Putting %s onto op stack" % tok[0])
+
+            # Purge operator stack if lower precedence op is found
+            try:
+                if len(ops) > 0 and prec[tok[0]] < prec[ops[-1][0][0]]:
+                    # print("Purging op stack on level %d" % level)
+                    purge()
+            
+            # Operators not in operator dict. are lambdas, with highest precedence
+            except KeyError:
+                pass
+
+            # Remove the 'Fn' marker 
+            if tok [0] == 'Fn':
+                tok = tok [1:]
+
+            ops.append((tok, level))
+
+        # Opening parenthesis
+        elif tok[0] == "(":
+            level += 1
+
+        # Closing parentheses
+        elif tok[0] == ")":
+            purge()
+            level -= 1
+
+        # Operands
+        else:
+            out.append(tok)
+
+        # print("Operands:")
+        # print(out)
+        # print()
+        # print("Op stack:")
+        # print(ops)
+        # print()
+
+    # Add all tokens left on operator stack
+    [ out.append(ops.pop()[0]) for i in range(len(ops)) ]
+    # print("Final expression: ")
+    # print(out)
+    # print()
+    out = [ replace_keywords(o) for o in out ]
+    return out
+
+
+def build_list(expr):
+    # Sanitize
+    # dirty_chars =  [ "(", ")", "'s ", " . "]
+    # replacements = [ "" , "" , "."  , "."  ]
+    # for (d, r) in zip(dirty_chars, replacements):
+    #     expr = expr.replace(d, r)
+
+    # # Tokenize
+    # toks = [ e.split(".") for e in expr.split()]
+    # print(toks)
+    # return [ replace_keywords(t) for t in toks ]
+    return shunt(expr)
 
 def resolve_attributes(items, ignore=None):
     if not ignore:
