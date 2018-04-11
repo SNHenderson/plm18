@@ -4,6 +4,7 @@ from models.hand import Hand
 from models.moves import Move
 from models.rules import Rule
 from models.moves import Positions
+from models.card import Card
 from utils.environment import global_env
 from collections import OrderedDict
 from random import shuffle
@@ -21,8 +22,14 @@ def replace_keywords(words):
 
 
 def build_list(expr):
+
+    # List of operators in format (op, level) where level is level of nesting op was found at
     ops = []
+
+    # Output post-fix list
     out = []
+
+    # Current level of nesting
     level = 0
 
     # Purges the operator stack of all operators part of current level of nesting
@@ -32,6 +39,10 @@ def build_list(expr):
                 out.append(ops[i][0])
                 ops.pop()
 
+    # Returns the precdence of the given token
+    def precedence(token):
+        return global_env[token][1]
+
     # Sanitize and tokenize
     dirty_chars =  [ "'s ", " . "]
     replacements = [ "."  , "."  ]
@@ -39,32 +50,38 @@ def build_list(expr):
         expr = expr.replace(d, r)
     toks = [ e.split(".") for e in expr.split()]
 
-    # Shunt
     for tok in toks:
+        current_token = tok[0]
 
         # Operators and lambdas
-        if tok[0] in global_env.keys() or tok[0] == 'Fn':
-            try:
-                # Purge operator stack if lower precedence op is found
-                if len(ops) > 0 and global_env[tok[0]][1] < global_env[ops[-1][0][0]][1]:
-                    purge()
-            
-            # Operators not in operator dict. are lambdas, with highest precedence
-            except KeyError:
-                pass
+        if current_token in global_env.keys() or current_token == 'Fn':
+
+            if len(ops) > 0:
+                try:
+                    top_operand = ops[-1][0][0]
+
+                    # Purge operator stack if lower precedence op is found
+                    if precedence(current_token) < precedence(top_operand):
+                        purge()
+                
+                except KeyError:
+
+                    # Purge operator stack if top_operand is a lambda, and the current one isn't
+                    if top_operand not in global_env.keys() and current_token in global_env.keys():
+                        purge()
 
             # Remove the 'Fn' marker from lambdas
-            if tok [0] == 'Fn':
-                tok = tok [1:]
+            if current_token == 'Fn':
+                tok = tok[1:]
 
             ops.append((tok, level))
 
-        # Opening parenthesis
-        elif tok[0] == "(":
+        # Opening parentheses indicate another level of nesting
+        elif current_token == "(":
             level += 1
 
-        # Closing parentheses
-        elif tok[0] == ")":
+        # Closing parentheses indicate the current level of nesting is closed
+        elif current_token == ")":
             purge()
             level -= 1
 
