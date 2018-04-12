@@ -68,7 +68,7 @@ class Controller(object):
                 try:
                     for move in self.get_input():
                         # If player's input corresponds to a move for the other player, don't allow it
-                        if self.game.valid_turn(move):
+                        if not self.game.valid_turn(move):
                             raise ValidationException
                         self.get_action(move).execute()
                         self.view.move_card(self.game)

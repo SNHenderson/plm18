@@ -41,6 +41,5 @@ class Game(object):
 
     def valid_turn(self, move):
         current_player = self.players[self.turn]
-        print(move.start, move.end)
-        return move.start.owner != current_player and move.end.owner != current_player
+        return move.start.owner is current_player or move.end.owner is current_player
 

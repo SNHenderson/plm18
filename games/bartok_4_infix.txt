@@ -28,10 +28,10 @@ pile0:
 Number of rules: 3
 rule0:
     name: validDiscard
-    expr: (card.rank = discard.rank) or (card.suit = discard.suit)
+    expr: (card.rank = discard.top_card.rank) or (card.suit = discard.top_card.suit)
 rule1:
     name: hasValidMove
-    expr: validDiscard move.end
+    expr: any validDiscard
 rule2:
     name: validDraw
     expr: not hasValidMove

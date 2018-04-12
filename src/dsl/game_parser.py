@@ -1,5 +1,5 @@
 from pyparsing import Word, OneOrMore, ZeroOrMore, Or, Literal
-from pyparsing import oneOf
+from pyparsing import oneOf, delimitedList
 from pyparsing import alphas, alphanums, nums, printables
 from models.player import Player
 from models.game import Game
@@ -24,7 +24,6 @@ def KeyValue(key_type, val_type):
 
     return key_type + ":" + val_type
 
-# Legal values for yes/no properties
 YesNo = oneOf("yes no") \
             .setName("YesNo") \
             .addParseAction(lambda toks: string_to_bool(toks[0]))
@@ -39,17 +38,25 @@ Number = Word(nums) \
 KeyboardChar = Word(printables) \
             .setName("KeyboardChar")
 
-Identifier = Word(alphanums) \
+Identifier = Word(alphanums + "_") \
             .setName("Identifier");
-
-Possessive = (Identifier + ZeroOrMore(oneOf(["'s ", "."]) + Identifier)) \
-                .setName("Possessive") \
-                .addParseAction(lambda toks: "".join(toks))
 
 Operator = oneOf("+ - * / > < >= <= = . ( )")
 Expression = OneOrMore(Operator | Identifier) \
                 .setName("Expression") \
                 .addParseAction(lambda toks: " ".join(toks))
+
+Iteration = Identifier + "<-" + Expression
+Binding = Identifier + "=" + Expression
+Assignment = Or(Iteration | Binding) \
+                .setName("Assignment") \
+                .addParseAction(lambda toks: [toks])
+
+# Environment = Or(delimitedList(Assignment), "None") \
+Environment = (delimitedList(Assignment) | "None") \
+                .setName("Environment") \
+                .addParseAction(lambda toks: [toks] )
+
 
 # Properties of a Player
 player = {
@@ -67,15 +74,16 @@ pile = {
 # Properties of a Rule
 rule = {
     "name": Identifier,
-    "expr": Expression
+    "expr": Expression,
+    "where": Environment
 }
 
 # Properties of a Move
 move = {
-    "where": Possessive,
-    "from": Possessive,
-    "to": Possessive,
-    "when": KeyboardChar,
+    "where": Expression,
+    "from": Expression,
+    "to": Expression,
+    "trigger": KeyboardChar,
     "how": Expression
 }
 
@@ -119,13 +127,15 @@ def parse(filename):
             obj = {}
             props = props_for(obj_type)
 
-            id_rule = Identifier + ":" 
+            id_rule = Identifier + ":"
             prop_rule = Or([KeyValue(p, obj_type[p]) for p in props])
 
             parse_line(id_rule)
             for _ in props:
                 # Convert the value to the right type, store with key k
-                (k, _, v) = parse_line(prop_rule)
+                # (k, _, v) = parse_line(prop_rule)
+                val =  parse_line(prop_rule)
+                (k, _, v) = val
                 obj[k] = v
             return obj
 

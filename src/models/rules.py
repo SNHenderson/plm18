@@ -1,7 +1,7 @@
 class Rule(object):
-    def __init__(self, rule, func):
-        self.rule_expression = rule
-        self.func = func
+    def __init__(self, check_function):
+        self.check_function = check_function
 
-    def check(self, *params):
-        return self.func(self.rule_expression, *params)
+    def check(self, action):
+        return self.check_function(action)
+

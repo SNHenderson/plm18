@@ -41,85 +41,110 @@ pile5:
     size: 1
     owner: all
 
-Number of rules: 8
+Number of rules: 10
 rule0:
-    name: validDiscardPlusMinusOne
-    expr: (card.value = move.end.value + 1) or (card.value = move.end.value - 1)
+    name: valuesWithinOne
+    expr: val1 is val2 + 1 or val1 is val2 - 1
+    where: None
+
 rule1:
-    name: validDiscardWrapAround
-    expr: (card.value = 1 and move.end.value = 13) or (card.value = 13 and move.end.value = 1)
+    name: valuesWrapAround
+    expr: (val1 is 1 and val2 is 13) or (val1 is 13 and val2 is 1)
+    where: None
+
 rule2:
     name: validDiscard
-    expr: (card.value = move.end.value + 1) or (card.value = move.end.value - 1) or (card.value = 1 and move.end.value = 13) or (card.value = 13 and move.end.value = 1)
+    expr: valuesWithinOne or valuesWrapAround
+    where: val1 = card.value, val2 = pile.top_card.value
+
+rule4:
+    name: canDiscard
+    expr: any validDiscard
+    where: card <- player.hand.cards, pile <- piles
+
 rule3:
     name: validDraw
-    expr: (move.start.size > 0) and (move.end.size < 5)
-rule4:
-    name: player1NeedsReplace
-    expr: not(Fn.rules.validDiscard Player1.hand discard1 or Fn.rules.validDiscard Player1.hand discard2)
+    expr: (draw.size > 0) and (hand.size < 5)
+    where: None
+
 rule5:
-    name: player2NeedsReplace
-    expr: not(Fn.rules.validDiscard Player2.hand discard1 or Fn.rules.validDiscard Player2.hand discard2)
+    name: canDraw
+    expr: validDraw
+    where: draw = player.draw, hand = player.hand
+
+rule4:
+    name: someoneCanPlay
+    expr: any validDiscard
+    where: player <- players
+
+rule5:
+    name: noneCanPlay
+    expr: not someoneCanPlay
+    where: None
+
 rule6:
     name: replacePilesSameSize
     expr: replace1.size = replace2.size
+    where: None
+
 rule7:
     name: validReplacement
-    expr: (not((Fn.rules.validDiscard discard1 Player1.hand or Fn.rules.validDiscard discard2 Player1.hand) or (Fn.rules.validDiscard discard1 Player2.hand or Fn.rules.validDiscard discard2 Player2.hand))) and (Player1.hand.size = 5 or draw1.size = 0) and (Player2.hand.size = 5 or draw2.size = 0) and (replace1.size = replace2.size)
+    expr: noneCanPlay or (not replacePilesSameSize)
+    where: None
 
 Number of moves: 8
 move0:
     where: all
     from: Player1.hand
     to: discard1
-    when: q
+    trigger: q
     how: validDiscard
 move1:
     where: all
-    from: Player1.hand
+    from: Player1's hand
     to: discard2
-    when: w
+    trigger: w
     how: validDiscard
 move2:
     where: top
     from: draw1
-    to: Player1.hand
-    when: e
+    to: Player1's hand
+    trigger: e
     how: validDraw
 move3:
     where: all
-    from: Player2.hand
+    from: Player2's hand
     to: discard1
-    when: i
+    trigger: i
     how: validDiscard
 move4:
     where: all
-    from: Player2.hand
+    from: Player2's hand
     to: discard2
-    when: o
+    trigger: o
     how: validDiscard
 move5:
     where: top
     from: draw2
-    to: Player2.hand
-    when: p
+    to: Player2's hand
+    trigger: p
     how: validDraw
 move6:
     where: bottom
     from: replace1
     to: discard1
-    when: b
+    trigger: b
     how: validReplacement
 move7:
     where: bottom
     from: replace2
     to: discard2
-    when: b
+    trigger: b
     how: validReplacement
 
 Number of events: 1
 event0:
     trigger: replace1.size = 0
-    action: (Fn.replace1.replenish discard1 5) (Fn.replace2.replenish discard2 5)
+    action: (replace1.replenish discard1 5) (replace2.replenish discard2 5)
 
 Win condition: (Player1.hand.size = 0) or (Player2.hand.size = 0)

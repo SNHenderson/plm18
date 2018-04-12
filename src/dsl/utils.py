@@ -2,23 +2,28 @@ from collections import OrderedDict
 from models.events import Event
 from models.hand import Hand
 from models.moves import Move
-from models.moves import Positions
 from models.pile import Pile
 from models.player import Player
 from models.rules import Rule
-from utils.environment import global_env
+from dsl.environment import global_env
+from dsl.environment import Operator
 import inspect
 
-namespace = {
-    "first": "bottom_card",
-    "all": Positions.ANY,
-    "top": Positions.LAST,
-    "bottom": Positions.FIRST
-}
+def replace_keywords(words, local_env):
+    output = []
+    for word in words:
+        try:
+            output.append(int(word))
+        except (TypeError, ValueError):
+            # Attempt to find the keyword in first the local and then the global environment
+            val = local_env.get(word, global_env.get(word, word))
+            if isinstance(val, list):
+                # Looks like this was another expression, so expand it here
+                output += replace_keywords(val, local_env)
+            else:
+                output.append(val)
 
-def replace_keywords(words):
-    return [int(word) if isinstance(word, str) and word.isdigit() else namespace.get(word, word) for word in words]
-
+    return output
 
 def build_list(expr):
     # Replace syntactic sugar with the appropriate operator
@@ -45,9 +50,9 @@ def build_list(expr):
 
     for current_token in expr.split():
 
-        # Globally-known operators
+        # Check for known operators
         global_val = global_env.get(current_token)
-        if global_val:
+        if global_val and isinstance(global_val, Operator):
             # Perform shunting if necessary
             if op_stack and global_val.precedence <= op_stack[-1][0].precedence:
                 shunt_ops(global_val.precedence)
@@ -70,101 +75,50 @@ def build_list(expr):
     # Push any remaining operators to the output
     shunt_ops()
 
-    # Replace keywords with known values
-    o = replace_keywords(output)
-    return replace_keywords(output)
+    return output
 
-def check_env(loc, item):
-    assert 0
-    if callable(item):
-        loc.append(item())
-    else:
-        try:
+def create_rule(expression):
+    def action_checker(action):
+        print(expression, action)
+        return evaluate(expression, {"move": action.move, "card": action.card})
 
-            op = global_env.find(item)[item][0]
-            args = [loc.pop()]
-            if loc:
-                args.append(loc.pop())
-            loc.append(op(*reversed(args)))
-        except AttributeError as e:
-            assert False, e
-            loc.append(item)
-        except TypeError as e:
-            assert False, e
-            loc.append(item)
-
-def check_list(item_list):
-    assert 0
-    loc = []
-
-    for item in item_list:
-        check_env(loc, item[0])
-
-    return loc[0]
-
-def check_rule(rule, move, card):
-    # TODO: Rules not working, as expected
-    return evaluate(rule)
-
-    if isinstance(card, Hand):
-        return any([check_rule(rule, move, c) for c in card])
-
-    for l in rule:
-        if len(l) > 1:
-            if l[0] == "rules":
-                if stack:
-                    first = stack.pop()
-                    if stack:
-                        second = stack.pop()
-                        loc.append(check_rule(l[1], l2, l1))
-                    else:
-                        loc.append(check_rule(l[1], move, l1))
-                else:
-                    loc.append(check_rule(l[1], move, card))
-            if l[0] == "card":
-                val = [card]
-                for j in l[1:]:
-                    if callable(val):
-                        val = val()
-                    val = [getattr(val.pop(), j)]
-                check_env(loc, val[0])
-            elif l[0] == "move":
-                val = [move]
-                for j in l[1:]:
-                    pop = val[-1]
-                    if callable(pop):
-                        val = [pop()]
-                    val = [getattr(val.pop(), j)]
-                check_env(loc, val[0])
-        else: check_env(loc, l[0])
-    return loc[0]
+    return Rule(action_checker)
 
 
-def evaluate(expression):
+def evaluate(expression, local_env=None):
+    expression = replace_keywords(expression, local_env or {})
+
     stack = []
 
     def run(f):
         args = []
         argcount = len(inspect.signature(f).parameters)
-        # required_args = argcount - 1 if inspect.ismethod(f) else argcount
         
         for _ in range(argcount):
             args.append(stack.pop())
 
-        # Run function and push result
+        # Run function
         result = f(*reversed(args))
         if callable(result):
+            # If the result is a function, run that one too
             return run(result)
         else:
             return result
 
+    def do_any(expr):
+        m = local_env.get("move")
+        results = [evaluate(expr, { "card": c, "move": m }) for c in m.end]
+        return any(results)
+
     for term in expression:
         if callable(term):
             stack.append(run(term))
+        elif isinstance(term, str) and term.startswith("any_"):
+            subexpression = [term.replace("any_", "")]
+            stack.append(do_any(subexpression))
         else:
             stack.append(term)
-
-    assert len(stack) == 1, "Invalid expression: must result in exactly one result"
+    assert len(stack) == 1, "Invalid expression: evaluation must produce exactly one result"
     return stack.pop()
 
 def build_piles(pile_dict):
@@ -174,7 +128,7 @@ def build_piles(pile_dict):
         piles[p.get('name')] = pile
 
     for name, pile in piles.items():
-        namespace[pile.name] = pile
+        global_env[pile.name] = pile
 
     return piles.items()
 
@@ -187,27 +141,53 @@ def build_players(player_dict, size, count):
         players[p.get('name')] = player
 
     for name, player in players.items():
-        namespace[player.name] = player
+        global_env[player.name] = player
 
     return players.items()
+
+def create_env(assignments):
+    local_env = {}
+    iterations = {}
+    for a in assignments:
+        if a == "None":
+            continue
+        else:
+            (var, op, expression) = a
+            if op == "=":
+                local_env[var] = evaluate(expression)
+            elif op == "<-":
+                iterations[var] = expression
+
+    # TODO: Running
+    # iterables = iterations.values()
+        
+    possible_environments = [ create_env(*comb) for combo in product(iterables) ]
+    
+    # TODO: run call rule with each environment, then run any or all
+
+    return local_env
 
 def build_rules(rule_dict):
     rules = OrderedDict()
     for rule in rule_dict:
-        rules[rule.get('name')] = build_list(rule.get('expr'))
-        namespace[rule.get('name')] = rules[rule.get('name')]
+        name = rule.get('name')
+        parsed_rule = build_list(rule.get('expr'))
+        parsed_assignments = build_assignments(rule.get('where'))
+        rules[name] = parsed_rule
+        global_env[name] = parsed_rule
 
+    assert 0
     return rules
 
 def build_moves(move_data):
     def build_move(move):
         m = {key: (build_list(value)) for key, value in move.items()}
+            
         return Move(*[
-            evaluate(m.get("where")),
             evaluate(m.get("from")),
             evaluate(m.get("to")),
             evaluate(m.get("when")),
-            Rule(m.get("how"), check_rule)
+            create_rule(m.get("how"))
         ])
     return [build_move(m) for m in move_data]
 
