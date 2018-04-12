@@ -79,23 +79,26 @@ def build_list(expr):
 
 def create_rule(expression):
     def action_checker(action):
-        print(expression, action)
-        return evaluate(expression, {"move": action.move, "card": action.card})
+        return evaluate(expression)
 
     return Rule(action_checker)
 
 
 def evaluate(expression, local_env=None):
+    print("EVAL", expression)
     expression = replace_keywords(expression, local_env or {})
+    print(expression)
 
     stack = []
 
     def run(f):
         args = []
         argcount = len(inspect.signature(f).parameters)
-        
+
         for _ in range(argcount):
             args.append(stack.pop())
+
+        print("ARGS", list(reversed(args)))
 
         # Run function
         result = f(*reversed(args))
@@ -113,11 +116,13 @@ def evaluate(expression, local_env=None):
     for term in expression:
         if callable(term):
             stack.append(run(term))
-        elif isinstance(term, str) and term.startswith("any_"):
-            subexpression = [term.replace("any_", "")]
-            stack.append(do_any(subexpression))
+        elif isinstance(term, MyRule):
+            term.eval(local_env)
+            # stack.append(do_any(subexpression))
         else:
             stack.append(term)
+
+    print("RETURNING", stack[0])
     assert len(stack) == 1, "Invalid expression: evaluation must produce exactly one result"
     return stack.pop()
 
@@ -145,48 +150,69 @@ def build_players(player_dict, size, count):
 
     return players.items()
 
-def create_env(assignments):
-    local_env = {}
-    iterations = {}
-    for a in assignments:
-        if a == "None":
-            continue
+
+class MyRule(object):
+    def __init__(self, expression, assignments):
+        self.expression = expression
+        self.assignments = assignments
+
+    def eval(self, env):
+        bindings = {}
+        iterations = {}
+
+        # Parse assignments
+        for a in self.assignments:
+            if a == "None":
+                continue
+            else:
+                (var, op, expr) = a
+                resolved_expr = evaluate(build_list(expr))
+                if op == "=":
+                    bindings[var] = resolved_expr
+                elif op == "<-":
+                    iterations[var] = resolved_expr
+
+        print("ITER", iterations)
+        print("BIND", bindings)
+
+        # Assignments -> Environment and evaluate expression
+        if iterations:
+            # Generate possible environments
+            results = []
+            for selected_bindings in product(possible_bindings):
+                new_env = { k: v for (k, v) in selected_bindings }
+                new_env.update(bindings)
+                results.append(evaluate(self.expression, new_env))
+            return iteration_func(results)
+
         else:
-            (var, op, expression) = a
-            if op == "=":
-                local_env[var] = evaluate(expression)
-            elif op == "<-":
-                iterations[var] = expression
+            return evaluate(self.expression, bindings)
 
-    # TODO: Running
-    # iterables = iterations.values()
+        return local_env
         
-    possible_environments = [ create_env(*comb) for combo in product(iterables) ]
-    
-    # TODO: run call rule with each environment, then run any or all
-
-    return local_env
 
 def build_rules(rule_dict):
     rules = OrderedDict()
     for rule in rule_dict:
         name = rule.get('name')
-        parsed_rule = build_list(rule.get('expr'))
-        parsed_assignments = build_assignments(rule.get('where'))
-        rules[name] = parsed_rule
-        global_env[name] = parsed_rule
+        expression = build_list(rule.get("expr"))
+        assignments = rule.get("where")
 
-    assert 0
+        r = MyRule(expression, assignments)
+        rules[name] = r
+        global_env[name] = r
+
     return rules
 
 def build_moves(move_data):
     def build_move(move):
         m = {key: (build_list(value)) for key, value in move.items()}
-            
+
         return Move(*[
+            evaluate(m.get("where")),
             evaluate(m.get("from")),
             evaluate(m.get("to")),
-            evaluate(m.get("when")),
+            evaluate(m.get("trigger")),
             create_rule(m.get("how"))
         ])
     return [build_move(m) for m in move_data]

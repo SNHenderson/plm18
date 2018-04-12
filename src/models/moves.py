@@ -7,13 +7,12 @@ class Positions(Enum):
     ANY = 3
 
 class Move(object):
-    def __init__(self, position, start, end, key, rule, variables):
+    def __init__(self, position, start, end, key, rule):
         self.position = position
         self.start = start
         self.end = end
         self.key = key
         self.rule = rule
-        self.variables = data
 
 class Action(Move):
     def __init__(self, move, card):
@@ -27,10 +26,8 @@ class Action(Move):
         1.) The start collection has the card and
         2.) The move satisfies the rule
         """
-        print("CHECKING")
         can_move = self.move.start.contains(self.card)
         should_move = self.move.rule.check(self)
-        print(can_move, should_move)
         return can_move and should_move
 
     def execute(self):
