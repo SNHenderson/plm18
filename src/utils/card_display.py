@@ -66,10 +66,8 @@ def ascii_version_of_card(*cards):
     }
 
     def card_to_string(card):
-        # 10 is the only card with a 2-char rank abbreviation
         rank = name_to_rank[card.rank]
         suit = name_to_symbol[card.suit]
-        #rank = card.rank if card.rank == '10' else card.rank[0]
 
         # add the individual card on a line by line basis
         return CARD.format(rank=rank, suit=name_to_symbol[card.suit])
@@ -85,4 +83,4 @@ def ascii_version_of_hidden_card(*cards):
     :return: A string, the nice ascii version of cards
     """
 
-    return join_lines((HIDDEN_CARD, '\n\n\n\n\n\n\n\n\n'))
+    return join_lines((HIDDEN_CARD, '\n' * 8))

@@ -1,18 +1,12 @@
-from utils.validation import validate
-from utils.validation import Validatable
-
-class Collection(Validatable):
+class Collection(object):
     def __init__(self, name=None):
-        super().__init__()
         self.cards = []
         self.name = name
         self.owner = None
 
-    @validate(undo=lambda self, *cards: [self.cards.remove(c) for c in cards])
     def add(self, *cards):
         self.cards.extend(cards)
 
-    @validate(undo=lambda self, card: self.insert(self._tmp, card))
     def remove(self, card):
         self._tmp = self.cards.index(card) # temporarily store the index in case we need to undo
         self.cards.pop(self._tmp)
@@ -30,7 +24,7 @@ class Collection(Validatable):
         return card in self.cards
 
     def size(self):
-        return self.__len__()
+        return len(self)
 
     def __len__(self):
         return len(self.cards)
@@ -48,5 +42,5 @@ class Collection(Validatable):
         val = self.name
         if self.cards:
             val += ":" + ",".join(map(str, self.cards))
-        return "[" + val + "]"
+        return "<" + val + ">"
 

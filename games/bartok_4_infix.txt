@@ -31,10 +31,10 @@ rule0:
     expr: (card.rank = discard.rank) or (card.suit = discard.suit)
 rule1:
     name: hasValidMove
-    expr: Fn.rules.validDiscard move.end 
+    expr: validDiscard move.end
 rule2:
     name: validDraw
-    expr: not Fn.rules.hasValidMove
+    expr: not hasValidMove
 
 Number of moves: 8
 move0:
@@ -89,6 +89,6 @@ move7:
 Number of events: 1
 event0:
     trigger: (draw.size = 0) and (discard.size > 1)
-    action: (Fn.draw.replenish discard) (Fn.shuffle draw.cards)
+    action: (draw.replenish discard) (shuffle draw.cards)
 
 Win condition: (Player1.hand.size = 0) or (Player2.hand.size = 0) or (Player3.hand.size = 0) or (Player4.hand.size = 0)

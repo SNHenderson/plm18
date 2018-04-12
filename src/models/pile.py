@@ -11,7 +11,7 @@ class Pile(Collection):
             top = "[X]" if self.facedown else str(self.top_card())
         else:
             top = "[?]"
-        return "[%s:%s(%d)]" % (self.name, top, len(self.cards))
+        return "<%s:%s(%d)>" % (self.name, top, len(self.cards))
 
     def value(self):
         return self.top_card().value

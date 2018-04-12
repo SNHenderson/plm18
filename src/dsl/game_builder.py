@@ -1,24 +1,11 @@
-from random import shuffle
 from models.game import Game
-from models.pile import Pile
-from models.player import Player
-from models.rank import Rank
-from models.suit import Suit
-from models.hand import Hand
 from models.moves import Move
 from models.events import Event
-from models.rules import Rule
-from models.moves import Positions
-from models.collection import Collection
-from utils.environment import global_env
-from collections import OrderedDict
-from random import shuffle
 import dsl.utils as utils
 
 
 def build_game(game_data):
     game = Game(game_data.name, game_data.turn_based)
-    game.restrict(lambda self: len(self.collections) == game_data.collections)
 
     # Create and register players
     players = utils.build_players(game_data.players, game_data.player_hand_size, game_data.player_collections)
@@ -41,23 +28,22 @@ def build_game(game_data):
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
 
-    # Build rules to be used for moves
-    rules = utils.build_rules(game_data.rules)
+    # Build rules to be used for moves. This adds them to the namespace
+    utils.build_rules(game_data.rules)
 
     # Build and add moves
-    [ game.add_move(Move(*m)) for m in utils.build_moves(game_data.moves) ]
+    [ game.add_move(m) for m in utils.build_moves(game_data.moves) ]
 
     # Build and add events
-    [ game.add_event(Event(*e)) for e in utils.build_events(game_data.events) ]
+    [ game.add_event(e) for e in utils.build_events(game_data.events) ]
 
     # Build and add the win condition
-    game.add_win_condition(utils.build_wins(game_data.win_condition))
+    game.add_win_condition(utils.build_win_condition(game_data.win_condition))
 
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):
         for _ in range(count):
             collection.add(cards.pop(0))
-    assert len(cards) == 0
 
     return game
 
