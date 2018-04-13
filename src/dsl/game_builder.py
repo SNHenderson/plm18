@@ -1,7 +1,8 @@
 from models.game import Game
 from models.moves import Move
 from models.events import Event
-import dsl.utils as utils
+from dsl.environment import global_env
+from dsl import utils
 
 
 def build_game(game_data):
@@ -44,6 +45,9 @@ def build_game(game_data):
     for (collection, count) in zip(collections, counts):
         for _ in range(count):
             collection.add(cards.pop(0))
+
+    # Allow access to game properties from rules
+    global_env.update(game.__dict__)
 
     return game
 

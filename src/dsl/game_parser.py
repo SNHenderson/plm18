@@ -41,7 +41,7 @@ KeyboardChar = Word(printables) \
 Identifier = Word(alphanums + "_") \
             .setName("Identifier");
 
-Operator = oneOf("+ - * / > < >= <= = . ( )")
+Operator = oneOf("+ - * / > < >= <= = . ( ) 's")
 Expression = OneOrMore(Operator | Identifier) \
                 .setName("Expression") \
                 .addParseAction(lambda toks: " ".join(toks))

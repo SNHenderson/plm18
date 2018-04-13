@@ -65,6 +65,9 @@ def standard_env():
         "bottom": Positions.FIRST
     })
 
+    for list_name in ["players", "piles", "rules", "moves", "events"]:
+        env[list_name] = []
+
     return env
 
 global_env = standard_env()
