@@ -27,9 +27,9 @@ class Action(Move):
         2.) The move satisfies the rule
         """
         can_move = self.move.start.contains(self.card)
-        should_move = self.move.rule(self.move, self.card)
+        should_move = self.move.rule.check(self)
+        assert isinstance(should_move, bool), "Invalid rule result: '%s'" % should_move
         return can_move and should_move
-
 
     def execute(self):
         if not self.is_valid():

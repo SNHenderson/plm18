@@ -1,13 +1,17 @@
 Name: Bartok
 Turn-based: yes
 
-Number of players: 2
+Number of players: 4
 Player hand size: 5
 Player collections: 1
 p0:
     name: Player1
 p1:
     name: Player2
+p2:
+    name: Player3
+p3:
+    name: Player4
 
 Number of piles: 2
 pile1:
@@ -18,46 +22,88 @@ pile1:
 pile0:
     name: draw
     facedown: yes
-    size: 41
+    size: 31
     owner: all
 
-Number of rules: 2
+Number of rules: 6
 rule0:
     name: validDiscard
-    expr: (card.rank discard.rank =) (card.suit discard.suit =) or
+    expr: (card.rank is discard.top_card.rank) or (card.suit is discard.top_card.suit)
+    where: None
 rule1:
-    name: validDraw
-    expr: move.end rules.validDiscard not
+    name: hasValidMove
+    expr: any validDiscard
+    where: card <- player's hand
+rule2:
+    name: validDraw1
+    expr: not hasValidMove
+    where: player = Player1
+rule3:
+    name: validDraw2
+    expr: not hasValidMove
+    where: player = Player2
+rule4:
+    name: validDraw3
+    expr: not hasValidMove
+    where: player = Player3
+rule5:
+    name: validDraw4
+    expr: not hasValidMove
+    where: player = Player4
 
-Number of moves: 4
+Number of moves: 8
 move0:
     where: all
-    from: Player1.hand
+    from: Player1's hand
     to: discard
-    when: q
+    trigger: q
     how: validDiscard
 move1:
     where: top
     from: draw
-    to: Player1.hand
-    when: e
-    how: validDraw
+    to: Player1's hand
+    trigger: e
+    how: validDraw1
 move2:
     where: all
-    from: Player2.hand
+    from: Player2's hand
     to: discard
-    when: i
+    trigger: i
     how: validDiscard
 move3:
     where: top
     from: draw
-    to: Player2.hand
-    when: p
-    how: validDraw
+    to: Player2's hand
+    trigger: p
+    how: validDraw2
+move4:
+    where: all
+    from: Player3's hand
+    to: discard
+    trigger: z
+    how: validDiscard
+move5:
+    where: top
+    from: draw
+    to: Player3's hand
+    trigger: c
+    how: validDraw3
+move6:
+    where: all
+    from: Player4's hand
+    to: discard
+    trigger: b
+    how: validDiscard
+move7:
+    where: top
+    from: draw
+    to: Player4's hand
+    trigger: m
+    how: validDraw4
 
 Number of events: 1
 event0:
-    trigger: (draw.size 0 =) (discard.size 1 >) and
-    action: discard -1 draw.replenish draw.cards shuffle
+    trigger: (draw.size is 0) and (discard.size > 1)
+    action: (draw.replenish discard) (shuffle draw.cards)
 
-Win condition: (Player1.hand.size 0 =) (Player2.hand.size 0 =) or
+Win condition: (Player1.hand.size is 0) or (Player2.hand.size is 0) or (Player3.hand.size is 0) or (Player4.hand.size is 0)

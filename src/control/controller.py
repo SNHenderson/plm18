@@ -1,11 +1,9 @@
-from utils.validation import Validatable
-from utils.validation import validate
 from utils.validation import ValidationException
 from utils.getch import getch
 from models.moves import Action
 from models.moves import Positions
 
-class Controller(Validatable):
+class Controller(object):
     def __init__(self, game, view):
         super().__init__()
         self.game = game
@@ -14,7 +12,6 @@ class Controller(Validatable):
 
     def run(self):
         self.view.start_game(self.game)
-        self.enable_validation()
         self.game_running = True
         if self.game.turn_based:
             self.game.turn = 0
@@ -62,7 +59,6 @@ class Controller(Validatable):
 
         return Action(move, move.start[index])
 
-    @validate()
     def update_game(self):
         if self.game.turn_based:
             # Prompt for a valid move from the player so they can complete their turn
@@ -72,7 +68,7 @@ class Controller(Validatable):
                 try:
                     for move in self.get_input():
                         # If player's input corresponds to a move for the other player, don't allow it
-                        if self.game.valid_turn(move):
+                        if not self.game.valid_turn(move):
                             raise ValidationException
                         self.get_action(move).execute()
                         self.view.move_card(self.game)

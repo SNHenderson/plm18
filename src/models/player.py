@@ -1,8 +1,6 @@
-from utils.validation import validate
-from utils.validation import Validatable
 from models.hand import Hand
 
-class Player(Validatable):
+class Player(object):
     def __init__(self, name):
         super().__init__()
         self.name = name
@@ -17,4 +15,4 @@ class Player(Validatable):
         return collection in self.collections
 
     def __repr__(self):
-        return "[%s:%s]" % (self.name, self.hand)
+        return "<%s:%s>" % (self.name, self.hand)
