@@ -4,82 +4,73 @@ Turn-based: yes
 Number of players: 4
 Player hand size: 5
 Player collections: 1
-p0:
-    name: Player1
-p1:
-    name: Player2
-p2:
-    name: Player3
-p3:
-    name: Player4
+Player1
+Player2
+Player3
+Player4
 
 Number of piles: 2
-pile1:
-    name: discard
+discard:
     facedown: no
     size: 1
     owner: all
-pile0:
-    name: draw
+draw:
     facedown: yes
     size: 31
     owner: all
 
 Number of rules: 3
-rule0:
-    name: validDiscard
+validDiscard:
     expr: (card.rank = discard.rank) or (card.suit = discard.suit)
-rule1:
-    name: hasValidMove
+hasValidMove:
     expr: Fn.rules.validDiscard move.end 
-rule2:
-    name: validDraw
+validDraw:
     expr: not Fn.rules.hasValidMove
 
 Number of moves: 8
-move0:
+q:
     where: all
     from: Player1.hand
     to: discard
     when: q
     how: validDiscard
-move1:
+e:
     where: top
     from: draw
     to: Player1.hand
     when: e
     how: validDraw
-move2:
+i:
     where: all
     from: Player2.hand
     to: discard
     when: i
     how: validDiscard
-move3:
+p:
     where: top
     from: draw
     to: Player2.hand
     when: p
     how: validDraw
-move4:
+z:
     where: all
     from: Player3.hand
     to: discard
     when: z
     how: validDiscard
-move5:
+c:
     where: top
     from: draw
     to: Player3.hand
     when: c
     how: validDraw
-move6:
+b:
     where: all
     from: Player4.hand
     to: discard
     when: b
     how: validDiscard
-move7:
+m:
     where: top
     from: draw
     to: Player4.hand

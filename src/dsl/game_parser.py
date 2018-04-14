@@ -29,8 +29,9 @@ YesNo = oneOf("yes no") \
             .setName("YesNo") \
             .addParseAction(lambda toks: string_to_bool(toks[0]))
 
-Name = Word(alphas) \
-            .setName("Name");
+Name = Word(alphanums) \
+            .setName("Name") \
+            .addParseAction(lambda toks: toks[0])
 
 Number = Word(nums) \
             .setName("Number") \
@@ -52,13 +53,10 @@ Expression = OneOrMore(Operator | Identifier) \
                 .addParseAction(lambda toks: " ".join(toks))
 
 # Properties of a Player
-player = {
-    "name": Identifier
-}
+player = {}
 
 # Properties of a Pile
 pile = {
-    "name": Identifier,
     "facedown": YesNo,
     "size": Number,
     "owner": Identifier
@@ -66,7 +64,6 @@ pile = {
 
 # Properties of a Rule
 rule = {
-    "name": Identifier,
     "expr": Expression
 }
 
@@ -118,11 +115,11 @@ def parse(filename):
             """
             obj = {}
             props = props_for(obj_type)
+            prop_rule = Or([ KeyValue(p, obj_type[p]) for p in props ])
 
-            id_rule = Identifier + ":" 
-            prop_rule = Or([KeyValue(p, obj_type[p]) for p in props])
+            # Get the name of the object
+            obj["name"] = parse_line(Name)[0]
 
-            parse_line(id_rule)
             for _ in props:
                 # Convert the value to the right type, store with key k
                 (k, _, v) = parse_line(prop_rule)

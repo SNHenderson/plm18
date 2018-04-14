@@ -4,113 +4,97 @@ Turn-based: no
 Number of players: 2
 Player hand size: 5
 Player collections: 3
-p0:
-    name: Player1
-p1:
-    name: Player2
+Player1
+Player2
 
 Number of piles: 6
-pile0:
-    name: draw1
+draw1:
     facedown: yes
     size: 15
     owner: Player1
-pile1:
-    name: draw2
+draw2:
     facedown: yes
     size: 15
     owner: Player2
-pile2:
-    name: replace1
+replace1:
     facedown: yes
     size: 5
     owner: all
-pile3:
-    name: replace2
+replace2:
     facedown: yes
     size: 5
     owner: all
-pile4:
-    name: discard1
+discard1:
     facedown: no
     size: 1
     owner: all
-pile5:
-    name: discard2
+discard2:
     facedown: no
     size: 1
     owner: all
 
 Number of rules: 8
-rule0:
-    name: validDiscardPlusMinusOne
+validDiscardPlusMinusOne:
     expr: (card.value = move.end.value + 1) or (card.value = move.end.value - 1)
-rule1:
-    name: validDiscardWrapAround
+validDiscardWrapAround:
     expr: (card.value = 1 and move.end.value = 13) or (card.value = 13 and move.end.value = 1)
-rule2:
-    name: validDiscard
+validDiscard:
     expr: (card.value = move.end.value + 1) or (card.value = move.end.value - 1) or (card.value = 1 and move.end.value = 13) or (card.value = 13 and move.end.value = 1)
-rule3:
-    name: validDraw
+validDraw:
     expr: (move.start.size > 0) and (move.end.size < 5)
-rule4:
-    name: player1NeedsReplace
+player1NeedsReplace:
     expr: not(Fn.rules.validDiscard Player1.hand discard1 or Fn.rules.validDiscard Player1.hand discard2)
-rule5:
-    name: player2NeedsReplace
+player2NeedsReplace:
     expr: not(Fn.rules.validDiscard Player2.hand discard1 or Fn.rules.validDiscard Player2.hand discard2)
-rule6:
-    name: replacePilesSameSize
+replacePilesSameSize:
     expr: replace1.size = replace2.size
-rule7:
-    name: validReplacement
-    expr: (not((Fn.rules.validDiscard discard1 Player1.hand or Fn.rules.validDiscard discard2 Player1.hand) or (Fn.rules.validDiscard discard1 Player2.hand or Fn.rules.validDiscard discard2 Player2.hand))) and (Player1.hand.size = 5 or draw1.size = 0) and (Player2.hand.size = 5 or draw2.size = 0) and (replace1.size = replace2.size)
+validReplacement:
+    expr: (not((Fn.rules.validDiscard discard1 Player1.hand or Fn.rules.validDiscard discard2 Player1.hand) or (Fn.rules.validDiscard discard1 Player2.hand or Fn.rules.validDiscard discard2 Player2.hand))) and (Player1.hand.size = 5 or draw1.size = 0) and (Player2.hand.size = 5 or draw2.size = 0)
 
 Number of moves: 8
-move0:
+q:
     where: all
     from: Player1.hand
     to: discard1
     when: q
     how: validDiscard
-move1:
+w:
     where: all
     from: Player1.hand
     to: discard2
     when: w
     how: validDiscard
-move2:
+e:
     where: top
     from: draw1
     to: Player1.hand
     when: e
     how: validDraw
-move3:
+i:
     where: all
     from: Player2.hand
     to: discard1
     when: i
     how: validDiscard
-move4:
+o:
     where: all
     from: Player2.hand
     to: discard2
     when: o
     how: validDiscard
-move5:
+p:
     where: top
     from: draw2
     to: Player2.hand
     when: p
     how: validDraw
-move6:
+b:
     where: bottom
     from: replace1
     to: discard1
     when: b
     how: validReplacement
-move7:
+b:
     where: bottom
     from: replace2
     to: discard2
@@ -118,7 +102,7 @@ move7:
     how: validReplacement
 
 Number of events: 1
-event0:
+replacePilesEmpty:
     trigger: replace1.size = 0
     action: (Fn.replace1.replenish discard1 5) (Fn.replace2.replenish discard2 5)
 
