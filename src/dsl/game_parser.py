@@ -42,10 +42,9 @@ KeyboardChar = Word(printables) \
 Identifier = Word(alphanums + "_") \
             .setName("Identifier");
 
-Operator = oneOf("+ - * / > < >= <= = . ( ) 's")
+Operator = oneOf("+ - * / > < >= <= = . ( ) 's ,")
 Expression = OneOrMore(Operator | Identifier) \
-                .setName("Expression") \
-                .addParseAction(lambda toks: " ".join(toks))
+                .setName("Expression")
 
 Iteration = Identifier + "<-" + Expression
 Binding = Identifier + "=" + Expression
@@ -53,8 +52,7 @@ Assignment = Or(Iteration | Binding) \
                 .setName("Assignment") \
                 .addParseAction(lambda toks: [toks])
 
-# Environment = Or(delimitedList(Assignment), "None") \
-Environment = (delimitedList(Assignment) | "None") \
+Environment = (delimitedList(Assignment, delim=";") | "None") \
                 .setName("Environment") \
                 .addParseAction(lambda toks: [toks] )
 
@@ -72,7 +70,7 @@ pile = {
 # Properties of a Rule
 rule = {
     "expr": Expression,
-    "where": Environment
+    "let": Environment
 }
 
 # Properties of a Move
@@ -81,7 +79,8 @@ move = {
     "from": Expression,
     "to": Expression,
     "trigger": KeyboardChar,
-    "how": Expression
+    "how": Expression,
+    "let": Environment
 }
 
 # Properties of a Event
@@ -113,9 +112,7 @@ def parse(filename):
             return line() if ln.isspace() else ln
 
         def parse_line(rule):
-            # return rule.parseString(line())
-            ln = line()
-            return rule.parseString(ln)
+            return rule.parseString(line())
 
         def parse_obj_defn(obj_type):
             """
@@ -130,10 +127,10 @@ def parse(filename):
 
             for _ in props:
                 # Convert the value to the right type, store with key k
-                # (k, _, v) = parse_line(prop_rule)
-                val =  parse_line(prop_rule)
-                (k, _, v) = val
-                obj[k] = v
+                parsed = parse_line(prop_rule)
+                prop = parsed["key"]
+                value = parsed["value"]
+                obj[prop] = value
             return obj
 
         def get_obj_defns(obj_type, count, ):

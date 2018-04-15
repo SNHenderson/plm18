@@ -25,31 +25,15 @@ pile0:
     size: 31
     owner: all
 
-Number of rules: 6
+Number of rules: 2
 rule0:
     name: validDiscard
     expr: (card.rank is discard.top_card.rank) or (card.suit is discard.top_card.suit)
-    where: None
+    let: None
 rule1:
-    name: hasValidMove
-    expr: any validDiscard
-    where: card <- player's hand
-rule2:
-    name: validDraw1
-    expr: not hasValidMove
-    where: player = Player1
-rule3:
-    name: validDraw2
-    expr: not hasValidMove
-    where: player = Player2
-rule4:
-    name: validDraw3
-    expr: not hasValidMove
-    where: player = Player3
-rule5:
-    name: validDraw4
-    expr: not hasValidMove
-    where: player = Player4
+    name: validDraw
+    expr: all not validDiscard
+    let: card <- player's hand
 
 Number of moves: 8
 move0:
@@ -58,52 +42,60 @@ move0:
     to: discard
     trigger: q
     how: validDiscard
+    let: player = Player1
 move1:
     where: top
     from: draw
     to: Player1's hand
     trigger: e
-    how: validDraw1
+    how: validDraw
+    let: player = Player1
 move2:
     where: all
     from: Player2's hand
     to: discard
     trigger: i
     how: validDiscard
+    let: player = Player2
 move3:
     where: top
     from: draw
     to: Player2's hand
     trigger: p
-    how: validDraw2
+    how: validDraw
+    let: player = Player2
 move4:
     where: all
     from: Player3's hand
     to: discard
     trigger: z
     how: validDiscard
+    let: player = Player3
 move5:
     where: top
     from: draw
     to: Player3's hand
     trigger: c
-    how: validDraw3
+    how: validDraw
+    let: player = Player3
 move6:
     where: all
     from: Player4's hand
     to: discard
     trigger: b
     how: validDiscard
+    let: player = Player4
 move7:
     where: top
     from: draw
     to: Player4's hand
     trigger: m
-    how: validDraw4
+    how: validDraw
+    let: player = Player4
 
 Number of events: 1
 event0:
     trigger: (draw.size is 0) and (discard.size > 1)
-    action: (draw.replenish discard) (shuffle draw.cards)
+    action: (replenish draw discard many), (shuffle draw)
 
 Win condition: (Player1.hand.size is 0) or (Player2.hand.size is 0) or (Player3.hand.size is 0) or (Player4.hand.size is 0)

@@ -8,6 +8,11 @@ from dsl import utils
 def build_game(game_data):
     game = Game(game_data.name, game_data.turn_based)
 
+    # Allow access to game properties from rules
+    global_env.update(game.__dict__)
+    global_env["replenish"] = game.replenish
+    global_env["shuffle"] = game.shuffle
+
     # Create and register players
     players = utils.build_players(game_data.players, game_data.player_hand_size, game_data.player_collections)
     [ game.add_player(player) for name, player in players ]
@@ -44,10 +49,7 @@ def build_game(game_data):
     # Distribute cards to the game's collections
     for (collection, count) in zip(collections, counts):
         for _ in range(count):
-            collection.add(cards.pop(0))
-
-    # Allow access to game properties from rules
-    global_env.update(game.__dict__)
+            collection.add(cards.pop())
 
     return game
 
