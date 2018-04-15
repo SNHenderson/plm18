@@ -29,8 +29,7 @@ def build_game(game_data):
 
     # Set the card count
     counts = [game_data.player_hand_size for player in game_data.players]
-    counts += [32, 0]
-    #counts += [pile.get('size') for pile in game_data.piles]
+    counts += [pile.get('size') for pile in game_data.piles]
 
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
