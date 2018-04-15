@@ -5,14 +5,14 @@ from models.moves import Positions
 class Operator(object):
     def __init__(self, name, function, precedence):
         self.name = name
-        self.function = function
         self.precedence = precedence
+        self.function = function
 
     def __str__(self):
-        return "<Operator %s >" % self.name
+        return self.name
 
     def __repr__(self):
-        return str(self)
+        return "<Operator '%s'>" % self.name
 
 def wrap(f, unary=False):
     """
@@ -38,18 +38,22 @@ class Env(dict):
         return self if (var in self) else self.outer.find(var)
 
 def standard_env():
-    "An environment with some standard procedures."
+    "Construct an environment with some standard properties."
+    def attr(x, y): return getattr(x,y)
+    def comma(x, y): return y
+
     env = dict()
 
     # Operator Precedence Hierarchy
     # Each set is a precedence class, and sets are ordered from low to high precedence
     # Each enter is in the form (name, function, arity)
     oph = [
+        { (',', comma ) },
         { ('or', op.or_), ('not', op.not_) },
         { ('and', op.and_) },
         { ('>', op.gt), ('<', op.lt), ('>=', op.ge), ('<=', op.le), ('is', op.eq) },
         { ('+', op.add), ('-', op.sub) },
-        { ('.', lambda x, y: getattr(x, y) ) }
+        { ('.', attr), ('\'s', attr ) }
     ]
     unary_ops = {'not'}
 

@@ -26,7 +26,7 @@ class Pile(Collection):
         if self.cards:
             return self.cards[-1]
 
-    def replenish(self, pile, count):
+    def replenish(self, source, count):
         count = int(count)
         self.cards = pile[:count]
         del pile[:count]

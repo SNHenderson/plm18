@@ -1,3 +1,5 @@
+from random import shuffle
+
 class Collection(object):
     def __init__(self, name=None):
         self.cards = []
@@ -25,6 +27,9 @@ class Collection(object):
 
     def size(self):
         return len(self)
+
+    def shuffle(self):
+        random.shuffle(cards)
 
     def __len__(self):
         return len(self.cards)
