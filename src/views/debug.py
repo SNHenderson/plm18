@@ -35,4 +35,3 @@ class DebugView(BaseView):
 
     def end_game(self, model):
             self.display("Game end!")
-            self.logger.close()
