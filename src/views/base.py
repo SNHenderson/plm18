@@ -2,17 +2,17 @@ import os
 from utils.logger import Logger
 
 class BaseView():
-    def __init__(self, log = False, file_name = None):
-        if log:
-            self.logger = Logger(os.path.join("logs", file_name))
+    def __init__(self, log_file = None):
+        if log_file:
+            self.logger = Logger(os.path.join("logs", log_file))
             self.log = self.logger.log
         else:
             self.log = None
 
-    def display(*args):
+    def display(self, *args):
         print(*args)
         if self.log:
-            self.log(*arg)
+            self.log(*args)
 
     def clear_screen(self):
         os.system('cls' if os.name == 'nt' else 'clear')

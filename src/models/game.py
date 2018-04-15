@@ -43,7 +43,7 @@ class Game(object):
         current_player = self.players[self.turn]
         return move.start.owner is current_player or move.end.owner is current_player
 
-    def replenish(self, dest, source, count):
+    def replenish(self, source, dest, count):
         count = len(source) - 1 if count == "many" else count
         source.replenish(dest, count)
 

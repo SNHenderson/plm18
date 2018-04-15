@@ -1,10 +1,8 @@
-import os
-
 from models.pile import Pile
 from utils.logger import Logger
 from views.base import BaseView
 
-class LineView(BaseView):
+class DebugView(BaseView):
 
     def start_game(self, model):
             self.clear_screen()
@@ -12,7 +10,7 @@ class LineView(BaseView):
             self.display()
 
     def render(self, model):
-        self.clear_screen()
+        self.display()
         # Render: need some abstract way to configure the layout of the game
         other_collections = { c for c in model.collections if isinstance(c, Pile) }
         self.display("Table:")
