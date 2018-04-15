@@ -47,23 +47,24 @@ class RuleExpression(Expression):
         iterations = {}
 
         # Parse assignments
-        for a in self.assignments:
-            if a == "None":
-                continue
-            else:
-                name = a[0]
-                op = a[1]
-                expr = a[2:]
-
-                resolved_expr = evaluate(parse(expr), env)
-                assert not isinstance(resolved_expr, str), "Could not resolve '%s'" % expr
-
-                if op == "=":
-                    bindings[name] = resolved_expr
-                elif op == "<-":
-                    iterations[name] = resolved_expr
+        if self.assignments:
+            for a in self.assignments:
+                if a == "None":
+                    continue
                 else:
-                    assert False, "Unexpected operator '%s'" % op
+                    name = a[0]
+                    op = a[1]
+                    expr = a[2:]
+
+                    resolved_expr = evaluate(parse(expr), env)
+                    assert not isinstance(resolved_expr, str), "Could not resolve '%s'" % expr
+
+                    if op == "=":
+                        bindings[name] = resolved_expr
+                    elif op == "<-":
+                        iterations[name] = resolved_expr
+                    else:
+                        assert False, "Unexpected operator '%s'" % op
 
         expr = self.expression.copy()
         if iterations:

@@ -148,7 +148,7 @@ def parse(filename):
             # Populate optional properites with defaults
             optional_props = [ k for k in obj_type.keys() if k not in obj.keys() ]
             for prop in optional_props:
-                obj[prop] = ["None"]
+                obj[prop] = None
             return obj
 
         def get_obj_defns(obj_type, count, ):
