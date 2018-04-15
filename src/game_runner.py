@@ -3,8 +3,7 @@ from dsl import game_builder
 from dsl import game_parser
 from models import collection
 from utils import arg_parser
-from views.view import View
-from views.log import LogView
+from views.debug import DebugView
 from views.pretty import PrettyView
 
 def run():
@@ -18,7 +17,11 @@ def run():
     game = game_builder.build_game(game_rules)
     
     # create view
-    view = LogView(args.log) if args.log else PrettyView()
+    if args.debug:
+        view = DebugView(args.log) if args.log else DebugView()
+    else:
+        print(args.log)
+        view = PrettyView(args.log) if args.log else PrettyView()
 
     # start game loop
     game_controller = Controller(game, view)

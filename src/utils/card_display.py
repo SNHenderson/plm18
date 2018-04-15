@@ -41,7 +41,7 @@ def ascii_version_of_card(*cards):
     :return: A string, the nice ascii version of cards
     """
 
-    # we will use this to prints the appropriate icons for each card
+    # we will use this to print the appropriate icons for each card
     name_to_symbol = {
         'SPADES':   '♠',
         'DIAMONDS': '♦',
@@ -70,7 +70,7 @@ def ascii_version_of_card(*cards):
         suit = name_to_symbol[card.suit]
 
         # add the individual card on a line by line basis
-        return CARD.format(rank=rank, suit=name_to_symbol[card.suit])
+        return CARD.format(rank=rank, suit=suit)
 
 
     return join_lines(map(card_to_string, cards))
@@ -83,4 +83,4 @@ def ascii_version_of_hidden_card(*cards):
     :return: A string, the nice ascii version of cards
     """
 
-    return join_lines((HIDDEN_CARD, '\n' * 8))
+    return join_lines((HIDDEN_CARD, '\n' * 9))

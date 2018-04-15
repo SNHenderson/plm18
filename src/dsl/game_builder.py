@@ -34,7 +34,7 @@ def build_game(game_data):
     # Register collections with the game
     [ game.add_collection(c) for c in collections ]
 
-    # Build rules to be used for moves. This adds them to the namespace
+    # Build rules to be used for moves. This adds them to the environment
     utils.build_rules(game_data.rules)
 
     # Build and add moves

@@ -10,7 +10,6 @@ class Logger(object):
         self.file = open(filename, 'w')
 
     def log(self, *args):
-        print(*args)
         print(*args, file=self.file)
 
     def close(self):

@@ -29,7 +29,7 @@ class Collection(object):
         return len(self)
 
     def shuffle(self):
-        random.shuffle(cards)
+        shuffle(self.cards)
 
     def __len__(self):
         return len(self.cards)
