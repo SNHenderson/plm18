@@ -1,6 +1,7 @@
 from pyparsing import Word, OneOrMore, ZeroOrMore, Or, Literal
 from pyparsing import oneOf, delimitedList
 from pyparsing import alphas, alphanums, nums, printables
+from pyparsing import ParseException
 from models.player import Player
 from models.game import Game
 
@@ -106,13 +107,19 @@ class GameDefinition(object):
 
 def parse(filename):
     with open(filename) as f:
+
+        # Stores lines read ahead of time for later
+        line_buffer = []
+
         def line():
             """ Returns the next non-empty line in file f """
+            if len(line_buffer):
+                return line_buffer.pop(0)
             ln = f.readline()
             return line() if ln.isspace() else ln
 
-        def parse_line(rule):
-            return rule.parseString(line())
+        def parse_line(rule, l = None):
+            return rule.parseString(line() if l == None else l)
 
         def parse_obj_defn(obj_type):
             """
@@ -125,12 +132,23 @@ def parse(filename):
             # Get the name of the object
             obj["name"] = parse_line(Name)[0]
 
-            for _ in props:
-                # Convert the value to the right type, store with key k
-                parsed = parse_line(prop_rule)
-                prop = parsed["key"]
-                value = parsed["value"]
-                obj[prop] = value
+            for k in props:
+                l = line()
+                try:
+                    # Convert the value to the right type, store with key k
+                    parsed = parse_line(prop_rule, l)
+                    prop = parsed["key"]
+                    value = parsed["value"]
+                    obj[prop] = value
+
+                # Some properties are optional and won't appear, so save the line for later
+                except ParseException:
+                    line_buffer.append(l)
+
+            # Populate optional properites with defaults
+            optional_props = [ k for k in obj_type.keys() if k not in obj.keys() ]
+            for prop in optional_props:
+                obj[prop] = ["None"]
             return obj
 
         def get_obj_defns(obj_type, count, ):

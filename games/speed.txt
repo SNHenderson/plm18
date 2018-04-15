@@ -4,108 +4,81 @@ Turn-based: no
 Number of players: 2
 Player hand size: 5
 Player collections: 3
-p0:
-    name: Player1
-p1:
-    name: Player2
+Player1
+Player2
 
 Number of piles: 6
-pile0:
-    name: draw1
+draw1:
     facedown: yes
     size: 15
     owner: Player1
-pile1:
-    name: draw2
+draw2:
     facedown: yes
     size: 15
     owner: Player2
-pile2:
-    name: replace1
+replace1:
     facedown: yes
     size: 5
     owner: all
-pile3:
-    name: replace2
+replace2:
     facedown: yes
     size: 5
     owner: all
-pile4:
-    name: discard1
+discard1:
     facedown: no
     size: 1
     owner: all
-pile5:
-    name: discard2
+discard2:
     facedown: no
     size: 1
     owner: all
 
 Number of rules: 13
-rule0:
-    name: valuesWithinOne
+valuesWithinOne:
     expr: (val1 is val2 + 1) or (val1 is val2 - 1)
-    let: None
 
-rule1:
-    name: valuesWrapAround
+valuesWrapAround:
     expr: (val1 is 1 and val2 is 13) or (val1 is 13 and val2 is 1)
-    let: None
 
-rule2:
-    name: validDiscard
+validDiscard:
     expr: valuesWithinOne or valuesWrapAround
     let: val1 = card.value; val2 = pile.top_card.value
 
-rule3:
-    name: validDiscardPile1
+validDiscardPile1:
     expr: validDiscard
     let: pile = discard1
-    
-rule4:
-    name: validDiscardPile2
+
+validDiscardPile2:
     expr: validDiscard
     let: pile = discard2
 
-rule5:
-    name: canDiscard
+canDiscard:
     expr: any (validDiscardPile1 or validDiscardPile2)
     let: card <- player.hand.cards
 
-rule6:
-    name: validDraw
+validDraw:
     expr: (player.hand.size < 5) and (pile.size > 0)
-    let: None
 
-rule7:
-    name: validDrawPlayer1
+validDrawPlayer1:
     expr: validDraw
     let: player = Player1; pile = draw1
 
-rule8:
-    name: validDrawPlayer2
+validDrawPlayer2:
     expr: validDraw
     let: player = Player2; pile = draw2
 
-rule9:
-    name: someoneCanPlay
+someoneCanPlay:
     expr: any (canDiscard or (validDrawPlayer1 or validDrawPlayer2))
     let: player <- players
 
-rule10:
-    name: noneCanPlay
+noneCanPlay:
     expr: not someoneCanPlay
-    let: None
 
-rule11:
-    name: replacePilesSameSize
+replacePilesSameSize:
     expr: replace1.size is replace2.size
-    let: None
 
-rule12:
-    name: validReplacement
+validReplacement:
     expr: noneCanPlay or (not replacePilesSameSize)
-    let: None
 
 Number of moves: 8
 move0:
@@ -114,35 +87,30 @@ move0:
     to: discard1
     trigger: q
     how: validDiscardPile1
-    let: None
 move1:
     where: all
     from: Player1's hand
     to: discard2
     trigger: w
     how: validDiscardPile2
-    let: None
 move2:
     where: top
     from: draw1
     to: Player1's hand
     trigger: e
     how: validDrawPlayer1
-    let: None
 move3:
     where: all
     from: Player2's hand
     to: discard1
     trigger: i
     how: validDiscardPile1
-    let: None
 move4:
     where: all
     from: Player2's hand
     to: discard2
     trigger: o
     how: validDiscardPile2
-    let: None
 move5:
     where: top
     from: draw2
@@ -156,14 +124,12 @@ move6:
     to: discard1
     trigger: b
     how: validReplacement
-    let: None
 move7:
     where: bottom
     from: replace2
     to: discard2
     trigger: b
     how: validReplacement
-    let: None
 
 Number of events: 1
 event0:

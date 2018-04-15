@@ -244,6 +244,8 @@ def build_moves(move_data):
 
 def build_events(event_data):
     def build_event(event):
+        # Remove the "name" of the event since it's unused
+        event.pop("name")
         e = {key : parse(value) for key, value in event.items()}
         return Event(lambda: evaluate(e.get('trigger')), lambda: do_event(e.get('action')))
     return [ build_event(e) for e in event_data ]
