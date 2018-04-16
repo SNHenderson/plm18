@@ -37,7 +37,6 @@ class Game(object):
         return all([c() for c in self.win_conditions])
 
     def update_turn(self):
-        print("New turn")
         self.turn = (self.turn + 1) % len(self.players)
 
     def current_player(self):
