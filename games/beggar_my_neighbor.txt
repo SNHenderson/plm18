@@ -1,0 +1,112 @@
+Name: Beggar My Neighbor
+Turn-based: yes
+
+Number of players: 2
+Player hand size: 0
+Player collections: 0
+p0:
+    name: Player1
+p1:
+    name: Player2
+
+Number of piles: 4
+pile0:
+    name: discard
+    facedown: no
+    size: 0
+    owner: all   
+pile1:
+    name: draw1
+    facedown: yes
+    size: 26
+    owner: Player1  
+pile2:
+    name: draw2
+    facedown: yes
+    size: 26
+    owner: Player2
+pile3:
+    name: penalty
+    facedown: no
+    size: 0
+    owner: all
+
+Number of rules: 2
+rule0: 
+    name: validDiscard
+    expr: (discard.size is 0) or (discard.top_card.value < 11) and (discard.top_card.value > 1)
+    let: None
+rule1:
+    name: penaltyPlay
+    expr: not validDiscard
+    let: None
+
+Number of moves: 4
+move0:
+    where: top
+    from: draw1
+    to: discard
+    trigger: q
+    how: validDiscard
+    let: None
+move1:
+    where: top
+    from: draw2
+    to: discard
+    trigger: i
+    how: validDiscard
+    let: None
+move2:
+    where: top
+    from: draw1
+    to: penalty
+    trigger: w
+    how: penaltyPlay
+    let: None
+move3:
+    where: top
+    from: draw1
+    to: penalty
+    trigger: o
+    how: penaltyPlay
+    let: None
+
+Number of events: 11
+
+event0:
+    trigger: discard.top_card is 12 and penalty.size > 1 and penalty.size < 2
+    action: update_turn    
+event1:
+    trigger: discard.top_card is 13 and penalty.size > 1 and penalty.size < 3
+    action: update_turn
+event2:
+    trigger: discard.top_card is 1 and penalty.size > 1 and penalty.size < 4
+    action: update_turn
+event3:
+    trigger: discard.top_card is 11 and penalty.size is 1 and current_player is Player1
+    action: (replenish discard penalty all), (replenish draw1 discard all)
+event4:
+    trigger: discard.top_card is 11 and penalty.size is 1 and current_player is Player2
+    action: (replenish discard penalty all), (replenish draw2 discard all) 
+event5:
+    trigger: discard.top_card is 12 and penalty.size is 2 and current_player is Player1
+    action: (replenish discard penalty all), (replenish draw1 discard all)
+event6:
+    trigger: discard.top_card is 12 and penalty.size is 2 and current_player is Player2
+    action: (replenish discard penalty all), (replenish draw2 discard all) 
+event7:
+    trigger: discard.top_card is 13 and penalty.size is 3 and current_player is Player1
+    action: (replenish discard penalty all), (replenish draw1 discard all)
+event8:
+    trigger: discard.top_card is 13 and penalty.size is 3 and current_player is Player2
+    action: (replenish discard penalty all), (replenish draw2 discard all) 
+event9:
+    trigger: discard.top_card is 1 and penalty.size is 4 and current_player is Player1
+    action: (replenish discard penalty all), (replenish draw1 discard all)
+event10:
+    trigger: discard.top_card is 1 and penalty.size is 4 and current_player is Player2
+    action: (replenish discard penalty all), (replenish draw2 discard all) 
+
+
+Win condition: (Player1.hand.size is 52) or (Player2.hand.size is 52)
+

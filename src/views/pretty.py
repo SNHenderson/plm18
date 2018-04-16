@@ -26,7 +26,7 @@ class PrettyView(BaseView):
 
         self.display("Players:")
         if model.turn_based:
-            p = model.players[model.turn]
+            p = model.current_player()
             self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
         else:
             for p in model.players:
@@ -42,8 +42,7 @@ class PrettyView(BaseView):
         self.display("Move was invalid!")
 
     def display_turn(self, model):
-        current_player = model.players[model.turn]
-        self.display(current_player.name + "'s turn:")
+        self.display(model.current_player().name + "'s turn:")
 
     def end_game(self, model):
         self.display("Game end!")

@@ -39,14 +39,20 @@ class Game(object):
     def update_turn(self):
         self.turn = (self.turn + 1) % len(self.players)
 
+    def current_player(self):
+        return self.players[self.turn]
+
     def valid_turn(self, move):
-        current_player = self.players[self.turn]
-        return move.start.owner is current_player or move.end.owner is current_player
+        print(move.start.owner, move.end.owner)
+        return move.start.owner is self.current_player() or move.end.owner is self.current_player()
 
     def replenish(self, source, dest, count):
-        count = len(source) - 1 if count == "many" else count
+        if count == "many":
+            count = len(source) - 1
+        elif count == "all":
+            count = len(source)
+        else: count
         source.replenish(dest, count)
 
     def shuffle(self, collection):
         collection.shuffle()
-

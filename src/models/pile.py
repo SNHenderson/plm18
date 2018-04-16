@@ -28,5 +28,5 @@ class Pile(Collection):
 
     def replenish(self, source, count):
         count = int(count)
-        self.cards = source[:count]
+        self.cards += source[:count]
         del source[:count]

@@ -30,8 +30,7 @@ class DebugView(BaseView):
         self.display("Move was invalid!")
 
     def display_turn(self, model):
-        current_player = model.players[model.turn]
-        self.display(current_player.name + "'s turn:")
+        self.display(model.current_player().name + "'s turn:")
 
     def end_game(self, model):
             self.display("Game end!")
