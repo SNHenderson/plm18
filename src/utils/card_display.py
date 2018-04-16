@@ -72,7 +72,6 @@ def ascii_version_of_card(*cards):
         # add the individual card on a line by line basis
         return CARD.format(rank=rank, suit=suit)
 
-
     return join_lines(map(card_to_string, cards))
 
 

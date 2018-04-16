@@ -6,7 +6,7 @@ class DebugView(BaseView):
 
     def start_game(self, model):
             self.clear_screen()
-            self.display("Starting new game of %s!" % model.name)
+            self.display("Starting new game of %s!" % model.game_name)
             self.display()
 
     def render(self, model):

@@ -14,7 +14,10 @@ class Pile(Collection):
         return "<%s:%s(%d)>" % (self.name, top, len(self.cards))
 
     def value(self):
-        return self.top_card().value
+        if self.top_card():
+            return self.top_card().value
+        else:
+            return -1
 
     def rank(self):
         return self.top_card().rank
@@ -28,5 +31,5 @@ class Pile(Collection):
 
     def replenish(self, source, count):
         count = int(count)
-        self.cards += source[:count]
+        self.cards = source[:count] + self.cards
         del source[:count]

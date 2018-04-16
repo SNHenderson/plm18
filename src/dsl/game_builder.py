@@ -12,13 +12,13 @@ def build_game(game_data):
     game_properties = {attr : getattr(game, attr) for attr in dir(game) if not attr.startswith("__")}
     global_env.update(game_properties)
 
-    # Create and register players
-    players = utils.build_players(game_data.players, game_data.player_hand_size, game_data.player_collections)
-    [ game.add_player(player) for name, player in players ]
-
     # Create and register piles
     piles = utils.build_piles(game_data.piles)
 
+    # Create and register players
+    players = utils.build_players(game_data.players, game_data.player_hand_size, game_data.player_collections, game_data.piles)
+    [ game.add_player(player) for name, player in players ]
+    
     # Shuffle the cards
     cards = game.deck.shuffled()
 
