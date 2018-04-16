@@ -38,7 +38,6 @@ class PrettyView(BaseView):
 
     def move_card(self, model):
         self.render(model)
-        self.display("Moved the card!")
         time.sleep(0.5)
 
     def invalid_move(self, model):
@@ -48,8 +47,8 @@ class PrettyView(BaseView):
         self.display(model.current_player().name + "'s turn:")
 
     def end_game(self, model):
-        self.clear_screen()
-        for p in model.players:
-                if p.hand.size() > 0:
-                    self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
+        if model.turn_based:
+            for p in model.players:
+                    if p.hand.size() > 0:
+                        self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
         self.display("Game end!")
