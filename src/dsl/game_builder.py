@@ -9,17 +9,16 @@ def build_game(game_data):
     game = Game(game_data.name, game_data.turn_based)
 
     # Allow access to game properties from rules
-    global_env.update(game.__dict__)
-    global_env["replenish"] = game.replenish
-    global_env["shuffle"] = game.shuffle
-
-    # Create and register players
-    players = utils.build_players(game_data.players, game_data.player_hand_size, game_data.player_collections)
-    [ game.add_player(player) for name, player in players ]
+    game_properties = {attr : getattr(game, attr) for attr in dir(game) if not attr.startswith("__")}
+    global_env.update(game_properties)
 
     # Create and register piles
     piles = utils.build_piles(game_data.piles)
 
+    # Create and register players
+    players = utils.build_players(game_data.players, game_data.player_hand_size, game_data.player_collections, game_data.piles)
+    [ game.add_player(player) for name, player in players ]
+    
     # Shuffle the cards
     cards = game.deck.shuffled()
 

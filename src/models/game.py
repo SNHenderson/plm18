@@ -2,9 +2,9 @@ from utils.getch import getch
 from models.deck import Deck
 
 class Game(object):
-    def __init__(self, name, turn_based):
+    def __init__(self, game_name, turn_based):
         super().__init__()
-        self.name = name
+        self.game_name = game_name
         self.players = []
         self.win_conditions = []
         self.moves = []
@@ -39,14 +39,18 @@ class Game(object):
     def update_turn(self):
         self.turn = (self.turn + 1) % len(self.players)
 
-    def valid_turn(self, move):
-        current_player = self.players[self.turn]
-        return move.start.owner is current_player or move.end.owner is current_player
+    def current_player(self):
+        return self.players[self.turn]
 
-    def replenish(self, source, dest, count):
-        count = len(source) - 1 if count == "many" else count
-        source.replenish(dest, count)
+    def valid_turn(self, move):
+        return move.start.owner is self.current_player() or move.end.owner is self.current_player()
+
+    def replenish(self, dest, source, count):
+        if count == "many":
+            count = source.size() - 1
+        elif count == "full":
+            count = source.size()
+        dest.replenish(source, count)
 
     def shuffle(self, collection):
         collection.shuffle()
-

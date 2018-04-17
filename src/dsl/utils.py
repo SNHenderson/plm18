@@ -147,7 +147,6 @@ def parse(expr):
 
     # Push any remaining operators to the output
     shunt_ops()
-
     return output
 
 def evaluate(expression, local_env=None):
@@ -197,11 +196,14 @@ def build_piles(pile_dict):
 
     return piles.items()
 
-def build_players(player_dict, size, count):
+def build_players(player_dict, size, count, pile_dict):
     players = OrderedDict()
     for p in player_dict:
         player = Player(p.get('name'))
         player.add_collection(player.hand)
+        for pile in pile_dict:
+            if pile.get('owner') == player.name:
+                player.add_collection(global_env[pile.get('name')])
         players[p.get('name')] = player
 
     for name, player in players.items():
