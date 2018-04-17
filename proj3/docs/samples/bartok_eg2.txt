@@ -1,0 +1,128 @@
+Starting new game of Bartok!
+
+Starting game of Bartok
+Table:
+[discard:[THREE CLUBS](1)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[KING SPADES],[JACK SPADES],[SIX DIAMONDS],[TWO CLUBS],[NINE HEARTS]]
+Player2 [Player2's hand:[SIX CLUBS],[TWO SPADES],[QUEEN SPADES],[QUEEN DIAMONDS],[ACE SPADES]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[TWO CLUBS](2)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[KING SPADES],[JACK SPADES],[SIX DIAMONDS],[NINE HEARTS]]
+Player2 [Player2's hand:[SIX CLUBS],[TWO SPADES],[QUEEN SPADES],[QUEEN DIAMONDS],[ACE SPADES]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[SIX CLUBS](3)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[KING SPADES],[JACK SPADES],[SIX DIAMONDS],[NINE HEARTS]]
+Player2 [Player2's hand:[TWO SPADES],[QUEEN SPADES],[QUEEN DIAMONDS],[ACE SPADES]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[SIX DIAMONDS](4)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[KING SPADES],[JACK SPADES],[NINE HEARTS]]
+Player2 [Player2's hand:[TWO SPADES],[QUEEN SPADES],[QUEEN DIAMONDS],[ACE SPADES]]
+
+Player2's turn:
+Move was invalid!
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[QUEEN DIAMONDS](5)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[KING SPADES],[JACK SPADES],[NINE HEARTS]]
+Player2 [Player2's hand:[TWO SPADES],[QUEEN SPADES],[ACE SPADES]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[QUEEN DIAMONDS](5)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[KING SPADES],[JACK SPADES],[NINE HEARTS],[TEN HEARTS]]
+Player2 [Player2's hand:[TWO SPADES],[QUEEN SPADES],[ACE SPADES]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[QUEEN SPADES](6)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[KING SPADES],[JACK SPADES],[NINE HEARTS],[TEN HEARTS]]
+Player2 [Player2's hand:[TWO SPADES],[ACE SPADES]]
+
+Player1's turn:
+Move was invalid!
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[KING SPADES](7)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[JACK SPADES],[NINE HEARTS],[TEN HEARTS]]
+Player2 [Player2's hand:[TWO SPADES],[ACE SPADES]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[ACE SPADES](8)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[JACK SPADES],[NINE HEARTS],[TEN HEARTS]]
+Player2 [Player2's hand:[TWO SPADES]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[JACK SPADES](9)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[TEN HEARTS]]
+Player2 [Player2's hand:[TWO SPADES]]
+
+Player2's turn:
+Move was invalid!
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[TWO SPADES](10)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[NINE HEARTS],[TEN HEARTS]]
+Player2 [Player2's hand:]
+
+Game end!

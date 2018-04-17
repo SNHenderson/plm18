@@ -1,0 +1,155 @@
+Starting new game of Bartok!
+
+Starting game of Bartok
+Table:
+[discard:[KING HEARTS](1)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[FIVE CLUBS],[JACK CLUBS],[ACE SPADES],[NINE CLUBS],[NINE HEARTS]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[SEVEN CLUBS],[QUEEN SPADES],[JACK SPADES]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[NINE HEARTS](2)]
+[draw:[X](41)]
+
+Players:
+Player1 [Player1's hand:[FIVE CLUBS],[JACK CLUBS],[ACE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[SEVEN CLUBS],[QUEEN SPADES],[JACK SPADES]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[NINE HEARTS](2)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[FIVE CLUBS],[JACK CLUBS],[ACE SPADES],[NINE CLUBS]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[SEVEN CLUBS],[QUEEN SPADES],[JACK SPADES],[KING CLUBS]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[NINE CLUBS](3)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[FIVE CLUBS],[JACK CLUBS],[ACE SPADES]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[SEVEN CLUBS],[QUEEN SPADES],[JACK SPADES],[KING CLUBS]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[SEVEN CLUBS](4)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[FIVE CLUBS],[JACK CLUBS],[ACE SPADES]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[JACK SPADES],[KING CLUBS]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[FIVE CLUBS](5)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[JACK CLUBS],[ACE SPADES]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[JACK SPADES],[KING CLUBS]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[KING CLUBS](6)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[JACK CLUBS],[ACE SPADES]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[JACK SPADES]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[JACK CLUBS](7)]
+[draw:[X](40)]
+
+Players:
+Player1 [Player1's hand:[ACE SPADES]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[JACK SPADES]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[JACK CLUBS](7)]
+[draw:[X](39)]
+
+Players:
+Player1 [Player1's hand:[ACE SPADES]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[JACK SPADES],[TWO DIAMONDS]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[JACK CLUBS](7)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[ACE SPADES],[THREE DIAMONDS]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[JACK SPADES],[TWO DIAMONDS]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[JACK SPADES](8)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[ACE SPADES],[THREE DIAMONDS]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[TWO DIAMONDS]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[ACE SPADES](9)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[THREE DIAMONDS]]
+Player2 [Player2's hand:[THREE SPADES],[ACE DIAMONDS],[QUEEN SPADES],[TWO DIAMONDS]]
+
+Player2's turn:
+Moved the card!
+
+Table:
+[discard:[THREE SPADES](10)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:[THREE DIAMONDS]]
+Player2 [Player2's hand:[ACE DIAMONDS],[QUEEN SPADES],[TWO DIAMONDS]]
+
+Player1's turn:
+Moved the card!
+
+Table:
+[discard:[THREE DIAMONDS](11)]
+[draw:[X](38)]
+
+Players:
+Player1 [Player1's hand:]
+Player2 [Player2's hand:[ACE DIAMONDS],[QUEEN SPADES],[TWO DIAMONDS]]
+
+Game end!

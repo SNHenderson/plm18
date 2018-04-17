@@ -1,0 +1,140 @@
+Name: Speed
+Turn-based: no
+
+Number of players: 2
+Player hand size: 5
+Player collections: 3
+Player1
+Player2
+
+Number of piles: 6
+draw1:
+    facedown: yes
+    size: 15
+    owner: Player1
+draw2:
+    facedown: yes
+    size: 15
+    owner: Player2
+replace1:
+    facedown: yes
+    size: 5
+    owner: all
+replace2:
+    facedown: yes
+    size: 5
+    owner: all
+discard1:
+    facedown: no
+    size: 1
+    owner: all
+discard2:
+    facedown: no
+    size: 1
+    owner: all
+
+Number of rules: 13
+valuesWithinOne:
+    expr: (val1 is val2 + 1) or (val1 is val2 - 1)
+
+valuesWrapAround:
+    expr: (val1 is 1 and val2 is 13) or (val1 is 13 and val2 is 1)
+
+validDiscard:
+    expr: valuesWithinOne or valuesWrapAround
+    let: val1 = card.value; val2 = pile.top_card.value
+
+validDiscardPile1:
+    expr: validDiscard
+    let: pile = discard1
+
+validDiscardPile2:
+    expr: validDiscard
+    let: pile = discard2
+
+canDiscard:
+    expr: any (validDiscardPile1 or validDiscardPile2)
+    let: card <- player.hand.cards
+
+validDraw:
+    expr: (player.hand.size < 5) and (pile.size > 0)
+
+validDrawPlayer1:
+    expr: validDraw
+    let: player = Player1; pile = draw1
+
+validDrawPlayer2:
+    expr: validDraw
+    let: player = Player2; pile = draw2
+
+someoneCanPlay:
+    expr: any (canDiscard or (validDrawPlayer1 or validDrawPlayer2))
+    let: player <- players
+
+noneCanPlay:
+    expr: not someoneCanPlay
+
+replacePilesSameSize:
+    expr: replace1.size is replace2.size
+
+validReplacement:
+    expr: noneCanPlay or (not replacePilesSameSize)
+
+Number of moves: 8
+move0:
+    where: all
+    from: Player1's hand
+    to: discard1
+    trigger: q
+    how: validDiscardPile1
+move1:
+    where: all
+    from: Player1's hand
+    to: discard2
+    trigger: w
+    how: validDiscardPile2
+move2:
+    where: top
+    from: draw1
+    to: Player1's hand
+    trigger: e
+    how: validDrawPlayer1
+move3:
+    where: all
+    from: Player2's hand
+    to: discard1
+    trigger: i
+    how: validDiscardPile1
+move4:
+    where: all
+    from: Player2's hand
+    to: discard2
+    trigger: o
+    how: validDiscardPile2
+move5:
+    where: top
+    from: draw2
+    to: Player2's hand
+    trigger: p
+    how: validDrawPlayer2
+    let: pile = draw2
+move6:
+    where: bottom
+    from: replace1
+    to: discard1
+    trigger: b
+    how: validReplacement
+move7:
+    where: bottom
+    from: replace2
+    to: discard2
+    trigger: b
+    how: validReplacement
+
+Number of events: 1
+event0:
+    trigger: replace1.size is 0
+    action: (replenish replace1 discard1 5), (replenish replace2 discard2 5)
+
+Win condition: (Player1.hand.size is 0 and draw1.size is 0) or (Player2.hand.size is 0 and draw2.size is 0)
+
