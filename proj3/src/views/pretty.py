@@ -5,7 +5,7 @@ import time
 
 class PrettyView(BaseView):
     def start_game(self, model):
-            self.display("Starting new game of %s!" % model.name)
+            self.display("Starting new game of %s!" % model.game_name)
             self.display()
 
     def render(self, model):
@@ -16,34 +16,39 @@ class PrettyView(BaseView):
         facedowns = []
         faceups = []
         for c in other_collections:
-            if c.facedown:
-                facedowns.append("%s(%d): \n%s" % (c.name, len(c.cards), card_display.ascii_version_of_hidden_card()))
-            else:
-                faceups.append("%s(%d): \n%s" % (c.name, len(c.cards), card_display.ascii_version_of_card(c.top_card())))
+            if c.size() > 0:
+                if c.facedown:
+                    facedowns.append("%s(%d): \n%s" % (c.name, len(c.cards), card_display.ascii_version_of_hidden_card()))
+                else:
+                    faceups.append("%s(%d): \n%s" % (c.name, len(c.cards), card_display.ascii_version_of_card(c.top_card())))
         self.display(card_display.join_lines(sorted(facedowns)))
         self.display(card_display.join_lines(sorted(faceups)))
         self.display()
 
         self.display("Players:")
         if model.turn_based:
-            p = model.players[model.turn]
-            self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
+            p = model.current_player()
+            if p.hand.size() > 0:
+                self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
         else:
             for p in model.players:
-                self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
+                if p.hand.size() > 0:
+                    self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
         self.display()
 
     def move_card(self, model):
         self.render(model)
-        self.display("Moved the card!")
-        time.sleep(1)
+        time.sleep(0.5)
 
     def invalid_move(self, model):
         self.display("Move was invalid!")
 
     def display_turn(self, model):
-        current_player = model.players[model.turn]
-        self.display(current_player.name + "'s turn:")
+        self.display(model.current_player().name + "'s turn:")
 
     def end_game(self, model):
+        if model.turn_based:
+            for p in model.players:
+                    if p.hand.size() > 0:
+                        self.display("%s:\n%s" % (p.hand.name, card_display.ascii_version_of_card(*p.hand.cards)))
         self.display("Game end!")
