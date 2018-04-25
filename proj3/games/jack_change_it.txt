@@ -1,0 +1,101 @@
+Name: JackChangeIt
+Turn-based: yes
+
+Number of players: 4
+Player hand size: 5
+Player collections: 1
+Player1
+Player2
+Player3
+Player4
+
+Number of piles: 2
+discard:
+    facedown: no
+    size: 1
+    owner: all
+draw:
+    facedown: yes
+    size: 31
+    owner: all
+
+Number of rules: 2
+validDiscard:
+    expr: (card.rank is discard.top_card.rank) or (card.suit is discard.top_card.suit) or (card.value is 11)
+validDraw:
+    expr: all not validDiscard
+    let: card <- player's hand
+
+Number of moves: 8
+move0:
+    where: all
+    from: Player1's hand
+    to: discard
+    trigger: q
+    how: validDiscard
+    let: player = Player1
+move1:
+    where: top
+    from: draw
+    to: Player1's hand
+    trigger: e
+    how: validDraw
+    let: player = Player1
+move2:
+    where: all
+    from: Player2's hand
+    to: discard
+    trigger: i
+    how: validDiscard
+    let: player = Player2
+move3:
+    where: top
+    from: draw
+    to: Player2's hand
+    trigger: p
+    how: validDraw
+    let: player = Player2
+move4:
+    where: all
+    from: Player3's hand
+    to: discard
+    trigger: z
+    how: validDiscard
+    let: player = Player3
+move5:
+    where: top
+    from: draw
+    to: Player3's hand
+    trigger: c
+    how: validDraw
+    let: player = Player3
+move6:
+    where: all
+    from: Player4's hand
+    to: discard
+    trigger: b
+    how: validDiscard
+    let: player = Player4
+move7:
+    where: top
+    from: draw
+    to: Player4's hand
+    trigger: m
+    how: validDraw
+    let: player = Player4
+
+Number of events: 4
+replenishDrawPiles:
+    trigger: (draw.size is 0) and (discard.size > 1)
+    action: (replenish draw discard many), (shuffle draw)
+drawFive:
+    trigger: (discard.value is 1) and (discard.suit is 4)
+    action: (replenish (current_player).hand draw 5), (update_turn)
+drawTwo:
+    trigger: (discard.value is 2)
+    action: (replenish ((current_player).hand) draw 2)
+skip:
+    trigger: (discard.value is 8)
+    action: (update_turn)
+
+Win condition: (Player1.hand.size is 0) or (Player2.hand.size is 0) or (Player3.hand.size is 0) or (Player4.hand.size is 0)

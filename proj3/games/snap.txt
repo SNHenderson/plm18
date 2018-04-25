@@ -1,0 +1,103 @@
+Name: Slapjack
+Turn-based: yes
+
+Number of players: 2
+Player hand size: 0
+Player collections: 0
+Player1
+Player2
+
+Number of piles: 3
+discard:
+    facedown: no
+    size: 0
+    owner: all   
+draw1:
+    facedown: yes
+    size: 26
+    owner: Player1  
+draw2:
+    facedown: yes
+    size: 26
+    owner: Player2
+
+Number of rules: 2
+validDiscard:
+    expr: (discard.size is 0) or (discard.value != 11)
+    let: None
+
+penaltyPlay:
+    expr: not validDiscard
+    let: None
+
+Number of moves: 4
+move0:
+    where: top
+    from: draw1
+    to: discard
+    trigger: q
+    how: validDiscard
+    let: None
+move1:
+    where: top
+    from: draw2
+    to: discard
+    trigger: i
+    how: validDiscard
+    let: None
+move2:
+    where: top
+    from: draw1
+    to: penalty
+    trigger: e
+    how: penaltyPlay
+    let: None
+move3:
+    where: top
+    from: draw2
+    to: penalty
+    trigger: p
+    how: penaltyPlay
+    let: None
+
+Number of events: 12
+
+event0:
+    trigger: (penalty.value is 1) or (penalty.value > 10)
+    action: (replenish penalty discard full), (replenish discard penalty full)
+event1:
+    trigger: (discard.value is 12) and (penalty.size >= 1) and (penalty.size < 2)
+    action: update_turn    
+event2:
+    trigger: (discard.value is 13) and (penalty.size >= 1) and (penalty.size < 3)
+    action: update_turn
+event3:
+    trigger: (discard.value is 1) and (penalty.size >= 1) and (penalty.size < 4)
+    action: update_turn
+event4:
+    trigger: (discard.value is 11) and (penalty.size is 1) and ((current_player) is Player1)
+    action: (replenish discard penalty full), (replenish draw1 discard full)
+event5:
+    trigger: (discard.value is 11) and (penalty.size is 1) and ((current_player) is Player2)
+    action: (replenish discard penalty full), (replenish draw2 discard full) 
+event6:
+    trigger: (discard.value is 12) and (penalty.size is 2) and ((current_player) is Player1)
+    action: (replenish discard penalty full), (replenish draw1 discard full)
+event7:
+    trigger: (discard.value is 12) and (penalty.size is 2) and ((current_player) is Player2)
+    action: (replenish discard penalty full), (replenish draw2 discard full) 
+event8:
+    trigger: (discard.value is 13) and (penalty.size is 3) and ((current_player) is Player1)
+    action: (replenish discard penalty full), (replenish draw1 discard full)
+event9:
+    trigger: (discard.value is 13) and (penalty.size is 3) and ((current_player) is Player2)
+    action: (replenish discard penalty full), (replenish draw2 discard full) 
+event10:
+    trigger: (discard.value is 1) and (penalty.size is 4) and ((current_player) is Player1)
+    action: (replenish discard penalty full), (replenish draw1 discard full)
+event11:
+    trigger: (discard.value is 1) and (penalty.size is 4) and ((current_player) is Player2)
+    action: (replenish discard penalty full), (replenish draw2 discard full) 
+
+
+Win condition: (draw1.size is 52) or (draw2.size is 52) or (draw1.size is 0) or (draw2.size is 0)
