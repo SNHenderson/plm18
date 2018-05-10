@@ -49,3 +49,8 @@ class Collection(object):
             val += ":" + ",".join(map(str, self.cards))
         return "<" + val + ">"
 
+    def replenish(self, source, count):
+        count = int(count)
+        self.cards = source[:count] + self.cards
+        del source[:count]
+

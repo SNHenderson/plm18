@@ -14,6 +14,7 @@ class Game(object):
         self.turn_based = turn_based
         if turn_based:
             self.turn = 0
+            self.turn_direction = 1
 
     def add_collection(self, collection):
         self.collections.add(collection)
@@ -37,7 +38,13 @@ class Game(object):
         return all([c() for c in self.win_conditions])
 
     def update_turn(self):
-        self.turn = (self.turn + 1) % len(self.players)
+        self.turn = (self.turn + self.turn_direction) % len(self.players)
+
+    def undo_turn(self):
+        self.turn = (self.turn - self.turn_direction) % len(self.players)
+
+    def reverse_turn(self):
+        self.turn_direction *= -1
 
     def current_player(self):
         return self.players[self.turn]

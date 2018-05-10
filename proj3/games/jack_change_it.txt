@@ -84,18 +84,21 @@ move7:
     how: validDraw
     let: player = Player4
 
-Number of events: 4
+Number of events: 5
 replenishDrawPiles:
     trigger: (draw.size is 0) and (discard.size > 1)
     action: (replenish draw discard many), (shuffle draw)
 drawFive:
-    trigger: (discard.value is 1) and (discard.suit is 4)
-    action: (replenish (current_player).hand draw 5), (update_turn)
+    trigger: (discard.value is 1) and (discard.suit is hearts)
+    action: (replenish (current_player).hand draw 5)
 drawTwo:
     trigger: (discard.value is 2)
     action: (replenish ((current_player).hand) draw 2)
 skip:
     trigger: (discard.value is 8)
     action: (update_turn)
+reverse:
+    trigger: (discard.value is 12)
+    action: (reverse_turn), (update_turn), (update_turn)
 
 Win condition: (Player1.hand.size is 0) or (Player2.hand.size is 0) or (Player3.hand.size is 0) or (Player4.hand.size is 0)

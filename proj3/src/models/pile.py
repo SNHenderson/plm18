@@ -28,8 +28,3 @@ class Pile(Collection):
     def top_card(self):
         if self.cards:
             return self.cards[-1]
-
-    def replenish(self, source, count):
-        count = int(count)
-        self.cards = source[:count] + self.cards
-        del source[:count]

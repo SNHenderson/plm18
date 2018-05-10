@@ -46,6 +46,30 @@ Start a game with: `bin/cards games/bartok.txt`. To generate a transcript of gam
 - `b` for player 4 to discard a card
 - `m` for player 4 to draw a card
 
+### Beggar My Neighbor
+
+Start a game with: `bin/cards games/beggar_my_neighbor.txt`. To generate a transcript of gameplay, use: `bin/cards --log <filename> games/beggar_my_neighbor.txt`. The transcript is written to `logs/<filename>`.
+
+**Controls**
+- `q` for player 1 to discard a card
+- `e` for player 1 to play a penalty card
+- `i` for player 2 to discard a card
+- `p` for player 2 to play a penalty card
+
+### Jack Change It
+
+Start a game with: `bin/cards games/jack_change_it.txt`. To generate a transcript of gameplay, use: `bin/cards --log <filename> games/jack_change_it.txt`. The transcript is written to `logs/<filename>`.
+
+**Controls**
+- `q` for player 1 to discard a card
+- `e` for player 1 to draw a card
+- `i` for player 2 to discard a card
+- `p` for player 2 to draw a card
+- `z` for player 3 to discard a card
+- `c` for player 3 to draw a card
+- `b` for player 4 to discard a card
+- `m` for player 4 to draw a card
+
 ## Samples
 Sample transcripts for both games can be found in the `docs/samples` folder. The game config files can be in found `games`.
 
